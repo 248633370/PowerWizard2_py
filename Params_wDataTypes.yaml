@@ -1,0 +1,1650 @@
+ACK_EVENTS_CMN_: {DisplayText: !!python/str 'Подтвердите все команды событий', Enable: '0',
+  MaxVal: '1', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: ACK_EVENTS_CMN_,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '304'}
+ADEM_COOL_TEMP: {DisplayText: !!python/str 'Температура охлаждающей жидкости двигателя
+    с системы ADEM', Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16',
+  Offset: '-273', ParamID: ADEM_COOL_TEMP, ReadRegister: '219', Scale: '0,03125',
+  TotalBytes: '2', WriteRegister: ''}
+ADEM_OIL_PRESS: {DisplayText: !!python/str 'Давление масла в двигателе с системы ADEM',
+  Enable: '0', MaxVal: '8031,875', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: ADEM_OIL_PRESS,
+  ReadRegister: '217', Scale: '0,125', TotalBytes: '2', WriteRegister: ''}
+AIR_FLT_PRES_PIN: {DisplayText: !!python/str 'Перепад давления воздушного фильтра
+    1 с контакта ВВ/ВЫВ', Enable: '0', MaxVal: '251,99', MinVal: '-250', NumUsedBits: '16',
+  Offset: '-250', ParamID: AIR_FLT_PRES_PIN, ReadRegister: '810', Scale: '0,0078125',
+  TotalBytes: '2', WriteRegister: ''}
+AMB_AIR_TMP_PIN: {DisplayText: !!python/str 'Температура окружающего воздуха с контакта
+    ВВ/ВЫВ', Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
+  ParamID: AMB_AIR_TMP_PIN, ReadRegister: '814', Scale: '0,03125', TotalBytes: '2',
+  WriteRegister: ''}
+AUTO_STRT_STOP: {DisplayText: !!python/str 'Состояние автоматического пуска/останова',
+  Enable: '0', MaxVal: '7', MinVal: '0', NumUsedBits: '8', Offset: '0', ParamID: AUTO_STRT_STOP,
+  ReadRegister: '206', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+AVG_AC_CURRENT: {DisplayText: !!python/str 'Среднее значение среднеквадратичного переменного
+    тока генератора', Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: AVG_AC_CURRENT, ReadRegister: '101', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+AVG_AC_FREQ: {DisplayText: !!python/str 'Среднее значение среднеквадратичной частоты
+    переменного тока генератора', Enable: '0', MaxVal: '501,9922', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: AVG_AC_FREQ, ReadRegister: '102', Scale: '0,0078125', TotalBytes: '2',
+  WriteRegister: ''}
+AVG_L2L_AC_VOLTS: {DisplayText: !!python/str 'Среднее линейное среднеквадратичное
+    напряжение переменного тока генератора', Enable: '0', MaxVal: '64255', MinVal: '0',
+  NumUsedBits: '16', Offset: '0', ParamID: AVG_L2L_AC_VOLTS, ReadRegister: '100',
+  Scale: '1', TotalBytes: '2', WriteRegister: ''}
+AVG_L2L_VOLTS_%: {DisplayText: !!python/str 'Среднее линейное среднеквадратичное напряжение
+    переменного тока генератора в %', Enable: '0', MaxVal: '250,99', MinVal: '-251',
+  NumUsedBits: '16', Offset: '-251', ParamID: AVG_L2L_VOLTS_%, ReadRegister: '163',
+  Scale: '0,0078125', TotalBytes: '2', WriteRegister: ''}
+AVG_L2N_VOLTS: {DisplayText: !!python/str 'Среднее фазное (меж линией и нейтралью)
+    среднеквадратичное напряжение переменного тока генератора', Enable: '0', MaxVal: '64255',
+  MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: AVG_L2N_VOLTS, ReadRegister: '148',
+  Scale: '1', TotalBytes: '2', WriteRegister: ''}
+AVR_BIAS_PCT: {DisplayText: !!python/str 'Смещение в % автоматического регулятора
+    напряжения', Enable: '0', MaxVal: '250,99', MinVal: '-251', NumUsedBits: '16',
+  Offset: '-251', ParamID: AVR_BIAS_PCT, ReadRegister: '1058', Scale: '0,0078125',
+  TotalBytes: '2', WriteRegister: ''}
+BAT_VOLTS: {DisplayText: !!python/str 'Напр акк бат', Enable: '0', MaxVal: '3212,75',
+  MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: BAT_VOLTS, ReadRegister: '202',
+  Scale: '0,05', TotalBytes: '2', WriteRegister: ''}
+BPASS_COOLDOW_: {DisplayText: !!python/str 'Охлаждение по препускной линии', Enable: '0',
+  MaxVal: '1', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: BPASS_COOLDOW_,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '300'}
+BPAS_RET_DEL_CM_: {DisplayText: !!python/str 'Команда задержки переключения на шунтирующую
+    линию передачи', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0',
+  ParamID: BPAS_RET_DEL_CM_, ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '1063'}
+B_AVG_AC_FREQ: {DisplayText: !!python/str 'Среднее значение среднеквадратичной частоты
+    переменного тока на шинах', Enable: '0', MaxVal: '501,9922', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: B_AVG_AC_FREQ, ReadRegister: '165', Scale: '0,0078125', TotalBytes: '2',
+  WriteRegister: ''}
+B_AVG_L2L_VOLTS: {DisplayText: !!python/str 'Среднее линейное среднеквадратичное напряжение
+    переменного тока на шинах', Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: B_AVG_L2L_VOLTS, ReadRegister: '164', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+B_AVG_L2L_VOLT_%: {DisplayText: !!python/str 'Среднее линейное среднеквадратичное
+    напряжение переменного тока на шинах в %', Enable: '0', MaxVal: '250,99', MinVal: '-251',
+  NumUsedBits: '16', Offset: '-251', ParamID: B_AVG_L2L_VOLT_%, ReadRegister: '173',
+  Scale: '0,0078125', TotalBytes: '2', WriteRegister: ''}
+B_AVG_L2N_VOLTS: {DisplayText: !!python/str 'Среднее фазное среднеквадратичное напряжение
+    переменного тока на шинах', Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: B_AVG_L2N_VOLTS, ReadRegister: '172', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+B_PH_A_L2L_VOLTS: {DisplayText: !!python/str 'Линейное среднеквадратичное напряжение
+    переменного тока на шинах фазы А', Enable: '0', MaxVal: '64255', MinVal: '0',
+  NumUsedBits: '16', Offset: '0', ParamID: B_PH_A_L2L_VOLTS, ReadRegister: '166',
+  Scale: '1', TotalBytes: '2', WriteRegister: ''}
+B_PH_A_L2N_VOLTS: {DisplayText: !!python/str 'Фазное среднеквадратичное напряжение
+    переменного тока на шинах фазы А', Enable: '0', MaxVal: '64255', MinVal: '0',
+  NumUsedBits: '16', Offset: '0', ParamID: B_PH_A_L2N_VOLTS, ReadRegister: '169',
+  Scale: '1', TotalBytes: '2', WriteRegister: ''}
+B_PH_B_L2L_VOLTS: {DisplayText: !!python/str 'Линейное среднеквадратичное напряжение
+    переменного тока на шинах фазы В', Enable: '0', MaxVal: '64255', MinVal: '0',
+  NumUsedBits: '16', Offset: '0', ParamID: B_PH_B_L2L_VOLTS, ReadRegister: '167',
+  Scale: '1', TotalBytes: '2', WriteRegister: ''}
+B_PH_B_L2N_VOLTS: {DisplayText: !!python/str 'Фазное среднеквадратичное напряжение
+    переменного тока на шинах фазы В', Enable: '0', MaxVal: '64255', MinVal: '0',
+  NumUsedBits: '16', Offset: '0', ParamID: B_PH_B_L2N_VOLTS, ReadRegister: '170',
+  Scale: '1', TotalBytes: '2', WriteRegister: ''}
+B_PH_C_L2L_VOLTS: {DisplayText: !!python/str 'Линейное среднеквадратичное напряжение
+    переменного тока на шинах фазы С', Enable: '0', MaxVal: '64255', MinVal: '0',
+  NumUsedBits: '16', Offset: '0', ParamID: B_PH_C_L2L_VOLTS, ReadRegister: '168',
+  Scale: '1', TotalBytes: '2', WriteRegister: ''}
+B_PH_C_L2N_VOLTS: {DisplayText: !!python/str 'Фазное среднеквадратичное напряжение
+    переменного тока на шинах фазы С', Enable: '0', MaxVal: '64255', MinVal: '0',
+  NumUsedBits: '16', Offset: '0', ParamID: B_PH_C_L2N_VOLTS, ReadRegister: '171',
+  Scale: '1', TotalBytes: '2', WriteRegister: ''}
+C10_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 10 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C10_EXH_PRT_TEMP, ReadRegister: '230',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C11_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 11 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C11_EXH_PRT_TEMP, ReadRegister: '231',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C12_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 12 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C12_EXH_PRT_TEMP, ReadRegister: '232',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C13_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 13 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C13_EXH_PRT_TEMP, ReadRegister: '233',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C14_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 14 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C14_EXH_PRT_TEMP, ReadRegister: '234',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C15_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 15 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C15_EXH_PRT_TEMP, ReadRegister: '235',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C16_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 16 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C16_EXH_PRT_TEMP, ReadRegister: '236',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C17_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 17 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C17_EXH_PRT_TEMP, ReadRegister: '237',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C18_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 18 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C18_EXH_PRT_TEMP, ReadRegister: '238',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C19_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 19 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C19_EXH_PRT_TEMP, ReadRegister: '239',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C1_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 1 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C1_EXH_PRT_TEMP, ReadRegister: '221',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C20_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 20 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C20_EXH_PRT_TEMP, ReadRegister: '240',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C2_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 2 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C2_EXH_PRT_TEMP, ReadRegister: '222',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C3_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 3 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C3_EXH_PRT_TEMP, ReadRegister: '223',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C4_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 4 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C4_EXH_PRT_TEMP, ReadRegister: '224',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C5_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 5 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C5_EXH_PRT_TEMP, ReadRegister: '225',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C6_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 6 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C6_EXH_PRT_TEMP, ReadRegister: '226',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C7_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 7 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C7_EXH_PRT_TEMP, ReadRegister: '227',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C8_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 8 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C8_EXH_PRT_TEMP, ReadRegister: '228',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+C9_EXH_PRT_TEMP: {DisplayText: !!python/str 'Температура отработавших газов в отверстии
+    цилиндра 9 с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: C9_EXH_PRT_TEMP, ReadRegister: '229',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+CLDWN_DUR_REM: {DisplayText: !!python/str 'Оставшееся время охлаждения', Enable: '0',
+  MaxVal: '64255', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: CLDWN_DUR_REM,
+  ReadRegister: '1054', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+CRANK_ATTEMPTS: {DisplayText: !!python/str 'Количество попыток проворота маховика',
+  Enable: '0', MaxVal: '4211081215', MinVal: '0', NumUsedBits: '32', Offset: '0',
+  ParamID: CRANK_ATTEMPTS, ReadRegister: '213', Scale: '1', TotalBytes: '4', WriteRegister: ''}
+DES_GEN_OUT_VOLT: {DisplayText: !!python/str 'Необходимое выходное напряжение генераторной
+    установки', Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16', Offset: '0',
+  ParamID: DES_GEN_OUT_VOLT, ReadRegister: '1057', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_IN_STATE_1: {DisplayText: !!python/str 'Активное состояние дискретного ввода №
+    1', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_IN_STATE_1,
+  ReadRegister: '600', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_IN_STATE_10: {DisplayText: !!python/str 'Активное состояние дискретного ввода
+    № 10', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_IN_STATE_10,
+  ReadRegister: '609', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_IN_STATE_11: {DisplayText: !!python/str 'Активное состояние дискретного ввода
+    № 11', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_IN_STATE_11,
+  ReadRegister: '610', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_IN_STATE_12: {DisplayText: !!python/str 'Активное состояние дискретного ввода
+    № 12', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_IN_STATE_12,
+  ReadRegister: '611', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_IN_STATE_13: {DisplayText: !!python/str 'Активное состояние дискретного ввода
+    № 13', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_IN_STATE_13,
+  ReadRegister: '612', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_IN_STATE_14: {DisplayText: !!python/str 'Активное состояние дискретного ввода
+    № 14', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_IN_STATE_14,
+  ReadRegister: '613', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_IN_STATE_15: {DisplayText: !!python/str 'Активное состояние дискретного ввода
+    № 15', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_IN_STATE_15,
+  ReadRegister: '614', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_IN_STATE_16: {DisplayText: !!python/str 'Активное состояние дискретного ввода
+    № 16', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_IN_STATE_16,
+  ReadRegister: '615', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_IN_STATE_2: {DisplayText: !!python/str 'Активное состояние дискретного ввода №
+    2', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_IN_STATE_2,
+  ReadRegister: '601', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_IN_STATE_3: {DisplayText: !!python/str 'Активное состояние дискретного ввода №
+    3', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_IN_STATE_3,
+  ReadRegister: '602', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_IN_STATE_4: {DisplayText: !!python/str 'Активное состояние дискретного ввода №
+    4', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_IN_STATE_4,
+  ReadRegister: '603', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_IN_STATE_5: {DisplayText: !!python/str 'Активное состояние дискретного ввода №
+    5', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_IN_STATE_5,
+  ReadRegister: '604', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_IN_STATE_6: {DisplayText: !!python/str 'Активное состояние дискретного ввода №
+    6', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_IN_STATE_6,
+  ReadRegister: '605', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_IN_STATE_7: {DisplayText: !!python/str 'Активное состояние дискретного ввода №
+    7', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_IN_STATE_7,
+  ReadRegister: '606', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_IN_STATE_8: {DisplayText: !!python/str 'Активное состояние дискретного ввода №
+    8', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_IN_STATE_8,
+  ReadRegister: '607', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_IN_STATE_9: {DisplayText: !!python/str 'Активное состояние дискретного ввода №
+    9', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_IN_STATE_9,
+  ReadRegister: '608', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_OUT_STATE_1: {DisplayText: !!python/str 'Активное состояние дискретного вывода
+    № 1', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_OUT_STATE_1,
+  ReadRegister: '624', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_OUT_STATE_2: {DisplayText: !!python/str 'Активное состояние дискретного вывода
+    № 2', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_OUT_STATE_2,
+  ReadRegister: '625', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_OUT_STATE_3: {DisplayText: !!python/str 'Активное состояние дискретного вывода
+    № 3', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_OUT_STATE_3,
+  ReadRegister: '626', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_OUT_STATE_4: {DisplayText: !!python/str 'Активное состояние дискретного вывода
+    № 4', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_OUT_STATE_4,
+  ReadRegister: '627', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_SEL_ACT_1: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 1', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_ACT_1,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '628'}
+DIG_SEL_ACT_10: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 1', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_ACT_10,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '637'}
+DIG_SEL_ACT_2: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 10', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_ACT_2,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '629'}
+DIG_SEL_ACT_3: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 10', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_ACT_3,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '630'}
+DIG_SEL_ACT_4: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 2', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_ACT_4,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '631'}
+DIG_SEL_ACT_5: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 2', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_ACT_5,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '632'}
+DIG_SEL_ACT_6: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 3', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_ACT_6,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '633'}
+DIG_SEL_ACT_7: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 3', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_ACT_7,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '634'}
+DIG_SEL_ACT_8: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 4', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_ACT_8,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '635'}
+DIG_SEL_ACT_9: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 4', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_ACT_9,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '636'}
+DIG_SEL_VAL_1: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 5', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_VAL_1,
+  ReadRegister: '638', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_SEL_VAL_10: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 5', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_VAL_10,
+  ReadRegister: '647', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_SEL_VAL_2: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 6', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_VAL_2,
+  ReadRegister: '639', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_SEL_VAL_3: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 6', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_VAL_3,
+  ReadRegister: '640', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_SEL_VAL_4: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 7', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_VAL_4,
+  ReadRegister: '641', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_SEL_VAL_5: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 7', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_VAL_5,
+  ReadRegister: '642', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_SEL_VAL_6: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 8', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_VAL_6,
+  ReadRegister: '643', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_SEL_VAL_7: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 8', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_VAL_7,
+  ReadRegister: '644', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_SEL_VAL_8: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 9', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_VAL_8,
+  ReadRegister: '645', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DIG_SEL_VAL_9: {DisplayText: !!python/str 'Команда активирования цифрового селектора
+    № 9', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: DIG_SEL_VAL_9,
+  ReadRegister: '646', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+DL_AFLT_DIF_PRES: {DisplayText: !!python/str 'Перепад давления воздушного фильтра
+    с канала передачи данных', Enable: '0', MaxVal: '251,99', MinVal: '-250', NumUsedBits: '16',
+  Offset: '-250', ParamID: DL_AFLT_DIF_PRES, ReadRegister: '253', Scale: '0,0078125',
+  TotalBytes: '2', WriteRegister: ''}
+DL_ATMOS_PRESS: {DisplayText: !!python/str 'Атмосферное давление с канала передачи
+    данных', Enable: '0', MaxVal: '8031,875', MinVal: '0', NumUsedBits: '16', Offset: '0',
+  ParamID: DL_ATMOS_PRESS, ReadRegister: '257', Scale: '0,125', TotalBytes: '2', WriteRegister: ''}
+DL_CRANK_PRESS: {DisplayText: !!python/str 'Давление в картере двигателя с канала
+    передачи данных', Enable: '0', MaxVal: '251,99', MinVal: '-250', NumUsedBits: '16',
+  Offset: '-250', ParamID: DL_CRANK_PRESS, ReadRegister: '248', Scale: '0,0078125',
+  TotalBytes: '2', WriteRegister: ''}
+DL_ENG_OIL_TEMP: {DisplayText: !!python/str 'Температура масла в двигателе с канала
+    передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16',
+  Offset: '-273', ParamID: DL_ENG_OIL_TEMP, ReadRegister: '245', Scale: '0,03125',
+  TotalBytes: '2', WriteRegister: ''}
+DL_EX_MFD_1_TEMP: {DisplayText: !!python/str 'Температура коллектора 1 отработавших
+    газов с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: DL_EX_MFD_1_TEMP, ReadRegister: '241',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+DL_EX_MFD_2_TEMP: {DisplayText: !!python/str 'Температура коллектора 2 отработавших
+    газов с канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: DL_EX_MFD_2_TEMP, ReadRegister: '242',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+DL_FFLT_DIF_PRES: {DisplayText: !!python/str 'Перепад давления топливного фильтра
+    с канала передачи данных', Enable: '0', MaxVal: '8031,875', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: DL_FFLT_DIF_PRES, ReadRegister: '252', Scale: '0,125', TotalBytes: '2',
+  WriteRegister: ''}
+DL_FUEL_LEVEL: {DisplayText: !!python/str 'Уровень топлива с канала передачи данных',
+  Enable: '0', MaxVal: '250,99', MinVal: '-251', NumUsedBits: '16', Offset: '-251',
+  ParamID: DL_FUEL_LEVEL, ReadRegister: '258', Scale: '0,0078125', TotalBytes: '2',
+  WriteRegister: ''}
+DL_FUEL_PRESS: {DisplayText: !!python/str 'Давление топлива с канала передачи данных',
+  Enable: '0', MaxVal: '8031,875', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: DL_FUEL_PRESS,
+  ReadRegister: '247', Scale: '0,125', TotalBytes: '2', WriteRegister: ''}
+DL_INST_FUEL_CON: {DisplayText: !!python/str 'Мгновенный расход топлива с канала передачи
+    данных', Enable: '0', MaxVal: '3212,75', MinVal: '0', NumUsedBits: '16', Offset: '0',
+  ParamID: DL_INST_FUEL_CON, ReadRegister: '256', Scale: '0,05', TotalBytes: '2',
+  WriteRegister: ''}
+DL_IN_MFD_1_PRES: {DisplayText: !!python/str 'Давление впускного коллектора 1 с канала
+    передачи данных', Enable: '0', MaxVal: '8031,875', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: DL_IN_MFD_1_PRES, ReadRegister: '249', Scale: '0,125', TotalBytes: '2',
+  WriteRegister: ''}
+DL_IN_MFD_1_TEMP: {DisplayText: !!python/str 'Температура впускного коллектора 1 с
+    канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16',
+  Offset: '-273', ParamID: DL_IN_MFD_1_TEMP, ReadRegister: '243', Scale: '0,03125',
+  TotalBytes: '2', WriteRegister: ''}
+DL_IN_MFD_2_TEMP: {DisplayText: !!python/str 'Температура впускного коллектора 2 с
+    канала передачи данных', Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16',
+  Offset: '-273', ParamID: DL_IN_MFD_2_TEMP, ReadRegister: '244', Scale: '0,03125',
+  TotalBytes: '2', WriteRegister: ''}
+DL_NET_BAT_CUR: {DisplayText: !!python/str 'Полезный ток аккумуляторной батареи с
+    канала передачи данных', Enable: '0', MaxVal: '125', MinVal: '-125', NumUsedBits: '8',
+  Offset: '-125', ParamID: DL_NET_BAT_CUR, ReadRegister: '259', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+DL_OFLT_DIF_PRES: {DisplayText: !!python/str 'Перепад давления масляного фильтра с
+    канала передачи данных', Enable: '0', MaxVal: '8031,875', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: DL_OFLT_DIF_PRES, ReadRegister: '251', Scale: '0,125', TotalBytes: '2',
+  WriteRegister: ''}
+DL_TOT_FUEL_CON: {DisplayText: !!python/str 'Суммарный расход топлива с канала передачи
+    данных', Enable: '0', MaxVal: '2105540607,5', MinVal: '0', NumUsedBits: '32',
+  Offset: '0', ParamID: DL_TOT_FUEL_CON, ReadRegister: '254', Scale: '0,5', TotalBytes: '4',
+  WriteRegister: ''}
+ECM_LOW_PWR_MODE: {DisplayText: !!python/str 'ЭБУ в режиме пониженной мощности', Enable: '0',
+  MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: ECM_LOW_PWR_MODE,
+  ReadRegister: '308', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+EM_OV_SHTDWN_HRS: {DisplayText: !!python/str 'Количество часов режима подавления аварийной
+    остановки', Enable: '0', MaxVal: '210554060,75', MinVal: '0', NumUsedBits: '32',
+  Offset: '0', ParamID: EM_OV_SHTDWN_HRS, ReadRegister: '314', Scale: '0,05', TotalBytes: '4',
+  WriteRegister: ''}
+EM_SH_OVR_CMD_: {DisplayText: !!python/str 'Команда активирования режима подавления
+    аварийной остановки', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2',
+  Offset: '0', ParamID: EM_SH_OVR_CMD_, ReadRegister: '', Scale: '1', TotalBytes: '2',
+  WriteRegister: '317'}
+EM_SH_OV_STATE: {DisplayText: !!python/str 'Активен реж подавл аварийн остнвки', Enable: '0',
+  MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: EM_SH_OV_STATE,
+  ReadRegister: '318', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+ENG_COOL_LVL_PIN: {DisplayText: !!python/str 'Уровень охлаждающей жидкости в двигателе
+    с контакта ВВ/ВЫВ', Enable: '0', MaxVal: '250,99', MinVal: '-251', NumUsedBits: '16',
+  Offset: '-251', ParamID: ENG_COOL_LVL_PIN, ReadRegister: '807', Scale: '0,0078125',
+  TotalBytes: '2', WriteRegister: ''}
+ENG_COOL_TMP: {DisplayText: !!python/str 'Темп охл жидк двгля', Enable: '0', MaxVal: '1735',
+  MinVal: '-273', NumUsedBits: '16', Offset: '-273', ParamID: ENG_COOL_TMP, ReadRegister: '201',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+ENG_OIL_LVL_PIN: {DisplayText: !!python/str 'Уровень масла в двигателе с контакта
+    ВВ/ВЫВ', Enable: '0', MaxVal: '250,99', MinVal: '-251', NumUsedBits: '16', Offset: '-251',
+  ParamID: ENG_OIL_LVL_PIN, ReadRegister: '806', Scale: '0,0078125', TotalBytes: '2',
+  WriteRegister: ''}
+ENG_OIL_PRESS: {DisplayText: !!python/str 'Давл масла двгля', Enable: '0', MaxVal: '8031,875',
+  MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: ENG_OIL_PRESS, ReadRegister: '200',
+  Scale: '0,125', TotalBytes: '2', WriteRegister: ''}
+ENG_OIL_TMP_PIN: {DisplayText: !!python/str 'Температура масла в двигателе с контакта
+    ВВ/ВЫВ', Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
+  ParamID: ENG_OIL_TMP_PIN, ReadRegister: '800', Scale: '0,03125', TotalBytes: '2',
+  WriteRegister: ''}
+ENG_OP_HRS: {DisplayText: !!python/str 'Моточасы работы двигателя', Enable: '0', MaxVal: '210554060,75',
+  MinVal: '0', NumUsedBits: '32', Offset: '0', ParamID: ENG_OP_HRS, ReadRegister: '204',
+  Scale: '0,05', TotalBytes: '4', WriteRegister: ''}
+ENG_OP_MODE: {DisplayText: !!python/str 'Режим работы двигателя', Enable: '0', MaxVal: '2',
+  MinVal: '0', NumUsedBits: '8', Offset: '0', ParamID: ENG_OP_MODE, ReadRegister: '301',
+  Scale: '1', TotalBytes: '2', WriteRegister: ''}
+ENG_OP_MODE_CM_: {DisplayText: !!python/str 'Команда режима работы двигателя', Enable: '0',
+  MaxVal: '2', MinVal: '0', NumUsedBits: '8', Offset: '0', ParamID: ENG_OP_MODE_CM_,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '302'}
+ENG_RPM: {DisplayText: !!python/str 'ЧВД', Enable: '0', MaxVal: '8031,875', MinVal: '0',
+  NumUsedBits: '16', Offset: '0', ParamID: ENG_RPM, ReadRegister: '203', Scale: '0,125',
+  TotalBytes: '2', WriteRegister: ''}
+ENG_STATUS: {DisplayText: !!python/str 'Состояние двигателя', Enable: '0', MaxVal: '5',
+  MinVal: '0', NumUsedBits: '8', Offset: '0', ParamID: ENG_STATUS, ReadRegister: '1053',
+  Scale: '1', TotalBytes: '2', WriteRegister: ''}
+ESTOP_CMND_: {DisplayText: !!python/str 'Команда аварийного останова', Enable: '0',
+  MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: ESTOP_CMND_, ReadRegister: '',
+  Scale: '1', TotalBytes: '2', WriteRegister: '1056'}
+EVT_LAMP_STAT: {DisplayText: !!python/str 'Состояние индикатора системного события',
+  Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: EVT_LAMP_STAT,
+  ReadRegister: '335', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+EXH_TMP_PIN: {DisplayText: !!python/str 'Температура отработавших газов с контакта
+    ВВ/ВЫВ', Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
+  ParamID: EXH_TMP_PIN, ReadRegister: '801', Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+EXT_FUEL_LVL_PIN: {DisplayText: !!python/str 'Уровень топлива во внешнем баке с контакта
+    ВВ/ВЫВ', Enable: '0', MaxVal: '250,99', MinVal: '-251', NumUsedBits: '16', Offset: '-251',
+  ParamID: EXT_FUEL_LVL_PIN, ReadRegister: '805', Scale: '0,0078125', TotalBytes: '2',
+  WriteRegister: ''}
+FRNT_BRG_TMP: {DisplayText: !!python/str 'Температура переднего подшипника генератора',
+  Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
+  ParamID: FRNT_BRG_TMP, ReadRegister: '149', Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+FUEL_CTRL_ENBLD: {DisplayText: !!python/str 'Разрешение регулирования топлива при
+    автоматическом пуске/остановке', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2',
+  Offset: '0', ParamID: FUEL_CTRL_ENBLD, ReadRegister: '307', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+FUEL_FLT_PRES_PI: {DisplayText: !!python/str 'Перепад давления топливного фильтра
+    с контакта ВВ/ВЫВ', Enable: '0', MaxVal: '8031,875', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: FUEL_FLT_PRES_PI, ReadRegister: '811', Scale: '0,125', TotalBytes: '2',
+  WriteRegister: ''}
+FUEL_LVL_PIN: {DisplayText: !!python/str 'Уровень топлива с контакта ВВ/ВЫВ', Enable: '0',
+  MaxVal: '250,99', MinVal: '-251', NumUsedBits: '16', Offset: '-251', ParamID: FUEL_LVL_PIN,
+  ReadRegister: '804', Scale: '0,0078125', TotalBytes: '2', WriteRegister: ''}
+FXT_PRESS_PIN: {DisplayText: !!python/str 'Давление огнетушителя с контакта ВВ/ВЫВ',
+  Enable: '0', MaxVal: '8031,875', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: FXT_PRESS_PIN,
+  ReadRegister: '808', Scale: '0,125', TotalBytes: '2', WriteRegister: ''}
+GEN_BRKR_OPEN: {DisplayText: !!python/str 'Состояние разрыва прерывателя генератора',
+  Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: GEN_BRKR_OPEN,
+  ReadRegister: '1065', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+GEN_FREQ_OK: {DisplayText: !!python/str 'Частота генератора в заданных пределах',
+  Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: GEN_FREQ_OK,
+  ReadRegister: '1067', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+GEN_VOLTS_OK: {DisplayText: !!python/str 'Напряжение генератора в заданных пределах',
+  Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: GEN_VOLTS_OK,
+  ReadRegister: '1068', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+GOOD_STARTS: {DisplayText: !!python/str 'Количество успешных пусков', Enable: '0',
+  MaxVal: '4211081215', MinVal: '0', NumUsedBits: '32', Offset: '0', ParamID: GOOD_STARTS,
+  ReadRegister: '215', Scale: '1', TotalBytes: '4', WriteRegister: ''}
+INST_BLK_401_: {DisplayText: !!python/str 'Тип установленного блока', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_401_,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '401'}
+INST_BLK_500: {DisplayText: !!python/str 'Тип установленного блока [1]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_500,
+  ReadRegister: '500', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_501: {DisplayText: !!python/str 'Тип установленного блока [2]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_501,
+  ReadRegister: '501', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_502: {DisplayText: !!python/str 'Тип установленного блока [3]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_502,
+  ReadRegister: '502', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_503: {DisplayText: !!python/str 'Тип установленного блока [4]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_503,
+  ReadRegister: '503', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_504: {DisplayText: !!python/str 'Тип установленного блока [5]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_504,
+  ReadRegister: '504', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_505: {DisplayText: !!python/str 'Тип установленного блока [6]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_505,
+  ReadRegister: '505', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_506: {DisplayText: !!python/str 'Тип установленного блока [7]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_506,
+  ReadRegister: '506', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_507: {DisplayText: !!python/str 'Тип установленного блока [8]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_507,
+  ReadRegister: '507', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_508: {DisplayText: !!python/str 'Тип установленного блока [9]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_508,
+  ReadRegister: '508', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_509: {DisplayText: !!python/str 'Тип установленного блока [10]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_509,
+  ReadRegister: '509', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_510: {DisplayText: !!python/str 'Тип установленного блока [11]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_510,
+  ReadRegister: '510', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_511: {DisplayText: !!python/str 'Тип установленного блока [12]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_511,
+  ReadRegister: '511', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_512: {DisplayText: !!python/str 'Тип установленного блока [13]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_512,
+  ReadRegister: '512', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_513: {DisplayText: !!python/str 'Тип установленного блока [14]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_513,
+  ReadRegister: '513', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_514: {DisplayText: !!python/str 'Тип установленного блока [15]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_514,
+  ReadRegister: '514', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_515: {DisplayText: !!python/str 'Тип установленного блока [16]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_515,
+  ReadRegister: '515', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_516: {DisplayText: !!python/str 'Тип установленного блока [17]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_516,
+  ReadRegister: '516', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_517: {DisplayText: !!python/str 'Тип установленного блока [18]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_517,
+  ReadRegister: '517', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_518: {DisplayText: !!python/str 'Тип установленного блока [19]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_518,
+  ReadRegister: '518', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_519: {DisplayText: !!python/str 'Тип установленного блока [20]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_519,
+  ReadRegister: '519', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_520: {DisplayText: !!python/str 'Тип установленного блока [21]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_520,
+  ReadRegister: '520', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_521: {DisplayText: !!python/str 'Тип установленного блока [22]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_521,
+  ReadRegister: '521', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_522: {DisplayText: !!python/str 'Тип установленного блока [23]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_522,
+  ReadRegister: '522', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_523: {DisplayText: !!python/str 'Тип установленного блока [24]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_523,
+  ReadRegister: '523', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_524: {DisplayText: !!python/str 'Тип установленного блока [25]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_524,
+  ReadRegister: '524', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_525: {DisplayText: !!python/str 'Тип установленного блока [26]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_525,
+  ReadRegister: '525', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_526: {DisplayText: !!python/str 'Тип установленного блока [27]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_526,
+  ReadRegister: '526', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_527: {DisplayText: !!python/str 'Тип установленного блока [28]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_527,
+  ReadRegister: '527', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_528: {DisplayText: !!python/str 'Тип установленного блока [29]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_528,
+  ReadRegister: '528', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_529: {DisplayText: !!python/str 'Тип установленного блока [30]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_529,
+  ReadRegister: '529', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_530: {DisplayText: !!python/str 'Тип установленного блока [31]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_530,
+  ReadRegister: '530', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_531: {DisplayText: !!python/str 'Тип установленного блока [32]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_531,
+  ReadRegister: '531', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_532: {DisplayText: !!python/str 'Тип установленного блока [33]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_532,
+  ReadRegister: '532', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_533: {DisplayText: !!python/str 'Тип установленного блока [34]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_533,
+  ReadRegister: '533', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_534: {DisplayText: !!python/str 'Тип установленного блока [35]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_534,
+  ReadRegister: '534', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_535: {DisplayText: !!python/str 'Тип установленного блока [36]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_535,
+  ReadRegister: '535', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_536: {DisplayText: !!python/str 'Тип установленного блока [37]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_536,
+  ReadRegister: '536', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_537: {DisplayText: !!python/str 'Тип установленного блока [38]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_537,
+  ReadRegister: '537', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_538: {DisplayText: !!python/str 'Тип установленного блока [39]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_538,
+  ReadRegister: '538', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_539: {DisplayText: !!python/str 'Тип установленного блока [40]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_539,
+  ReadRegister: '539', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_540: {DisplayText: !!python/str 'Тип установленного блока [41]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_540,
+  ReadRegister: '540', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_541: {DisplayText: !!python/str 'Тип установленного блока [42]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_541,
+  ReadRegister: '541', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_542: {DisplayText: !!python/str 'Тип установленного блока [43]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_542,
+  ReadRegister: '542', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_543: {DisplayText: !!python/str 'Тип установленного блока [44]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_543,
+  ReadRegister: '543', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_544: {DisplayText: !!python/str 'Тип установленного блока [45]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_544,
+  ReadRegister: '544', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_545: {DisplayText: !!python/str 'Тип установленного блока [46]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_545,
+  ReadRegister: '545', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_546: {DisplayText: !!python/str 'Тип установленного блока [47]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_546,
+  ReadRegister: '546', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_547: {DisplayText: !!python/str 'Тип установленного блока [48]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_547,
+  ReadRegister: '547', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_548: {DisplayText: !!python/str 'Тип установленного блока [49]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_548,
+  ReadRegister: '548', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_549: {DisplayText: !!python/str 'Тип установленного блока [50]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_549,
+  ReadRegister: '549', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_550: {DisplayText: !!python/str 'Тип установленного блока [51]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_550,
+  ReadRegister: '550', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_551: {DisplayText: !!python/str 'Тип установленного блока [52]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_551,
+  ReadRegister: '551', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_552: {DisplayText: !!python/str 'Тип установленного блока [53]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_552,
+  ReadRegister: '552', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_553: {DisplayText: !!python/str 'Тип установленного блока [54]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_553,
+  ReadRegister: '553', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_554: {DisplayText: !!python/str 'Тип установленного блока [55]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_554,
+  ReadRegister: '554', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_555: {DisplayText: !!python/str 'Тип установленного блока [56]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_555,
+  ReadRegister: '555', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_556: {DisplayText: !!python/str 'Тип установленного блока [57]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_556,
+  ReadRegister: '556', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_557: {DisplayText: !!python/str 'Тип установленного блока [58]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_557,
+  ReadRegister: '557', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_558: {DisplayText: !!python/str 'Тип установленного блока [59]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_558,
+  ReadRegister: '558', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_559: {DisplayText: !!python/str 'Тип установленного блока [60]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_559,
+  ReadRegister: '559', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_560: {DisplayText: !!python/str 'Тип установленного блока [61]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_560,
+  ReadRegister: '560', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_561: {DisplayText: !!python/str 'Тип установленного блока [62]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_561,
+  ReadRegister: '561', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_562: {DisplayText: !!python/str 'Тип установленного блока [63]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_562,
+  ReadRegister: '562', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_563: {DisplayText: !!python/str 'Тип установленного блока [64]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_563,
+  ReadRegister: '563', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_564: {DisplayText: !!python/str 'Тип установленного блока [65]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_564,
+  ReadRegister: '564', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_565: {DisplayText: !!python/str 'Тип установленного блока [66]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_565,
+  ReadRegister: '565', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_566: {DisplayText: !!python/str 'Тип установленного блока [67]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_566,
+  ReadRegister: '566', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_567: {DisplayText: !!python/str 'Тип установленного блока [68]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_567,
+  ReadRegister: '567', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_568: {DisplayText: !!python/str 'Тип установленного блока [69]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_568,
+  ReadRegister: '568', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_569: {DisplayText: !!python/str 'Тип установленного блока [70]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_569,
+  ReadRegister: '569', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_570: {DisplayText: !!python/str 'Тип установленного блока [71]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_570,
+  ReadRegister: '570', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_571: {DisplayText: !!python/str 'Тип установленного блока [72]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_571,
+  ReadRegister: '571', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_572: {DisplayText: !!python/str 'Тип установленного блока [73]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_572,
+  ReadRegister: '572', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_573: {DisplayText: !!python/str 'Тип установленного блока [74]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_573,
+  ReadRegister: '573', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_574: {DisplayText: !!python/str 'Тип установленного блока [75]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_574,
+  ReadRegister: '574', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_575: {DisplayText: !!python/str 'Тип установленного блока [76]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_575,
+  ReadRegister: '575', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_576: {DisplayText: !!python/str 'Тип установленного блока [77]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_576,
+  ReadRegister: '576', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_577: {DisplayText: !!python/str 'Тип установленного блока [78]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_577,
+  ReadRegister: '577', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_578: {DisplayText: !!python/str 'Тип установленного блока [79]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_578,
+  ReadRegister: '578', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_579: {DisplayText: !!python/str 'Тип установленного блока [80]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_579,
+  ReadRegister: '579', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_580: {DisplayText: !!python/str 'Тип установленного блока [81]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_580,
+  ReadRegister: '580', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_581: {DisplayText: !!python/str 'Тип установленного блока [82]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_581,
+  ReadRegister: '581', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_582: {DisplayText: !!python/str 'Тип установленного блока [83]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_582,
+  ReadRegister: '582', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_583: {DisplayText: !!python/str 'Тип установленного блока [84]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_583,
+  ReadRegister: '583', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_584: {DisplayText: !!python/str 'Тип установленного блока [85]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_584,
+  ReadRegister: '584', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_585: {DisplayText: !!python/str 'Тип установленного блока [86]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_585,
+  ReadRegister: '585', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_586: {DisplayText: !!python/str 'Тип установленного блока [87]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_586,
+  ReadRegister: '586', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_587: {DisplayText: !!python/str 'Тип установленного блока [88]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_587,
+  ReadRegister: '587', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_588: {DisplayText: !!python/str 'Тип установленного блока [89]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_588,
+  ReadRegister: '588', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_589: {DisplayText: !!python/str 'Тип установленного блока [90]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_589,
+  ReadRegister: '589', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_590: {DisplayText: !!python/str 'Тип установленного блока [91]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_590,
+  ReadRegister: '590', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_591: {DisplayText: !!python/str 'Тип установленного блока [92]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_591,
+  ReadRegister: '591', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_592: {DisplayText: !!python/str 'Тип установленного блока [93]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_592,
+  ReadRegister: '592', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_593: {DisplayText: !!python/str 'Тип установленного блока [94]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_593,
+  ReadRegister: '593', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_594: {DisplayText: !!python/str 'Тип установленного блока [95]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_594,
+  ReadRegister: '594', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_595: {DisplayText: !!python/str 'Тип установленного блока [96]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_595,
+  ReadRegister: '595', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_596: {DisplayText: !!python/str 'Тип установленного блока [97]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_596,
+  ReadRegister: '596', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_597: {DisplayText: !!python/str 'Тип установленного блока [98]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_597,
+  ReadRegister: '597', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_598: {DisplayText: !!python/str 'Тип установленного блока [99]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_598,
+  ReadRegister: '598', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+INST_BLK_599: {DisplayText: !!python/str 'Тип установленного блока [100]', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: INST_BLK_599,
+  ReadRegister: '599', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+LAMP_TEST_CMN_: {DisplayText: !!python/str 'Команда проверки ламп', Enable: '0', MaxVal: '1',
+  MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: LAMP_TEST_CMN_, ReadRegister: '',
+  Scale: '1', TotalBytes: '2', WriteRegister: '303'}
+LFT_MFD_TMP_PIN: {DisplayText: !!python/str 'Температура отработавших газов левого
+    коллектора с контакта ВВ/ВЫВ', Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16',
+  Offset: '-273', ParamID: LFT_MFD_TMP_PIN, ReadRegister: '802', Scale: '0,03125',
+  TotalBytes: '2', WriteRegister: ''}
+LOSS_OF_UTILITY: {DisplayText: !!python/str 'Потеря общ э/сети', Enable: '0', MaxVal: '3',
+  MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: LOSS_OF_UTILITY, ReadRegister: '1064',
+  Scale: '1', TotalBytes: '2', WriteRegister: ''}
+MAINT_DAYS_REM: {DisplayText: !!python/str 'Осталось дней до технического обслуживания
+    по регламентному интервалу', Enable: '0', MaxVal: '32128', MinVal: '-32137', NumUsedBits: '16',
+  Offset: '-32127', ParamID: MAINT_DAYS_REM, ReadRegister: '212', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+MAINT_HRS_REM: {DisplayText: !!python/str 'Осталось часов до технического обслуживания
+    по регламентному интервалу', Enable: '0', MaxVal: '32128', MinVal: '-32127', NumUsedBits: '16',
+  Offset: '-32127', ParamID: MAINT_HRS_REM, ReadRegister: '210', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+MAINT_WKS_REM: {DisplayText: !!python/str 'Осталось недель до технического обслуживания
+    по регламентному интервалу', Enable: '0', MaxVal: '125', MinVal: '-125', NumUsedBits: '8',
+  Offset: '-125', ParamID: MAINT_WKS_REM, ReadRegister: '299', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+NUM_INST_BLOCKS: {DisplayText: !!python/str 'Количество типов установленных блоков',
+  Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: NUM_INST_BLOCKS,
+  ReadRegister: '400', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+OIL_FLT_PRES_PIN: {DisplayText: !!python/str 'Перепад давления масляного фильтра с
+    контакта ВВ/ВЫВ', Enable: '0', MaxVal: '8031,875', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: OIL_FLT_PRES_PIN, ReadRegister: '809', Scale: '0,125', TotalBytes: '2',
+  WriteRegister: ''}
+PH_A_APRNT_POWER: {DisplayText: !!python/str 'Кажущаяся мощность фазы А генератора',
+  Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: PH_A_APRNT_POWER, ReadRegister: '123', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+PH_A_L2L_VOLTS: {DisplayText: !!python/str 'Линейное среднеквадратичное напряжение
+    переменного тока фазы А генератора', Enable: '0', MaxVal: '64255', MinVal: '0',
+  NumUsedBits: '16', Offset: '0', ParamID: PH_A_L2L_VOLTS, ReadRegister: '108', Scale: '1',
+  TotalBytes: '2', WriteRegister: ''}
+PH_A_L2N_VOLTS: {DisplayText: !!python/str 'Фазное среднеквадратичное напряжение переменного
+    тока фазы А генератора', Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: PH_A_L2N_VOLTS, ReadRegister: '114', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+PH_A_PWR_FACTOR: {DisplayText: !!python/str 'Коэффициент мощности фазы А генератора',
+  Enable: '0', MaxVal: '1', MinVal: '-1', NumUsedBits: '16', Offset: '-1', ParamID: PH_A_PWR_FACTOR,
+  ReadRegister: '135', Scale: '0,00006103515625', TotalBytes: '2', WriteRegister: ''}
+PH_A_P_FCTR_LAG: {DisplayText: !!python/str 'Сдвиг по фазе коэффициента мощности фазы
+    А генератора', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0',
+  ParamID: PH_A_P_FCTR_LAG, ReadRegister: '159', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+PH_A_REACT_POWER: {DisplayText: !!python/str 'Реактивная мощность фазы А генератора',
+  Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: PH_A_REACT_POWER, ReadRegister: '129', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+PH_A_REAL_POWER: {DisplayText: !!python/str 'Активная мощность фазы А генератора',
+  Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: PH_A_REAL_POWER, ReadRegister: '117', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+PH_A_RMS_CURRENT: {DisplayText: !!python/str 'Среднеквадратичный переменный ток фазы
+    А генератора', Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16', Offset: '0',
+  ParamID: PH_A_RMS_CURRENT, ReadRegister: '111', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+PH_A_WND_TMP: {DisplayText: !!python/str 'Температура обмотки фазы А генератора',
+  Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
+  ParamID: PH_A_WND_TMP, ReadRegister: '151', Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+PH_B_APRNT_POWER: {DisplayText: !!python/str 'Кажущаяся мощность фазы В генератора',
+  Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: PH_B_APRNT_POWER, ReadRegister: '125', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+PH_B_L2L_VOLTS: {DisplayText: !!python/str 'Линейное среднеквадратичное напряжение
+    переменного тока фазы В генератора', Enable: '0', MaxVal: '64255', MinVal: '0',
+  NumUsedBits: '16', Offset: '0', ParamID: PH_B_L2L_VOLTS, ReadRegister: '109', Scale: '1',
+  TotalBytes: '2', WriteRegister: ''}
+PH_B_L2N_VOLTS: {DisplayText: !!python/str 'Фазное среднеквадратичное напряжение переменного
+    тока фазы В генератора', Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: PH_B_L2N_VOLTS, ReadRegister: '115', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+PH_B_PWR_FACTOR: {DisplayText: !!python/str 'Коэффициент мощности фазы В генератора',
+  Enable: '0', MaxVal: '1', MinVal: '-1', NumUsedBits: '16', Offset: '-1', ParamID: PH_B_PWR_FACTOR,
+  ReadRegister: '136', Scale: '0,00006103515625', TotalBytes: '2', WriteRegister: ''}
+PH_B_P_FCTR_LAG: {DisplayText: !!python/str 'Сдвиг по фазе коэффициента мощности фазы
+    В генератора', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0',
+  ParamID: PH_B_P_FCTR_LAG, ReadRegister: '160', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+PH_B_REACT_POWER: {DisplayText: !!python/str 'Реактивная мощность фазы В генератора',
+  Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: PH_B_REACT_POWER, ReadRegister: '131', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+PH_B_REAL_POWER: {DisplayText: !!python/str 'Активная мощность фазы В генератора',
+  Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: PH_B_REAL_POWER, ReadRegister: '119', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+PH_B_RMS_CURRENT: {DisplayText: !!python/str 'Среднеквадратичный переменный ток фазы
+    В генератора', Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16', Offset: '0',
+  ParamID: PH_B_RMS_CURRENT, ReadRegister: '112', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+PH_B_WND_TMP: {DisplayText: !!python/str 'Температура обмотки фазы В генератора',
+  Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
+  ParamID: PH_B_WND_TMP, ReadRegister: '152', Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+PH_C_APRNT_POWER: {DisplayText: !!python/str 'Кажущаяся мощность фазы С генератора',
+  Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: PH_C_APRNT_POWER, ReadRegister: '127', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+PH_C_L2L_VOLTS: {DisplayText: !!python/str 'Линейное среднеквадратичное напряжение
+    переменного тока фазы С генератора', Enable: '0', MaxVal: '64255', MinVal: '0',
+  NumUsedBits: '16', Offset: '0', ParamID: PH_C_L2L_VOLTS, ReadRegister: '110', Scale: '1',
+  TotalBytes: '2', WriteRegister: ''}
+PH_C_L2N_VOLTS: {DisplayText: !!python/str 'Фазное среднеквадратичное напряжение переменного
+    тока фазы С генератора', Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: PH_C_L2N_VOLTS, ReadRegister: '116', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+PH_C_PWR_FACTOR: {DisplayText: !!python/str 'Коэффициент мощности фазы С генератора',
+  Enable: '0', MaxVal: '1', MinVal: '-1', NumUsedBits: '16', Offset: '-1', ParamID: PH_C_PWR_FACTOR,
+  ReadRegister: '137', Scale: '0,00006103515625', TotalBytes: '2', WriteRegister: ''}
+PH_C_P_FCTR_LAG: {DisplayText: !!python/str 'Сдвиг по фазе коэффициента мощности фазы
+    С генератора', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0',
+  ParamID: PH_C_P_FCTR_LAG, ReadRegister: '161', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+PH_C_REACT_POWER: {DisplayText: !!python/str 'Реактивная мощность фазы С генератора',
+  Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: PH_C_REACT_POWER, ReadRegister: '133', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+PH_C_REAL_POWER: {DisplayText: !!python/str 'Активная мощность фазы С генератора',
+  Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: PH_C_REAL_POWER, ReadRegister: '121', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+PH_C_RMS_CURRENT: {DisplayText: !!python/str 'Среднеквадратичный переменный ток фазы
+    С генератора', Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16', Offset: '0',
+  ParamID: PH_C_RMS_CURRENT, ReadRegister: '113', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+PH_C_WND_TMP: {DisplayText: !!python/str 'Температура обмотки фазы С генератора',
+  Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
+  ParamID: PH_C_WND_TMP, ReadRegister: '153', Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+POWER_FACTOR: {DisplayText: !!python/str 'Общий коэффициент мощности генератора',
+  Enable: '0', MaxVal: '1', MinVal: '-1', NumUsedBits: '16', Offset: '-1', ParamID: POWER_FACTOR,
+  ReadRegister: '103', Scale: '0,00006103515625', TotalBytes: '2', WriteRegister: ''}
+PWR_FCTR_LAGGING: {DisplayText: !!python/str 'Общий сдвиг по фазе коэффициента мощности
+    генератора', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0',
+  ParamID: PWR_FCTR_LAGGING, ReadRegister: '104', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+ParamID: {DisplayText: DisplayText, Enable: Enable, MaxVal: MaxVal, MinVal: MinVal,
+  NumUsedBits: NumUsedBits, Offset: Offset, ParamID: ParamID, ReadRegister: ReadRegister,
+  Scale: Scale, TotalBytes: TotalBytes, WriteRegister: WriteRegister}
+REAL_POWER: {DisplayText: !!python/str 'Общая активная мощность генератора', Enable: '0',
+  MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: REAL_POWER, ReadRegister: '106', Scale: '0,001', TotalBytes: '4', WriteRegister: ''}
+REAR_BRG_TMP: {DisplayText: !!python/str 'Температура заднего подшипника генератора',
+  Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
+  ParamID: REAR_BRG_TMP, ReadRegister: '150', Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+REAR_BRG_TMP_IO: {DisplayText: !!python/str 'Температура заднего подшипника генератора
+    с контакта ВВ/ВЫВ', Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16',
+  Offset: '-273', ParamID: REAR_BRG_TMP_IO, ReadRegister: '162', Scale: '0,03125',
+  TotalBytes: '2', WriteRegister: ''}
+REL_OUT_STATE_1: {DisplayText: !!python/str 'Активное состояние релейного вывода №
+    1', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REL_OUT_STATE_1,
+  ReadRegister: '616', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+REL_OUT_STATE_2: {DisplayText: !!python/str 'Активное состояние релейного вывода №
+    2', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REL_OUT_STATE_2,
+  ReadRegister: '617', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+REL_OUT_STATE_3: {DisplayText: !!python/str 'Активное состояние релейного вывода №
+    3', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REL_OUT_STATE_3,
+  ReadRegister: '618', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+REL_OUT_STATE_4: {DisplayText: !!python/str 'Активное состояние релейного вывода №
+    4', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REL_OUT_STATE_4,
+  ReadRegister: '619', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+REL_OUT_STATE_5: {DisplayText: !!python/str 'Активное состояние релейного вывода №
+    5', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REL_OUT_STATE_5,
+  ReadRegister: '620', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+REL_OUT_STATE_6: {DisplayText: !!python/str 'Активное состояние релейного вывода №
+    6', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REL_OUT_STATE_6,
+  ReadRegister: '621', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+REL_OUT_STATE_7: {DisplayText: !!python/str 'Активное состояние релейного вывода №
+    7', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REL_OUT_STATE_7,
+  ReadRegister: '622', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+REL_OUT_STATE_8: {DisplayText: !!python/str 'Активное состояние релейного вывода №
+    8', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REL_OUT_STATE_8,
+  ReadRegister: '623', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+REM_INIT_CMND_: {DisplayText: !!python/str 'Команда запуска дистанционного управления',
+  Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REM_INIT_CMND_,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '1055'}
+REQ_ENG_SPEED: {DisplayText: !!python/str 'Необходимая ЧВД', Enable: '0', MaxVal: '8031,875',
+  MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: REQ_ENG_SPEED, ReadRegister: '1060',
+  Scale: '0,125', TotalBytes: '2', WriteRegister: ''}
+RGT_MFD_TMP_PIN: {DisplayText: !!python/str 'Температура отработавших газов в правом
+    коллекторе с контакта ВВ/ВЫВ', Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16',
+  Offset: '-273', ParamID: RGT_MFD_TMP_PIN, ReadRegister: '803', Scale: '0,03125',
+  TotalBytes: '2', WriteRegister: ''}
+RST_ALL_ADEM_EVT: {DisplayText: !!python/str 'Сбросить все события, выработанные системой
+    ADEM', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: RST_ALL_ADEM_EVT,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '309'}
+RST_CRNK_CNT_: {DisplayText: !!python/str 'Сбросить счетч проворота к/вала', Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: RST_CRNK_CNT_,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '1028'}
+RST_ENG_OP_HOUR_: {DisplayText: !!python/str 'Сбросить моточасы работы двигателя',
+  Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: RST_ENG_OP_HOUR_,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '1025'}
+RST_EVENT_: {DisplayText: !!python/str 'Сбросить событие', Enable: '0', MaxVal: '0',
+  MinVal: '0', NumUsedBits: '24', Offset: '0', ParamID: RST_EVENT_, ReadRegister: '',
+  Scale: '1', TotalBytes: '4', WriteRegister: '1048'}
+RST_GOOD_ST_CNT_: {DisplayText: !!python/str 'Сбросить счетчик  успешных пусков',
+  Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: RST_GOOD_ST_CNT_,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '1029'}
+RST_KVAR_METER_: {DisplayText: !!python/str 'Сбросить показания счетчика реактивной
+    мощности', Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0',
+  ParamID: RST_KVAR_METER_, ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '1031'}
+RST_KW_METER_: {DisplayText: !!python/str 'Сбросить показания счетчика активной мощности',
+  Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: RST_KW_METER_,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '1030'}
+RST_SVC_INT_CNT_: {DisplayText: !!python/str 'Сбросить показания счетчика интервалов
+    техничского обслуживания', Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: RST_SVC_INT_CNT_, ReadRegister: '', Scale: '1', TotalBytes: '2',
+  WriteRegister: '1032'}
+RTC: {DisplayText: !!python/str 'Счетчик времени в реальном масштабе', Enable: '0',
+  MaxVal: '0', MinVal: '0', NumUsedBits: '48', Offset: '0', ParamID: RTC, ReadRegister: '900',
+  Scale: '1', TotalBytes: '6', WriteRegister: ''}
+SPD_BIAS_PCNT: {DisplayText: !!python/str 'Смещение частоты в %', Enable: '0', MaxVal: '250,99',
+  MinVal: '-251', NumUsedBits: '16', Offset: '-251', ParamID: SPD_BIAS_PCNT, ReadRegister: '1061',
+  Scale: '0,0078125', TotalBytes: '2', WriteRegister: ''}
+SPR_ALG_INP_PCNT: {DisplayText: !!python/str 'Смещение частоты в %', Enable: '0',
+  MaxVal: '250,99', MinVal: '-251', NumUsedBits: '16', Offset: '-251', ParamID: SPR_ALG_INP_PCNT,
+  ReadRegister: '207', Scale: '0,0078125', TotalBytes: '2', WriteRegister: ''}
+SPR_ALG_INP_PRES: {DisplayText: !!python/str 'Резервный аналоговый вход давления',
+  Enable: '0', MaxVal: '8031,875', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: SPR_ALG_INP_PRES,
+  ReadRegister: '209', Scale: '0,125', TotalBytes: '2', WriteRegister: ''}
+SPR_ALG_INP_TMP: {DisplayText: !!python/str 'Резервный аналоговый вход температуры',
+  Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
+  ParamID: SPR_ALG_INP_TMP, ReadRegister: '208', Scale: '0,03125', TotalBytes: '2',
+  WriteRegister: ''}
+STR_AIR_PRES_PIN: {DisplayText: !!python/str 'Давление воздуха для пуска с контакта
+    ВВ/ВЫВ', Enable: '0', MaxVal: '8031,875', MinVal: '0', NumUsedBits: '16', Offset: '0',
+  ParamID: STR_AIR_PRES_PIN, ReadRegister: '813', Scale: '0,125', TotalBytes: '2',
+  WriteRegister: ''}
+SYS_EVENT_COUNT: {DisplayText: !!python/str 'Подсчёт системных событий', Enable: '0',
+  MaxVal: '255', MinVal: '0', NumUsedBits: '8', Offset: '0', ParamID: SYS_EVENT_COUNT,
+  ReadRegister: '334', Scale: '1', TotalBytes: '1', WriteRegister: ''}
+TNS_ACK_EVENTS: {DisplayText: !!python/str 'Подтвердите все события (для передачи
+    в формате J1939)', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0',
+  ParamID: TNS_ACK_EVENTS, ReadRegister: '306', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+TOTAL_KW_PCT: {DisplayText: !!python/str 'Общая мощность генератора, кВт, в %', Enable: '0',
+  MaxVal: '250,99', MinVal: '-251', NumUsedBits: '16', Offset: '-251', ParamID: TOTAL_KW_PCT,
+  ReadRegister: '105', Scale: '0,0078125', TotalBytes: '2', WriteRegister: ''}
+TOT_APRNT_POWER: {DisplayText: !!python/str 'Полная кажущаяся мощность генератора',
+  Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: TOT_APRNT_POWER, ReadRegister: '138', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+TOT_KVAH: {DisplayText: !!python/str 'Полная реактивная энергия генератора квар х
+    час', Enable: '0', MaxVal: '4211081215', MinVal: '0', NumUsedBits: '32', Offset: '0',
+  ParamID: TOT_KVAH, ReadRegister: '146', Scale: '1', TotalBytes: '4', WriteRegister: ''}
+TOT_KVAH_IM: {DisplayText: !!python/str 'Полная реактивная энергия, импортированная
+    генератором, квар х час', Enable: '0', MaxVal: '4211081215', MinVal: '0', NumUsedBits: '32',
+  Offset: '0', ParamID: TOT_KVAH_IM, ReadRegister: '176', Scale: '1', TotalBytes: '4',
+  WriteRegister: ''}
+TOT_KVAR_PCNT: {DisplayText: !!python/str 'Полная рекактивная мощность генератора,
+    квар', Enable: '0', MaxVal: '250,99', MinVal: '-251', NumUsedBits: '16', Offset: '-251',
+  ParamID: TOT_KVAR_PCNT, ReadRegister: '143', Scale: '0,0078125', TotalBytes: '2',
+  WriteRegister: ''}
+TOT_KVA_PCNT: {DisplayText: !!python/str 'Полная мощность генератора, кВА, в %', Enable: '0',
+  MaxVal: '250,99', MinVal: '-251', NumUsedBits: '16', Offset: '-251', ParamID: TOT_KVA_PCNT,
+  ReadRegister: '140', Scale: '0,0078125', TotalBytes: '2', WriteRegister: ''}
+TOT_KWH: {DisplayText: !!python/str 'Полная активная энергия генератора, кВтчас',
+  Enable: '0', MaxVal: '4211081215', MinVal: '0', NumUsedBits: '32', Offset: '0',
+  ParamID: TOT_KWH, ReadRegister: '144', Scale: '1', TotalBytes: '4', WriteRegister: ''}
+TOT_KWM_IM: {DisplayText: !!python/str 'Полная активная энергия, импортированная генератором,
+    кВтчас', Enable: '0', MaxVal: '4211081215', MinVal: '0', NumUsedBits: '32', Offset: '0',
+  ParamID: TOT_KWM_IM, ReadRegister: '174', Scale: '1', TotalBytes: '4', WriteRegister: ''}
+TOT_REACT_POWER: {DisplayText: !!python/str 'Общая реактивная мощность генератора',
+  Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: TOT_REACT_POWER, ReadRegister: '141', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+UPD_END_OP_HOUR_: {DisplayText: !!python/str 'Обновить моточасы работы двигателя',
+  Enable: '0', MaxVal: '210554060,75', MinVal: '0', NumUsedBits: '32', Offset: '0',
+  ParamID: UPD_END_OP_HOUR_, ReadRegister: '', Scale: '0,05', TotalBytes: '4', WriteRegister: '1026'}
+UPD_RTC: {DisplayText: !!python/str 'Команда на обновление счетчика времени в реальном
+    масштабе', Enable: '0', MaxVal: '0', MinVal: '0', NumUsedBits: '48', Offset: '0',
+  ParamID: UPD_RTC, ReadRegister: '', Scale: '1', TotalBytes: '6', WriteRegister: '903'}
+UTIL_BRKR_OPEN: {DisplayText: !!python/str 'Состояние размыкания прерывателя сети',
+  Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: UTIL_BRKR_OPEN,
+  ReadRegister: '1066', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+, TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_569: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [70]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_569, ReadRegister: '569', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_570: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [71]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_570, ReadRegister: '570', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_571: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [72]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_571, ReadRegister: '571', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_572: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [73]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_572, ReadRegister: '572', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_573: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [74]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_573, ReadRegister: '573', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_574: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [75]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_574, ReadRegister: '574', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_575: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [76]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_575, ReadRegister: '575', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_576: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [77]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_576, ReadRegister: '576', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_577: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [78]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_577, ReadRegister: '577', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_578: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [79]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_578, ReadRegister: '578', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_579: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [80]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_579, ReadRegister: '579', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_580: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [81]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_580, ReadRegister: '580', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_581: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [82]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_581, ReadRegister: '581', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_582: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [83]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_582, ReadRegister: '582', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_583: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [84]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_583, ReadRegister: '583', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_584: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [85]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_584, ReadRegister: '584', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_585: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [86]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_585, ReadRegister: '585', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_586: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [87]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_586, ReadRegister: '586', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_587: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [88]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_587, ReadRegister: '587', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_588: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [89]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_588, ReadRegister: '588', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_589: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [90]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_589, ReadRegister: '589', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_590: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [91]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_590, ReadRegister: '590', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_591: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [92]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_591, ReadRegister: '591', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_592: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [93]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_592, ReadRegister: '592', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_593: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [94]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_593, ReadRegister: '593', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_594: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [95]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_594, ReadRegister: '594', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_595: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [96]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_595, ReadRegister: '595', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_596: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [97]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_596, ReadRegister: '596', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_597: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [98]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_597, ReadRegister: '597', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_598: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [99]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_598, ReadRegister: '598', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+INST_BLK_599: {DisplayText: !!python/str "\u0422\u0438\u043F \u0443\u0441\u0442\u0430\
+    \u043D\u043E\u0432\u043B\u0435\u043D\u043D\u043E\u0433\u043E \u0431\u043B\u043E\
+    \u043A\u0430 [100]", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: INST_BLK_599, ReadRegister: '599', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+LAMP_TEST_CMN_: {DisplayText: !!python/str "\u041A\u043E\u043C\u0430\u043D\u0434\u0430\
+    \ \u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0438 \u043B\u0430\u043C\u043F",
+  Enable: '0', MaxVal: '1', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: LAMP_TEST_CMN_,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '303'}
+LFT_MFD_TMP_PIN: {DisplayText: !!python/str "\u0422\u0435\u043C\u043F\u0435\u0440\u0430\
+    \u0442\u0443\u0440\u0430 \u043E\u0442\u0440\u0430\u0431\u043E\u0442\u0430\u0432\
+    \u0448\u0438\u0445 \u0433\u0430\u0437\u043E\u0432 \u043B\u0435\u0432\u043E\u0433\
+    \u043E \u043A\u043E\u043B\u043B\u0435\u043A\u0442\u043E\u0440\u0430 \u0441 \u043A\
+    \u043E\u043D\u0442\u0430\u043A\u0442\u0430 \u0412\u0412/\u0412\u042B\u0412", Enable: '0',
+  MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273', ParamID: LFT_MFD_TMP_PIN,
+  ReadRegister: '802', Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+LOSS_OF_UTILITY: {DisplayText: !!python/str "\u041F\u043E\u0442\u0435\u0440\u044F\
+    \ \u043E\u0431\u0449 \u044D/\u0441\u0435\u0442\u0438", Enable: '0', MaxVal: '3',
+  MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: LOSS_OF_UTILITY, ReadRegister: '1064',
+  Scale: '1', TotalBytes: '2', WriteRegister: ''}
+MAINT_DAYS_REM: {DisplayText: !!python/str "\u041E\u0441\u0442\u0430\u043B\u043E\u0441\
+    \u044C \u0434\u043D\u0435\u0439 \u0434\u043E \u0442\u0435\u0445\u043D\u0438\u0447\
+    \u0435\u0441\u043A\u043E\u0433\u043E \u043E\u0431\u0441\u043B\u0443\u0436\u0438\
+    \u0432\u0430\u043D\u0438\u044F \u043F\u043E \u0440\u0435\u0433\u043B\u0430\u043C\
+    \u0435\u043D\u0442\u043D\u043E\u043C\u0443 \u0438\u043D\u0442\u0435\u0440\u0432\
+    \u0430\u043B\u0443", Enable: '0', MaxVal: '32128', MinVal: '-32137', NumUsedBits: '16',
+  Offset: '-32127', ParamID: MAINT_DAYS_REM, ReadRegister: '212', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+MAINT_HRS_REM: {DisplayText: !!python/str "\u041E\u0441\u0442\u0430\u043B\u043E\u0441\
+    \u044C \u0447\u0430\u0441\u043E\u0432 \u0434\u043E \u0442\u0435\u0445\u043D\u0438\
+    \u0447\u0435\u0441\u043A\u043E\u0433\u043E \u043E\u0431\u0441\u043B\u0443\u0436\
+    \u0438\u0432\u0430\u043D\u0438\u044F \u043F\u043E \u0440\u0435\u0433\u043B\u0430\
+    \u043C\u0435\u043D\u0442\u043D\u043E\u043C\u0443 \u0438\u043D\u0442\u0435\u0440\
+    \u0432\u0430\u043B\u0443", Enable: '0', MaxVal: '32128', MinVal: '-32127', NumUsedBits: '16',
+  Offset: '-32127', ParamID: MAINT_HRS_REM, ReadRegister: '210', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+MAINT_WKS_REM: {DisplayText: !!python/str "\u041E\u0441\u0442\u0430\u043B\u043E\u0441\
+    \u044C \u043D\u0435\u0434\u0435\u043B\u044C \u0434\u043E \u0442\u0435\u0445\u043D\
+    \u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E \u043E\u0431\u0441\u043B\u0443\
+    \u0436\u0438\u0432\u0430\u043D\u0438\u044F \u043F\u043E \u0440\u0435\u0433\u043B\
+    \u0430\u043C\u0435\u043D\u0442\u043D\u043E\u043C\u0443 \u0438\u043D\u0442\u0435\
+    \u0440\u0432\u0430\u043B\u0443", Enable: '0', MaxVal: '125', MinVal: '-125', NumUsedBits: '8',
+  Offset: '-125', ParamID: MAINT_WKS_REM, ReadRegister: '299', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+NUM_INST_BLOCKS: {DisplayText: !!python/str "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\
+    \u0442\u0432\u043E \u0442\u0438\u043F\u043E\u0432 \u0443\u0441\u0442\u0430\u043D\
+    \u043E\u0432\u043B\u0435\u043D\u043D\u044B\u0445 \u0431\u043B\u043E\u043A\u043E\
+    \u0432", Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0',
+  ParamID: NUM_INST_BLOCKS, ReadRegister: '400', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+OIL_FLT_PRES_PIN: {DisplayText: !!python/str "\u041F\u0435\u0440\u0435\u043F\u0430\
+    \u0434 \u0434\u0430\u0432\u043B\u0435\u043D\u0438\u044F \u043C\u0430\u0441\u043B\
+    \u044F\u043D\u043E\u0433\u043E \u0444\u0438\u043B\u044C\u0442\u0440\u0430 \u0441\
+    \ \u043A\u043E\u043D\u0442\u0430\u043A\u0442\u0430 \u0412\u0412/\u0412\u042B\u0412",
+  Enable: '0', MaxVal: '8031,875', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: OIL_FLT_PRES_PIN,
+  ReadRegister: '809', Scale: '0,125', TotalBytes: '2', WriteRegister: ''}
+PH_A_APRNT_POWER: {DisplayText: !!python/str "\u041A\u0430\u0436\u0443\u0449\u0430\
+    \u044F\u0441\u044F \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u044C \u0444\u0430\
+    \u0437\u044B \u0410 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430",
+  Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: PH_A_APRNT_POWER, ReadRegister: '123', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+PH_A_L2L_VOLTS: {DisplayText: !!python/str "\u041B\u0438\u043D\u0435\u0439\u043D\u043E\
+    \u0435 \u0441\u0440\u0435\u0434\u043D\u0435\u043A\u0432\u0430\u0434\u0440\u0430\
+    \u0442\u0438\u0447\u043D\u043E\u0435 \u043D\u0430\u043F\u0440\u044F\u0436\u0435\
+    \u043D\u0438\u0435 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u043E\u0433\
+    \u043E \u0442\u043E\u043A\u0430 \u0444\u0430\u0437\u044B \u0410 \u0433\u0435\u043D\
+    \u0435\u0440\u0430\u0442\u043E\u0440\u0430", Enable: '0', MaxVal: '64255', MinVal: '0',
+  NumUsedBits: '16', Offset: '0', ParamID: PH_A_L2L_VOLTS, ReadRegister: '108', Scale: '1',
+  TotalBytes: '2', WriteRegister: ''}
+PH_A_L2N_VOLTS: {DisplayText: !!python/str "\u0424\u0430\u0437\u043D\u043E\u0435 \u0441\
+    \u0440\u0435\u0434\u043D\u0435\u043A\u0432\u0430\u0434\u0440\u0430\u0442\u0438\
+    \u0447\u043D\u043E\u0435 \u043D\u0430\u043F\u0440\u044F\u0436\u0435\u043D\u0438\
+    \u0435 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u043E\u0433\u043E \u0442\
+    \u043E\u043A\u0430 \u0444\u0430\u0437\u044B \u0410 \u0433\u0435\u043D\u0435\u0440\
+    \u0430\u0442\u043E\u0440\u0430", Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: PH_A_L2N_VOLTS, ReadRegister: '114', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+PH_A_PWR_FACTOR: {DisplayText: !!python/str "\u041A\u043E\u044D\u0444\u0444\u0438\u0446\
+    \u0438\u0435\u043D\u0442 \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u0438 \u0444\
+    \u0430\u0437\u044B \u0410 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\
+    \u0430", Enable: '0', MaxVal: '1', MinVal: '-1', NumUsedBits: '16', Offset: '-1',
+  ParamID: PH_A_PWR_FACTOR, ReadRegister: '135', Scale: '0,00006103515625', TotalBytes: '2',
+  WriteRegister: ''}
+PH_A_P_FCTR_LAG: {DisplayText: !!python/str "\u0421\u0434\u0432\u0438\u0433 \u043F\
+    \u043E \u0444\u0430\u0437\u0435 \u043A\u043E\u044D\u0444\u0444\u0438\u0446\u0438\
+    \u0435\u043D\u0442\u0430 \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u0438 \u0444\
+    \u0430\u0437\u044B \u0410 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\
+    \u0430", Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0',
+  ParamID: PH_A_P_FCTR_LAG, ReadRegister: '159', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+PH_A_REACT_POWER: {DisplayText: !!python/str "\u0420\u0435\u0430\u043A\u0442\u0438\
+    \u0432\u043D\u0430\u044F \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u044C \u0444\
+    \u0430\u0437\u044B \u0410 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\
+    \u0430", Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32',
+  Offset: '-2000000', ParamID: PH_A_REACT_POWER, ReadRegister: '129', Scale: '0,001',
+  TotalBytes: '4', WriteRegister: ''}
+PH_A_REAL_POWER: {DisplayText: !!python/str "\u0410\u043A\u0442\u0438\u0432\u043D\u0430\
+    \u044F \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u044C \u0444\u0430\u0437\u044B\
+    \ \u0410 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430", Enable: '0',
+  MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: PH_A_REAL_POWER, ReadRegister: '117', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+PH_A_RMS_CURRENT: {DisplayText: !!python/str "\u0421\u0440\u0435\u0434\u043D\u0435\
+    \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u0438\u0447\u043D\u044B\u0439 \u043F\
+    \u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0439 \u0442\u043E\u043A \u0444\
+    \u0430\u0437\u044B \u0410 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\
+    \u0430", Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16', Offset: '0',
+  ParamID: PH_A_RMS_CURRENT, ReadRegister: '111', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+PH_A_WND_TMP: {DisplayText: !!python/str "\u0422\u0435\u043C\u043F\u0435\u0440\u0430\
+    \u0442\u0443\u0440\u0430 \u043E\u0431\u043C\u043E\u0442\u043A\u0438 \u0444\u0430\
+    \u0437\u044B \u0410 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430",
+  Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
+  ParamID: PH_A_WND_TMP, ReadRegister: '151', Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+PH_B_APRNT_POWER: {DisplayText: !!python/str "\u041A\u0430\u0436\u0443\u0449\u0430\
+    \u044F\u0441\u044F \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u044C \u0444\u0430\
+    \u0437\u044B \u0412 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430",
+  Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: PH_B_APRNT_POWER, ReadRegister: '125', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+PH_B_L2L_VOLTS: {DisplayText: !!python/str "\u041B\u0438\u043D\u0435\u0439\u043D\u043E\
+    \u0435 \u0441\u0440\u0435\u0434\u043D\u0435\u043A\u0432\u0430\u0434\u0440\u0430\
+    \u0442\u0438\u0447\u043D\u043E\u0435 \u043D\u0430\u043F\u0440\u044F\u0436\u0435\
+    \u043D\u0438\u0435 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u043E\u0433\
+    \u043E \u0442\u043E\u043A\u0430 \u0444\u0430\u0437\u044B \u0412 \u0433\u0435\u043D\
+    \u0435\u0440\u0430\u0442\u043E\u0440\u0430", Enable: '0', MaxVal: '64255', MinVal: '0',
+  NumUsedBits: '16', Offset: '0', ParamID: PH_B_L2L_VOLTS, ReadRegister: '109', Scale: '1',
+  TotalBytes: '2', WriteRegister: ''}
+PH_B_L2N_VOLTS: {DisplayText: !!python/str "\u0424\u0430\u0437\u043D\u043E\u0435 \u0441\
+    \u0440\u0435\u0434\u043D\u0435\u043A\u0432\u0430\u0434\u0440\u0430\u0442\u0438\
+    \u0447\u043D\u043E\u0435 \u043D\u0430\u043F\u0440\u044F\u0436\u0435\u043D\u0438\
+    \u0435 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u043E\u0433\u043E \u0442\
+    \u043E\u043A\u0430 \u0444\u0430\u0437\u044B \u0412 \u0433\u0435\u043D\u0435\u0440\
+    \u0430\u0442\u043E\u0440\u0430", Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: PH_B_L2N_VOLTS, ReadRegister: '115', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+PH_B_PWR_FACTOR: {DisplayText: !!python/str "\u041A\u043E\u044D\u0444\u0444\u0438\u0446\
+    \u0438\u0435\u043D\u0442 \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u0438 \u0444\
+    \u0430\u0437\u044B \u0412 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\
+    \u0430", Enable: '0', MaxVal: '1', MinVal: '-1', NumUsedBits: '16', Offset: '-1',
+  ParamID: PH_B_PWR_FACTOR, ReadRegister: '136', Scale: '0,00006103515625', TotalBytes: '2',
+  WriteRegister: ''}
+PH_B_P_FCTR_LAG: {DisplayText: !!python/str "\u0421\u0434\u0432\u0438\u0433 \u043F\
+    \u043E \u0444\u0430\u0437\u0435 \u043A\u043E\u044D\u0444\u0444\u0438\u0446\u0438\
+    \u0435\u043D\u0442\u0430 \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u0438 \u0444\
+    \u0430\u0437\u044B \u0412 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\
+    \u0430", Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0',
+  ParamID: PH_B_P_FCTR_LAG, ReadRegister: '160', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+PH_B_REACT_POWER: {DisplayText: !!python/str "\u0420\u0435\u0430\u043A\u0442\u0438\
+    \u0432\u043D\u0430\u044F \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u044C \u0444\
+    \u0430\u0437\u044B \u0412 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\
+    \u0430", Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32',
+  Offset: '-2000000', ParamID: PH_B_REACT_POWER, ReadRegister: '131', Scale: '0,001',
+  TotalBytes: '4', WriteRegister: ''}
+PH_B_REAL_POWER: {DisplayText: !!python/str "\u0410\u043A\u0442\u0438\u0432\u043D\u0430\
+    \u044F \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u044C \u0444\u0430\u0437\u044B\
+    \ \u0412 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430", Enable: '0',
+  MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: PH_B_REAL_POWER, ReadRegister: '119', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+PH_B_RMS_CURRENT: {DisplayText: !!python/str "\u0421\u0440\u0435\u0434\u043D\u0435\
+    \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u0438\u0447\u043D\u044B\u0439 \u043F\
+    \u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0439 \u0442\u043E\u043A \u0444\
+    \u0430\u0437\u044B \u0412 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\
+    \u0430", Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16', Offset: '0',
+  ParamID: PH_B_RMS_CURRENT, ReadRegister: '112', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+PH_B_WND_TMP: {DisplayText: !!python/str "\u0422\u0435\u043C\u043F\u0435\u0440\u0430\
+    \u0442\u0443\u0440\u0430 \u043E\u0431\u043C\u043E\u0442\u043A\u0438 \u0444\u0430\
+    \u0437\u044B \u0412 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430",
+  Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
+  ParamID: PH_B_WND_TMP, ReadRegister: '152', Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+PH_C_APRNT_POWER: {DisplayText: !!python/str "\u041A\u0430\u0436\u0443\u0449\u0430\
+    \u044F\u0441\u044F \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u044C \u0444\u0430\
+    \u0437\u044B \u0421 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430",
+  Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: PH_C_APRNT_POWER, ReadRegister: '127', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+PH_C_L2L_VOLTS: {DisplayText: !!python/str "\u041B\u0438\u043D\u0435\u0439\u043D\u043E\
+    \u0435 \u0441\u0440\u0435\u0434\u043D\u0435\u043A\u0432\u0430\u0434\u0440\u0430\
+    \u0442\u0438\u0447\u043D\u043E\u0435 \u043D\u0430\u043F\u0440\u044F\u0436\u0435\
+    \u043D\u0438\u0435 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u043E\u0433\
+    \u043E \u0442\u043E\u043A\u0430 \u0444\u0430\u0437\u044B \u0421 \u0433\u0435\u043D\
+    \u0435\u0440\u0430\u0442\u043E\u0440\u0430", Enable: '0', MaxVal: '64255', MinVal: '0',
+  NumUsedBits: '16', Offset: '0', ParamID: PH_C_L2L_VOLTS, ReadRegister: '110', Scale: '1',
+  TotalBytes: '2', WriteRegister: ''}
+PH_C_L2N_VOLTS: {DisplayText: !!python/str "\u0424\u0430\u0437\u043D\u043E\u0435 \u0441\
+    \u0440\u0435\u0434\u043D\u0435\u043A\u0432\u0430\u0434\u0440\u0430\u0442\u0438\
+    \u0447\u043D\u043E\u0435 \u043D\u0430\u043F\u0440\u044F\u0436\u0435\u043D\u0438\
+    \u0435 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u043E\u0433\u043E \u0442\
+    \u043E\u043A\u0430 \u0444\u0430\u0437\u044B \u0421 \u0433\u0435\u043D\u0435\u0440\
+    \u0430\u0442\u043E\u0440\u0430", Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16',
+  Offset: '0', ParamID: PH_C_L2N_VOLTS, ReadRegister: '116', Scale: '1', TotalBytes: '2',
+  WriteRegister: ''}
+PH_C_PWR_FACTOR: {DisplayText: !!python/str "\u041A\u043E\u044D\u0444\u0444\u0438\u0446\
+    \u0438\u0435\u043D\u0442 \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u0438 \u0444\
+    \u0430\u0437\u044B \u0421 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\
+    \u0430", Enable: '0', MaxVal: '1', MinVal: '-1', NumUsedBits: '16', Offset: '-1',
+  ParamID: PH_C_PWR_FACTOR, ReadRegister: '137', Scale: '0,00006103515625', TotalBytes: '2',
+  WriteRegister: ''}
+PH_C_P_FCTR_LAG: {DisplayText: !!python/str "\u0421\u0434\u0432\u0438\u0433 \u043F\
+    \u043E \u0444\u0430\u0437\u0435 \u043A\u043E\u044D\u0444\u0444\u0438\u0446\u0438\
+    \u0435\u043D\u0442\u0430 \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u0438 \u0444\
+    \u0430\u0437\u044B \u0421 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\
+    \u0430", Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0',
+  ParamID: PH_C_P_FCTR_LAG, ReadRegister: '161', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+PH_C_REACT_POWER: {DisplayText: !!python/str "\u0420\u0435\u0430\u043A\u0442\u0438\
+    \u0432\u043D\u0430\u044F \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u044C \u0444\
+    \u0430\u0437\u044B \u0421 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\
+    \u0430", Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32',
+  Offset: '-2000000', ParamID: PH_C_REACT_POWER, ReadRegister: '133', Scale: '0,001',
+  TotalBytes: '4', WriteRegister: ''}
+PH_C_REAL_POWER: {DisplayText: !!python/str "\u0410\u043A\u0442\u0438\u0432\u043D\u0430\
+    \u044F \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u044C \u0444\u0430\u0437\u044B\
+    \ \u0421 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430", Enable: '0',
+  MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: PH_C_REAL_POWER, ReadRegister: '121', Scale: '0,001', TotalBytes: '4',
+  WriteRegister: ''}
+PH_C_RMS_CURRENT: {DisplayText: !!python/str "\u0421\u0440\u0435\u0434\u043D\u0435\
+    \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u0438\u0447\u043D\u044B\u0439 \u043F\
+    \u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0439 \u0442\u043E\u043A \u0444\
+    \u0430\u0437\u044B \u0421 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\
+    \u0430", Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16', Offset: '0',
+  ParamID: PH_C_RMS_CURRENT, ReadRegister: '113', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+PH_C_WND_TMP: {DisplayText: !!python/str "\u0422\u0435\u043C\u043F\u0435\u0440\u0430\
+    \u0442\u0443\u0440\u0430 \u043E\u0431\u043C\u043E\u0442\u043A\u0438 \u0444\u0430\
+    \u0437\u044B \u0421 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430",
+  Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
+  ParamID: PH_C_WND_TMP, ReadRegister: '153', Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+POWER_FACTOR: {DisplayText: !!python/str "\u041E\u0431\u0449\u0438\u0439 \u043A\u043E\
+    \u044D\u0444\u0444\u0438\u0446\u0438\u0435\u043D\u0442 \u043C\u043E\u0449\u043D\
+    \u043E\u0441\u0442\u0438 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\
+    \u0430", Enable: '0', MaxVal: '1', MinVal: '-1', NumUsedBits: '16', Offset: '-1',
+  ParamID: POWER_FACTOR, ReadRegister: '103', Scale: '0,00006103515625', TotalBytes: '2',
+  WriteRegister: ''}
+PWR_FCTR_LAGGING: {DisplayText: !!python/str "\u041E\u0431\u0449\u0438\u0439 \u0441\
+    \u0434\u0432\u0438\u0433 \u043F\u043E \u0444\u0430\u0437\u0435 \u043A\u043E\u044D\
+    \u0444\u0444\u0438\u0446\u0438\u0435\u043D\u0442\u0430 \u043C\u043E\u0449\u043D\
+    \u043E\u0441\u0442\u0438 \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\
+    \u0430", Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0',
+  ParamID: PWR_FCTR_LAGGING, ReadRegister: '104', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+ParamID: {DisplayText: DisplayText, Enable: Enable, MaxVal: MaxVal, MinVal: MinVal,
+  NumUsedBits: NumUsedBits, Offset: Offset, ParamID: ParamID, ReadRegister: ReadRegister,
+  Scale: Scale, TotalBytes: TotalBytes, WriteRegister: WriteRegister}
+REAL_POWER: {DisplayText: !!python/str "\u041E\u0431\u0449\u0430\u044F \u0430\u043A\
+    \u0442\u0438\u0432\u043D\u0430\u044F \u043C\u043E\u0449\u043D\u043E\u0441\u0442\
+    \u044C \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430", Enable: '0',
+  MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
+  ParamID: REAL_POWER, ReadRegister: '106', Scale: '0,001', TotalBytes: '4', WriteRegister: ''}
+REAR_BRG_TMP: {DisplayText: !!python/str "\u0422\u0435\u043C\u043F\u0435\u0440\u0430\
+    \u0442\u0443\u0440\u0430 \u0437\u0430\u0434\u043D\u0435\u0433\u043E \u043F\u043E\
+    \u0434\u0448\u0438\u043F\u043D\u0438\u043A\u0430 \u0433\u0435\u043D\u0435\u0440\
+    \u0430\u0442\u043E\u0440\u0430", Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: REAR_BRG_TMP, ReadRegister: '150', Scale: '0,03125',
+  TotalBytes: '2', WriteRegister: ''}
+REAR_BRG_TMP_IO: {DisplayText: !!python/str "\u0422\u0435\u043C\u043F\u0435\u0440\u0430\
+    \u0442\u0443\u0440\u0430 \u0437\u0430\u0434\u043D\u0435\u0433\u043E \u043F\u043E\
+    \u0434\u0448\u0438\u043F\u043D\u0438\u043A\u0430 \u0433\u0435\u043D\u0435\u0440\
+    \u0430\u0442\u043E\u0440\u0430 \u0441 \u043A\u043E\u043D\u0442\u0430\u043A\u0442\
+    \u0430 \u0412\u0412/\u0412\u042B\u0412", Enable: '0', MaxVal: '1735', MinVal: '-273',
+  NumUsedBits: '16', Offset: '-273', ParamID: REAR_BRG_TMP_IO, ReadRegister: '162',
+  Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
+REL_OUT_STATE_1: {DisplayText: !!python/str "\u0410\u043A\u0442\u0438\u0432\u043D\u043E\
+    \u0435 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435 \u0440\u0435\u043B\
+    \u0435\u0439\u043D\u043E\u0433\u043E \u0432\u044B\u0432\u043E\u0434\u0430 \u2116\
+    \ 1", Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REL_OUT_STATE_1,
+  ReadRegister: '616', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+REL_OUT_STATE_2: {DisplayText: !!python/str "\u0410\u043A\u0442\u0438\u0432\u043D\u043E\
+    \u0435 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435 \u0440\u0435\u043B\
+    \u0435\u0439\u043D\u043E\u0433\u043E \u0432\u044B\u0432\u043E\u0434\u0430 \u2116\
+    \ 2", Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REL_OUT_STATE_2,
+  ReadRegister: '617', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+REL_OUT_STATE_3: {DisplayText: !!python/str "\u0410\u043A\u0442\u0438\u0432\u043D\u043E\
+    \u0435 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435 \u0440\u0435\u043B\
+    \u0435\u0439\u043D\u043E\u0433\u043E \u0432\u044B\u0432\u043E\u0434\u0430 \u2116\
+    \ 3", Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REL_OUT_STATE_3,
+  ReadRegister: '618', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+REL_OUT_STATE_4: {DisplayText: !!python/str "\u0410\u043A\u0442\u0438\u0432\u043D\u043E\
+    \u0435 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435 \u0440\u0435\u043B\
+    \u0435\u0439\u043D\u043E\u0433\u043E \u0432\u044B\u0432\u043E\u0434\u0430 \u2116\
+    \ 4", Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REL_OUT_STATE_4,
+  ReadRegister: '619', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+REL_OUT_STATE_5: {DisplayText: !!python/str "\u0410\u043A\u0442\u0438\u0432\u043D\u043E\
+    \u0435 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435 \u0440\u0435\u043B\
+    \u0435\u0439\u043D\u043E\u0433\u043E \u0432\u044B\u0432\u043E\u0434\u0430 \u2116\
+    \ 5", Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REL_OUT_STATE_5,
+  ReadRegister: '620', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+REL_OUT_STATE_6: {DisplayText: !!python/str "\u0410\u043A\u0442\u0438\u0432\u043D\u043E\
+    \u0435 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435 \u0440\u0435\u043B\
+    \u0435\u0439\u043D\u043E\u0433\u043E \u0432\u044B\u0432\u043E\u0434\u0430 \u2116\
+    \ 6", Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REL_OUT_STATE_6,
+  ReadRegister: '621', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+REL_OUT_STATE_7: {DisplayText: !!python/str "\u0410\u043A\u0442\u0438\u0432\u043D\u043E\
+    \u0435 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435 \u0440\u0435\u043B\
+    \u0435\u0439\u043D\u043E\u0433\u043E \u0432\u044B\u0432\u043E\u0434\u0430 \u2116\
+    \ 7", Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REL_OUT_STATE_7,
+  ReadRegister: '622', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+REL_OUT_STATE_8: {DisplayText: !!python/str "\u0410\u043A\u0442\u0438\u0432\u043D\u043E\
+    \u0435 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435 \u0440\u0435\u043B\
+    \u0435\u0439\u043D\u043E\u0433\u043E \u0432\u044B\u0432\u043E\u0434\u0430 \u2116\
+    \ 8", Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: REL_OUT_STATE_8,
+  ReadRegister: '623', Scale: '1', TotalBytes: '2', WriteRegister: ''}
+REM_INIT_CMND_: {DisplayText: !!python/str "\u041A\u043E\u043C\u0430\u043D\u0434\u0430\
+    \ \u0437\u0430\u043F\u0443\u0441\u043A\u0430 \u0434\u0438\u0441\u0442\u0430\u043D\
+    \u0446\u0438\u043E\u043D\u043D\u043E\u0433\u043E \u0443\u043F\u0440\u0430\u0432\
+    \u043B\u0435\u043D\u0438\u044F", Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2',
+  Offset: '0', ParamID: REM_INIT_CMND_, ReadRegister: '', Scale: '1', TotalBytes: '2',
+  WriteRegister: '1055'}
+REQ_ENG_SPEED: {DisplayText: !!python/str "\u041D\u0435\u043E\u0431\u0445\u043E\u0434\
+    \u0438\u043C\u0430\u044F \u0427\u0412\u0414", Enable: '0', MaxVal: '8031,875',
+  MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: REQ_ENG_SPEED, ReadRegister: '1060',
+  Scale: '0,125', TotalBytes: '2', WriteRegister: ''}
+RGT_MFD_TMP_PIN: {DisplayText: !!python/str "\u0422\u0435\u043C\u043F\u0435\u0440\u0430\
+    \u0442\u0443\u0440\u0430 \u043E\u0442\u0440\u0430\u0431\u043E\u0442\u0430\u0432\
+    \u0448\u0438\u0445 \u0433\u0430\u0437\u043E\u0432 \u0432 \u043F\u0440\u0430\u0432\
+    \u043E\u043C \u043A\u043E\u043B\u043B\u0435\u043A\u0442\u043E\u0440\u0435 \u0441\
+    \ \u043A\u043E\u043D\u0442\u0430\u043A\u0442\u0430 \u0412\u0412/\u0412\u042B\u0412",
+  Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
+  ParamID: RGT_MFD_TMP_PIN, ReadRegister: '803', Scale: '0,03125', TotalBytes: '2',
+  WriteRegister: ''}
+RST_ALL_ADEM_EVT: {DisplayText: !!python/str "\u0421\u0431\u0440\u043E\u0441\u0438\
+    \u0442\u044C \u0432\u0441\u0435 \u0441\u043E\u0431\u044B\u0442\u0438\u044F, \u0432\
+    \u044B\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043D\u044B\u0435 \u0441\u0438\
+    \u0441\u0442\u0435\u043C\u043E\u0439 ADEM", Enable: '0', MaxVal: '3', MinVal: '0',
+  NumUsedBits: '2', Offset: '0', ParamID: RST_ALL_ADEM_EVT, ReadRegister: '', Scale: '1',
+  TotalBytes: '2', WriteRegister: '309'}
+RST_CRNK_CNT_: {DisplayText: !!python/str "\u0421\u0431\u0440\u043E\u0441\u0438\u0442\
+    \u044C \u0441\u0447\u0435\u0442\u0447 \u043F\u0440\u043E\u0432\u043E\u0440\u043E\
+    \u0442\u0430 \u043A/\u0432\u0430\u043B\u0430", Enable: '0', MaxVal: '65535', MinVal: '0',
+  NumUsedBits: '16', Offset: '0', ParamID: RST_CRNK_CNT_, ReadRegister: '', Scale: '1',
+  TotalBytes: '2', WriteRegister: '1028'}
+RST_ENG_OP_HOUR_: {DisplayText: !!python/str "\u0421\u0431\u0440\u043E\u0441\u0438\
+    \u0442\u044C \u043C\u043E\u0442\u043E\u0447\u0430\u0441\u044B \u0440\u0430\u0431\
+    \u043E\u0442\u044B \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F", Enable: '0',
+  MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: RST_ENG_OP_HOUR_,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '1025'}
+RST_EVENT_: {DisplayText: !!python/str "\u0421\u0431\u0440\u043E\u0441\u0438\u0442\
+    \u044C \u0441\u043E\u0431\u044B\u0442\u0438\u0435", Enable: '0', MaxVal: '0',
+  MinVal: '0', NumUsedBits: '24', Offset: '0', ParamID: RST_EVENT_, ReadRegister: '',
+  Scale: '1', TotalBytes: '4', WriteRegister: '1048'}
+RST_GOOD_ST_CNT_: {DisplayText: !!python/str "\u0421\u0431\u0440\u043E\u0441\u0438\
+    \u0442\u044C \u0441\u0447\u0435\u0442\u0447\u0438\u043A  \u0443\u0441\u043F\u0435\
+    \u0448\u043D\u044B\u0445 \u043F\u0443\u0441\u043A\u043E\u0432", Enable: '0', MaxVal: '65535',
+  MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: RST_GOOD_ST_CNT_, ReadRegister: '',
+  Scale: '1', TotalBytes: '2', WriteRegister: '1029'}
+RST_KVAR_METER_: {DisplayText: !!python/str "\u0421\u0431\u0440\u043E\u0441\u0438\u0442\
+    \u044C \u043F\u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0441\u0447\u0435\
+    \u0442\u0447\u0438\u043A\u0430 \u0440\u0435\u0430\u043A\u0442\u0438\u0432\u043D\
+    \u043E\u0439 \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u0438", Enable: '0', MaxVal: '65535',
+  MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: RST_KVAR_METER_, ReadRegister: '',
+  Scale: '1', TotalBytes: '2', WriteRegister: '1031'}
+RST_KW_METER_: {DisplayText: !!python/str "\u0421\u0431\u0440\u043E\u0441\u0438\u0442\
+    \u044C \u043F\u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0441\u0447\u0435\
+    \u0442\u0447\u0438\u043A\u0430 \u0430\u043A\u0442\u0438\u0432\u043D\u043E\u0439\
+    \ \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u0438", Enable: '0', MaxVal: '65535',
+  MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: RST_KW_METER_, ReadRegister: '',
+  Scale: '1', TotalBytes: '2', WriteRegister: '1030'}
+RST_SVC_INT_CNT_: {DisplayText: !!python/str "\u0421\u0431\u0440\u043E\u0441\u0438\
+    \u0442\u044C \u043F\u043E\u043A\u0430\u0437\u0430\u043D\u0438\u044F \u0441\u0447\
+    \u0435\u0442\u0447\u0438\u043A\u0430 \u0438\u043D\u0442\u0435\u0440\u0432\u0430\
+    \u043B\u043E\u0432 \u0442\u0435\u0445\u043D\u0438\u0447\u0441\u043A\u043E\u0433\
+    \u043E \u043E\u0431\u0441\u043B\u0443\u0436\u0438\u0432\u0430\u043D\u0438\u044F",
+  Enable: '0', MaxVal: '65535', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: RST_SVC_INT_CNT_,
+  ReadRegister: '', Scale: '1', TotalBytes: '2', WriteRegister: '1032'}
+RTC: {DisplayText: !!python/str "\u0421\u0447\u0435\u0442\u0447\u0438\u043A \u0432\
+    \u0440\u0435\u043C\u0435\u043D\u0438 \u0432 \u0440\u0435\u0430\u043B\u044C\u043D\
+    \u043E\u043C \u043C\u0430\u0441\u0448\u0442\u0430\u0431\u0435", Enable: '0', MaxVal: '0',
+  MinVal: '0', NumUsedBits: '48', Offset: '0', ParamID: RTC, ReadRegister: '900',
+  Scale: '1', TotalBytes: '6', WriteRegister: ''}
+SPD_BIAS_PCNT: {DisplayText: !!python/str "\u0421\u043C\u0435\u0449\u0435\u043D\u0438\
+    \u0435 \u0447\u0430\u0441\u0442\u043E\u0442\u044B \u0432 %", Enable: '0', MaxVal: '250,99',
+  MinVal: '-251', NumUsedBits: '16', Offset: '-251', ParamID: SPD_BIAS_PCNT, ReadRegister: '1061',
+  Scale: '0,0078125', TotalBytes: '2', WriteRegister: ''}
+SPR_ALG_INP_PCNT: {DisplayText: !!python/str "\u0421\u043C\u0435\u0449\u0435\u043D\
+    \u0438\u0435 \u0447\u0430\u0441\u0442\u043E\u0442\u044B \u0432 %", Enable: '0',
+  MaxVal: '250,99', MinVal: '-251', NumUsedBits: '16', Offset: '-251', ParamID: SPR_ALG_INP_PCNT,
+  ReadRegister: '207', Scale: '0,0078125', TotalBytes: '2', WriteRegister: ''}
+SPR_ALG_INP_PRES: {DisplayText: !!python/str "\u0420\u0435\u0437\u0435\u0440\u0432\
+    \u043D\u044B\u0439 \u0430\u043D\u0430\u043B\u043E\u0433\u043E\u0432\u044B\u0439\
+    \ \u0432\u0445\u043E\u0434 \u0434\u0430\u0432\u043B\u0435\u043D\u0438\u044F",
+  Enable: '0', MaxVal: '8031,875', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: SPR_ALG_INP_PRES,
+  ReadRegister: '209', Scale: '0,125', TotalBytes: '2', WriteRegister: ''}
+SPR_ALG_INP_TMP: {DisplayText: !!python/str "\u0420\u0435\u0437\u0435\u0440\u0432\u043D\
+    \u044B\u0439 \u0430\u043D\u0430\u043B\u043E\u0433\u043E\u0432\u044B\u0439 \u0432\
+    \u0445\u043E\u0434 \u0442\u0435\u043C\u043F\u0435\u0440\u0430\u0442\u0443\u0440\
+    \u044B", Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
+  ParamID: SPR_ALG_INP_TMP, ReadRegister: '208', Scale: '0,03125', TotalBytes: '2',
+  WriteRegister: ''}
+STR_AIR_PRES_PIN: {DisplayText: !!python/str "\u0414\u0430\u0432\u043B\u0435\u043D\
+    \u0438\u0435 \u0432\u043E\u0437\u0434\u0443\u0445\u0430 \u0434\u043B\u044F \u043F\
+    \u0443\u0441\u043A\u0430 \u0441 \u043A\u043E\u043D\u0442\u0430\u043A\u0442\u0430\
+    \ \u0412\u0412/\u0412\u042B\u0412", Enable: '0', MaxVal: '8031,875', MinVal: '0',
+  NumUsedBits: '16', Offset: '0', ParamID: STR_AIR_PRES_PIN, ReadRegister: '813',
+  Scale: '0,125', TotalBytes: '2', WriteRegister: ''}
+SYS_EVENT_COUNT: {DisplayText: !!python/str "\u041F\u043E\u0434\u0441\u0447\u0451\u0442\
+    \ \u0441\u0438\u0441\u0442\u0435\u043C\u043D\u044B\u0445 \u0441\u043E\u0431\u044B\
+    \u0442\u0438\u0439", Enable: '0', MaxVal: '255', MinVal: '0', NumUsedBits: '8',
+  Offset: '0', ParamID: SYS_EVENT_COUNT, ReadRegister: '334', Scale: '1', TotalBytes: '1',
+  WriteRegister: ''}
+TNS_ACK_EVENTS: {DisplayText: !!python/str "\u041F\u043E\u0434\u0442\u0432\u0435\u0440\
+    \u0434\u0438\u0442\u0435 \u0432\u0441\u0435 \u0441\u043E\u0431\u044B\u0442\u0438\
+    \u044F (\u0434\u043B\u044F \u043F\u0435\u0440\u0435\u0434\u0430\u0447\u0438 \u0432\
+    \ \u0444\u043E\u0440\u043C\u0430\u0442\u0435 J1939)", Enable: '0', MaxVal: '3',
+  MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: TNS_ACK_EVENTS, ReadRegister: '306',
+  Scale: '1', TotalBytes: '2', WriteRegister: ''}
+TOTAL_KW_PCT: {DisplayText: !!python/str "\u041E\u0431\u0449\u0430\u044F \u043C\u043E\
+    \u0449\u043D\u043E\u0441\u0442\u044C \u0433\u0435\u043D\u0435\u0440\u0430\u0442\
+    \u043E\u0440\u0430, \u043A\u0412\u0442, \u0432 %", Enable: '0', MaxVal: '250,99',
+  MinVal: '-251', NumUsedBits: '16', Offset: '-251', ParamID: TOTAL_KW_PCT, ReadRegister: '105',
+  Scale: '0,0078125', TotalBytes: '2', WriteRegister: ''}
+TOT_APRNT_POWER: {DisplayText: !!python/str "\u041F\u043E\u043B\u043D\u0430\u044F\
+    \ \u043A\u0430\u0436\u0443\u0449\u0430\u044F\u0441\u044F \u043C\u043E\u0449\u043D\
+    \u043E\u0441\u0442\u044C \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\
+    \u0430", Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32',
+  Offset: '-2000000', ParamID: TOT_APRNT_POWER, ReadRegister: '138', Scale: '0,001',
+  TotalBytes: '4', WriteRegister: ''}
+TOT_KVAH: {DisplayText: !!python/str "\u041F\u043E\u043B\u043D\u0430\u044F \u0440\u0435\
+    \u0430\u043A\u0442\u0438\u0432\u043D\u0430\u044F \u044D\u043D\u0435\u0440\u0433\
+    \u0438\u044F \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430 \u043A\
+    \u0432\u0430\u0440 \u0445 \u0447\u0430\u0441", Enable: '0', MaxVal: '4211081215',
+  MinVal: '0', NumUsedBits: '32', Offset: '0', ParamID: TOT_KVAH, ReadRegister: '146',
+  Scale: '1', TotalBytes: '4', WriteRegister: ''}
+TOT_KVAH_IM: {DisplayText: !!python/str "\u041F\u043E\u043B\u043D\u0430\u044F \u0440\
+    \u0435\u0430\u043A\u0442\u0438\u0432\u043D\u0430\u044F \u044D\u043D\u0435\u0440\
+    \u0433\u0438\u044F, \u0438\u043C\u043F\u043E\u0440\u0442\u0438\u0440\u043E\u0432\
+    \u0430\u043D\u043D\u0430\u044F \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\
+    \u0440\u043E\u043C, \u043A\u0432\u0430\u0440 \u0445 \u0447\u0430\u0441", Enable: '0',
+  MaxVal: '4211081215', MinVal: '0', NumUsedBits: '32', Offset: '0', ParamID: TOT_KVAH_IM,
+  ReadRegister: '176', Scale: '1', TotalBytes: '4', WriteRegister: ''}
+TOT_KVAR_PCNT: {DisplayText: !!python/str "\u041F\u043E\u043B\u043D\u0430\u044F \u0440\
+    \u0435\u043A\u0430\u043A\u0442\u0438\u0432\u043D\u0430\u044F \u043C\u043E\u0449\
+    \u043D\u043E\u0441\u0442\u044C \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\
+    \u0440\u0430, \u043A\u0432\u0430\u0440", Enable: '0', MaxVal: '250,99', MinVal: '-251',
+  NumUsedBits: '16', Offset: '-251', ParamID: TOT_KVAR_PCNT, ReadRegister: '143',
+  Scale: '0,0078125', TotalBytes: '2', WriteRegister: ''}
+TOT_KVA_PCNT: {DisplayText: !!python/str "\u041F\u043E\u043B\u043D\u0430\u044F \u043C\
+    \u043E\u0449\u043D\u043E\u0441\u0442\u044C \u0433\u0435\u043D\u0435\u0440\u0430\
+    \u0442\u043E\u0440\u0430, \u043A\u0412\u0410, \u0432 %", Enable: '0', MaxVal: '250,99',
+  MinVal: '-251', NumUsedBits: '16', Offset: '-251', ParamID: TOT_KVA_PCNT, ReadRegister: '140',
+  Scale: '0,0078125', TotalBytes: '2', WriteRegister: ''}
+TOT_KWH: {DisplayText: !!python/str "\u041F\u043E\u043B\u043D\u0430\u044F \u0430\u043A\
+    \u0442\u0438\u0432\u043D\u0430\u044F \u044D\u043D\u0435\u0440\u0433\u0438\u044F\
+    \ \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0430, \u043A\u0412\u0442\
+    \u0447\u0430\u0441", Enable: '0', MaxVal: '4211081215', MinVal: '0', NumUsedBits: '32',
+  Offset: '0', ParamID: TOT_KWH, ReadRegister: '144', Scale: '1', TotalBytes: '4',
+  WriteRegister: ''}
+TOT_KWM_IM: {DisplayText: !!python/str "\u041F\u043E\u043B\u043D\u0430\u044F \u0430\
+    \u043A\u0442\u0438\u0432\u043D\u0430\u044F \u044D\u043D\u0435\u0440\u0433\u0438\
+    \u044F, \u0438\u043C\u043F\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u043D\
+    \u043D\u0430\u044F \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u043E\
+    \u043C, \u043A\u0412\u0442\u0447\u0430\u0441", Enable: '0', MaxVal: '4211081215',
+  MinVal: '0', NumUsedBits: '32', Offset: '0', ParamID: TOT_KWM_IM, ReadRegister: '174',
+  Scale: '1', TotalBytes: '4', WriteRegister: ''}
+TOT_REACT_POWER: {DisplayText: !!python/str "\u041E\u0431\u0449\u0430\u044F \u0440\
+    \u0435\u0430\u043A\u0442\u0438\u0432\u043D\u0430\u044F \u043C\u043E\u0449\u043D\
+    \u043E\u0441\u0442\u044C \u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\
+    \u0430", Enable: '0', MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32',
+  Offset: '-2000000', ParamID: TOT_REACT_POWER, ReadRegister: '141', Scale: '0,001',
+  TotalBytes: '4', WriteRegister: ''}
+UPD_END_OP_HOUR_: {DisplayText: !!python/str "\u041E\u0431\u043D\u043E\u0432\u0438\
+    \u0442\u044C \u043C\u043E\u0442\u043E\u0447\u0430\u0441\u044B \u0440\u0430\u0431\
+    \u043E\u0442\u044B \u0434\u0432\u0438\u0433\u0430\u0442\u0435\u043B\u044F", Enable: '0',
+  MaxVal: '210554060,75', MinVal: '0', NumUsedBits: '32', Offset: '0', ParamID: UPD_END_OP_HOUR_,
+  ReadRegister: '', Scale: '0,05', TotalBytes: '4', WriteRegister: '1026'}
+UPD_RTC: {DisplayText: !!python/str "\u041A\u043E\u043C\u0430\u043D\u0434\u0430 \u043D\
+    \u0430 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0435 \u0441\u0447\
+    \u0435\u0442\u0447\u0438\u043A\u0430 \u0432\u0440\u0435\u043C\u0435\u043D\u0438\
+    \ \u0432 \u0440\u0435\u0430\u043B\u044C\u043D\u043E\u043C \u043C\u0430\u0441\u0448\
+    \u0442\u0430\u0431\u0435", Enable: '0', MaxVal: '0', MinVal: '0', NumUsedBits: '48',
+  Offset: '0', ParamID: UPD_RTC, ReadRegister: '', Scale: '1', TotalBytes: '6', WriteRegister: '903'}
+UTIL_BRKR_OPEN: {DisplayText: !!python/str "\u0421\u043E\u0441\u0442\u043E\u044F\u043D\
+    \u0438\u0435 \u0440\u0430\u0437\u043C\u044B\u043A\u0430\u043D\u0438\u044F \u043F\
+    \u0440\u0435\u0440\u044B\u0432\u0430\u0442\u0435\u043B\u044F \u0441\u0435\u0442\
+    \u0438", Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0',
+  ParamID: UTIL_BRKR_OPEN, ReadRegister: '1066', Scale: '1', TotalBytes: '2', WriteRegister: ''}
