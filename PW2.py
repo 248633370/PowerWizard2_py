@@ -10,14 +10,15 @@
 from twisted.internet import reactor, protocol
 from pymodbus.constants import Defaults
 # Make utf8 default encoding
+import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
-
+from getopt import getopt
 #---------------------------------------------------------------------------# 
 # choose the requested modbus protocol
 #---------------------------------------------------------------------------# 
 #from pymodbus.client.async import ModbusClientProtocol as ModbusClient
-from pymodbus.client.async import ModbusSerialClient as ModbusClient
+from pymodbus.client.sync import ModbusSerialClient as ModbusClient
 #from pymodbus.client.async import ModbusUdpClientProtocol as ModbusClient
 
 #---------------------------------------------------------------------------# 
@@ -26,7 +27,7 @@ from pymodbus.client.async import ModbusSerialClient as ModbusClient
 import logging
 logging.basicConfig()
 log = logging.getLogger()
-log.setLevel(logging.DEBUG)
+#log.setLevel(logging.DEBUG)
 
 #---------------------------------------------------------------------------# 
 # state a few constants
@@ -36,6 +37,7 @@ DATA_FILE = 'Params_wDataTypes.yaml'
 DEFAULT_SERIAL_PORT  = "/dev/ttyS33"        # symlink to /dev/ttyr00
 DEFAULT_REGS  = (201, 1)
 DEFAULT_UNIT='0x01'
+DEFAULT_REGS_STORE='/tmp/pw2/'              # place to hold regs status
 CLIENT_DELAY = 1
 
 #---------------------------------------------------------------------------# 
@@ -57,12 +59,26 @@ class Connect(ModbusClient):
 
     def ReadRegs(self, SERIALPORT_SERIAL_PORT, UNIT=UNIT, REGS=REGS):
         pass
-    def 
+
+#    def 
 
 
 class Options:
-    ''' class for input options ''' 
-    def
+    ''' class for script options ''' 
+    def Read(self):
+#        sys.args
+        for arg in sys.args:
+            if len(sys.args) == 0:
+                log.error('No args')
+                Options.UsageInfo
+    def UsageInfo(self):
+        ''' usage info'''
+        print ' \n\
+        pw2.py [options] <parameter> ... [parameter] \n\
+        parametr - query PW parametr \n\
+    Options: \n\
+        -l, --list - list all available parameters \n\
+        '
 
 
 class Params:
@@ -74,15 +90,18 @@ class Params:
         self.params = yaml.load(open(yamlfile, 'r'))
         close(yamlfile)
 
-    def GetRegs(self)
-        if self.parms['ReadRegistr'] == 0:
-            print 'No ReadRegistr'
+    def GetRegs(self):
+        if self.parms[param_id]['ReadRegistr'] == 0:
+            print 'No ReadRegistr'                                  #generate error if no read reg
         else:
-            return 
+            return self.parms[param_id]['ReadRegistr']
 
 
-def main ()
+def main():
 ##    rr = client.read_holding_registers(201,1)
+    Usage = Options()
+    Usage.UsageInfo()
+    
 
 # For not to work as library
 if __name__ == "__main__":
