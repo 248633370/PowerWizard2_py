@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 
+'''
+ The csv file must have a valid header as 1st line.
+Based on header fill the dictionary and subdictionary for yaml format file.
+'''
+
 import sys, csv, yaml, codecs
 # Make utf8 default encoding
 reload(sys)
@@ -10,7 +15,7 @@ params = {}
 header = []
 subdict = {}
 n=1
-# utf_8_encoder(
+
 #start process of csv
 with open("Params_wDataTypes.csv", 'r') as csvfile:
 	cfgread = csv.reader(csvfile, delimiter=';', quotechar='"')
@@ -19,9 +24,6 @@ with open("Params_wDataTypes.csv", 'r') as csvfile:
 		for i in range(len(line)):
 			if n == 1:
 				header.append(line[i])
-			if type(line[i]) == 'string':
-				print i
-				print 'string'
 		subdict = dict(zip(header,line))
 		params[line[0]] = subdict
 		n=n+1
