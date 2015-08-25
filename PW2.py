@@ -7,13 +7,15 @@
 #---------------------------------------------------------------------------# 
 # import needed libraries
 #---------------------------------------------------------------------------# 
-from twisted.internet import reactor, protocol
-from pymodbus.constants import Defaults
-# Make utf8 default encoding
 import sys
+# Make utf8 default encoding
 reload(sys)
 sys.setdefaultencoding('utf-8')
-from getopt import getopt
+
+cfrom getopt import getopt
+from pymodbus.constants import Defaults
+from twisted.internet import reactor, protocol
+
 #---------------------------------------------------------------------------# 
 # choose the requested modbus protocol
 #---------------------------------------------------------------------------# 
@@ -48,32 +50,29 @@ def dassert(deferred, callback):
     deferred.addCallback(lambda r: _assertor(callback(r)))
     deferred.addErrback(lambda  _: _assertor(False))
 
-# class for init connection and request regs
+
 class Connect(ModbusClient):
-    ''' Class for connection to PW console  '''
+    ''' Class for connection and request to PW console  '''
     SERIAL_PORT = DEFAULT_SERIAL_PORT
     UNIT = DEFAULT_UNIT
     REGS = DEFAULT_REGS
     def __init__(self):
         pass
 
-    def ReadRegs(self, SERIALPORT_SERIAL_PORT, UNIT=UNIT, REGS=REGS):
+    def RequestRegs(self, SERIAL_PORT=SERIAL_PORT, UNIT=UNIT, REGS=REGS):
         pass
-
-#    def 
 
 
 class Options:
     ''' class for script options ''' 
-    def Read(self):
-#        sys.args
-        for arg in sys.args:
-            if len(sys.args) == 0:
+    def Args(self):
+        for args in sys.argv:
+            if len(sys.argv) == 0:
                 log.error('No args')
-                Options.UsageInfo
+                
     def UsageInfo(self):
         ''' usage info'''
-        print ' \n\
+        return ' \n\
         pw2.py [options] <parameter> ... [parameter] \n\
         parametr - query PW parametr \n\
     Options: \n\
@@ -99,8 +98,8 @@ class Params:
 
 def main():
 ##    rr = client.read_holding_registers(201,1)
-    Usage = Options()
-    Usage.UsageInfo()
+    start = Options()
+    print start.Read()
     
 
 # For not to work as library
