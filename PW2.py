@@ -7,12 +7,14 @@
 #---------------------------------------------------------------------------# 
 # import needed libraries
 #---------------------------------------------------------------------------# 
+import os
 import sys
 # Make utf8 default encoding
 reload(sys)
 sys.setdefaultencoding('utf-8')
+import yaml
 
-cfrom getopt import getopt
+from getopt import getopt
 from pymodbus.constants import Defaults
 from twisted.internet import reactor, protocol
 
@@ -20,7 +22,7 @@ from twisted.internet import reactor, protocol
 # choose the requested modbus protocol
 #---------------------------------------------------------------------------# 
 #from pymodbus.client.async import ModbusClientProtocol as ModbusClient
-from pymodbus.client.sync import ModbusSerialClient as ModbusClient
+from pymodbus.client.sync import ModbusSerialClient as ModbusSerialClient
 #from pymodbus.client.async import ModbusUdpClientProtocol as ModbusClient
 
 #---------------------------------------------------------------------------# 
@@ -34,13 +36,25 @@ log = logging.getLogger()
 #---------------------------------------------------------------------------# 
 # state a few constants
 #---------------------------------------------------------------------------# 
-DATA_FILE = 'Params_wDataTypes.yaml'
-#DEFAULT_SERIAL_PORT  = "/dev/ttyr00"       # default port for npreals
-DEFAULT_SERIAL_PORT  = "/dev/ttyS33"        # symlink to /dev/ttyr00
-DEFAULT_REGS  = (201, 1)
-DEFAULT_UNIT='0x01'
-DEFAULT_REGS_STORE='/tmp/pw2/'              # place to hold regs status
-CLIENT_DELAY = 1
+DEFAULT_SERIAL_METHOD = "rtu"
+DEFAULT_SERIAL_STOPBITS = 1
+DEFAULT_SERIAL_BYTESIZE = 8
+DEFAULT_SERIAL_PARITY = "E"
+DEFAULT_SERIAL_BAUDRATE = 9600
+DEFAULT_SERIAL_TIMEOUT = 1
+DEFAULT_SERIAL_PORT = "/dev/ttyr00"        # default port for npreals
+#DEFAULT_SERIAL_PORT = "/dev/ttyS33"        # symlink to /dev/ttyr00
+
+#DEFAULT_TCP_SERVER = "172.16.156.69"
+#DEFAULT_TCP_PORT = 590
+#DEFAULT_TCP_ = 
+
+DEFAULT_REGS  = 201
+DEFAULT_UNIT = 0x01
+
+DATA_FILE = 'Params_wDataTypes.yaml'        # file with params config
+DEFAULT_STORE = '/tmp/pw2py/'              # place to store regs status
+PID_FILE = DEFAULT_STORE + 'pw2py.pid'
 
 #---------------------------------------------------------------------------# 
 # helper method to test deferred callbacks
@@ -51,56 +65,61 @@ def dassert(deferred, callback):
     deferred.addErrback(lambda  _: _assertor(False))
 
 
-class Connect(ModbusClient):
+class Client(ModbusSerialClient):
     ''' Class for connection and request to PW console  '''
-    SERIAL_PORT = DEFAULT_SERIAL_PORT
-    UNIT = DEFAULT_UNIT
-    REGS = DEFAULT_REGS
-    def __init__(self):
+    def __init__(self, method=DEFAULT_SERIAL_METHOD, stopbits=DEFAULT_SERIAL_STOPBITS, bytesize=DEFAULT_SERIAL_BYTESIZE, parity=DEFAULT_SERIAL_PARITY, port=DEFAULT_SERIAL_PORT):
         pass
 
-    def RequestRegs(self, SERIAL_PORT=SERIAL_PORT, UNIT=UNIT, REGS=REGS):
-        pass
+    def RequestRegs(self, regs=DEFAULT_REGS):
+        '''read_holding_registers'''
+        return self.read_holding_registers(REG, DEFAULT_REGS[1])
 
 
 class Options:
     ''' class for script options ''' 
     def Args(self):
         for args in sys.argv:
-            if len(sys.argv) == 0:
+            if len(sys.argv) == 0 :
                 log.error('No args')
-                
+            else:
+                return 
+
     def UsageInfo(self):
         ''' usage info'''
-        return ' \n\
+        print ' \n\
         pw2.py [options] <parameter> ... [parameter] \n\
         parametr - query PW parametr \n\
     Options: \n\
-        -l, --list - list all available parameters \n\
+        -a, --list - list all available parameters \n\
+        -l, --list-enable - list all enabled parameters \n\
         '
+        sys.exit()
 
 
 class Params:
     '''class for manipulate Params ''' 
     def __init__(self):
-        pass
+        self.params = {}
 
-    def  load(self, yamfile):
+    def  load(self, yamlfile=DATA_FILE):
         self.params = yaml.load(open(yamlfile, 'r'))
-        close(yamlfile)
-
-    def GetRegs(self):
-        if self.parms[param_id]['ReadRegistr'] == 0:
-            print 'No ReadRegistr'                                  #generate error if no read reg
+        
+    def GetRegistr(self, param_id ):
+        if self.params[param_id]['ReadRegister']:
+            return self.params[param_id]['ReadRegister']
         else:
-            return self.parms[param_id]['ReadRegistr']
+            print 'No ReadRegister'                                  #generate error if no read reg
+            sys.exit()
 
 
 def main():
 ##    rr = client.read_holding_registers(201,1)
-    start = Options()
-    print start.Read()
-    
+    config = Params()
+    config.load()
+#    print config.params
+    print config.GetRegistr(param_id='BPASS_COOLDOW_')
+    print config.GetRegistr(param_id='ADEM_COOL_TEMP')
+
 
 # For not to work as library
 if __name__ == "__main__":
