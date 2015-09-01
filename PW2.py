@@ -77,6 +77,9 @@ class Client(ModbusSerialClient):
 
 class Options:
     ''' class for script options ''' 
+    def __init__(self):
+        pass
+
     def args(self):
         for args in sys.argv:
             if len(sys.argv) == 0 :
@@ -104,20 +107,38 @@ class Params:
     def  load(self, yamlfile=DATA_FILE):
         self.params = yaml.load(open(yamlfile, 'r'))
         
+    def get_header(self):
+        ''' return "header" of dictionary'''
+        return self.params['ParamID'].keys()
+
     def get_register(self, param_id ):
         if self.params[param_id]['ReadRegister']:
             return self.params[param_id]['ReadRegister']
         else:
             return 'No ReadRegister'                                  #generate error if no read reg
-            
+
+    def get_write_register(self, param_id ):
+        if self.params[param_id]['WriteRegister']:
+            return self.params[param_id]['WriteRegister']
+        else:
+            return 'No WriteRegister'                                  #generate error if no write reg    
+
+    def get_description(self, param_id ):
+        return self.params[param_id]['DisplayText']
+       
 
 def main():
 ##    rr = client.read_holding_registers(201,1)
+    ''' Load conf to dictionary '''
     config = Params()
     config.load()
-#    print config.params
-    print config.get_register(param_id='BPASS_COOLDOW_')
+
+    print config.get_header()
+#   test get params
+    print config.get_register(param_id='ParamID')
+    print config.get_description(param_id='ParamID')
     print config.get_register(param_id='ENG_COOL_TMP')
+    print config.get_description(param_id='ENG_COOL_TMP')
 
 
 # For not to work as library
