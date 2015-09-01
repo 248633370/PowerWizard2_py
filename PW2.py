@@ -20,7 +20,8 @@ from twisted.internet import reactor, protocol
 
 #---------------------------------------------------------------------------# 
 # choose the requested modbus protocol
-#---------------------------------------------------------------------------# 
+#---------------------------------------------------------------------------#
+''' Первоначально только синхронный режим через последовательный порт '''
 #from pymodbus.client.async import ModbusClientProtocol as ModbusClient
 from pymodbus.client.sync import ModbusSerialClient as ModbusSerialClient
 #from pymodbus.client.async import ModbusUdpClientProtocol as ModbusClient
@@ -70,9 +71,9 @@ class Client(ModbusSerialClient):
     def __init__(self, method=DEFAULT_SERIAL_METHOD, stopbits=DEFAULT_SERIAL_STOPBITS, bytesize=DEFAULT_SERIAL_BYTESIZE, parity=DEFAULT_SERIAL_PARITY, port=DEFAULT_SERIAL_PORT):
         pass
 
-    def request_regs(self, regs=DEFAULT_REGS):
+    def request_regs(self, regs=DEFAULT_REGSm unit=DEFAULT_UNIT):
         '''read_holding_registers'''
-        return self.read_holding_registers(REG, DEFAULT_REGS[1])
+        return self.read_holding_registers(regs, unit)
 
 
 class Options:
@@ -91,7 +92,7 @@ class Options:
         ''' usage info'''
         print ' \n\
         pw2.py [options] <parameter> ... [parameter] \n\
-        parametr - query PW parametr \n\
+        parameter - query PW parameter \n\
     Options: \n\
         -a, --list - list all available parameters \n\
         -l, --list-enable - list all enabled parameters \n\
