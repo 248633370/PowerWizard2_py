@@ -70,21 +70,21 @@ class Client(ModbusSerialClient):
     def __init__(self, method=DEFAULT_SERIAL_METHOD, stopbits=DEFAULT_SERIAL_STOPBITS, bytesize=DEFAULT_SERIAL_BYTESIZE, parity=DEFAULT_SERIAL_PARITY, port=DEFAULT_SERIAL_PORT):
         pass
 
-    def RequestRegs(self, regs=DEFAULT_REGS):
+    def request_regs(self, regs=DEFAULT_REGS):
         '''read_holding_registers'''
         return self.read_holding_registers(REG, DEFAULT_REGS[1])
 
 
 class Options:
     ''' class for script options ''' 
-    def Args(self):
+    def args(self):
         for args in sys.argv:
             if len(sys.argv) == 0 :
                 log.error('No args')
             else:
                 return 
 
-    def UsageInfo(self):
+    def usage_info(self):
         ''' usage info'''
         print ' \n\
         pw2.py [options] <parameter> ... [parameter] \n\
@@ -104,21 +104,20 @@ class Params:
     def  load(self, yamlfile=DATA_FILE):
         self.params = yaml.load(open(yamlfile, 'r'))
         
-    def GetRegistr(self, param_id ):
+    def get_register(self, param_id ):
         if self.params[param_id]['ReadRegister']:
             return self.params[param_id]['ReadRegister']
         else:
-            print 'No ReadRegister'                                  #generate error if no read reg
-            sys.exit()
-
+            return 'No ReadRegister'                                  #generate error if no read reg
+            
 
 def main():
 ##    rr = client.read_holding_registers(201,1)
     config = Params()
     config.load()
 #    print config.params
-    print config.GetRegistr(param_id='BPASS_COOLDOW_')
-    print config.GetRegistr(param_id='ADEM_COOL_TEMP')
+    print config.get_register(param_id='BPASS_COOLDOW_')
+    print config.get_register(param_id='ENG_COOL_TMP')
 
 
 # For not to work as library
