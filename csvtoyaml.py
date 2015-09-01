@@ -4,20 +4,24 @@
  The csv file must have a valid header as 1st line.
 Based on header fill the dictionary and subdictionary for yaml format file.
 '''
-
-import sys, csv, yaml, codecs
+import csv
+import yaml
+import codecs
+import sys
 # Make utf8 default encoding
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
 # constants and init vars
+infile = 'Params_wDataTypes.csv'
+outfile = 'newParams_wDataTypes.yaml'
 params = {}
 header = []
 subdict = {}
 n=1
 
 #start process of csv
-with open("Params_wDataTypes.csv", 'r') as csvfile:
+with open(infile, 'r') as csvfile:
 	cfgread = csv.reader(csvfile, delimiter=';', quotechar='"')
 #	cfgread = unicode_csv_reader(csvfile, delimiter=';', quotechar='"')
 	for line in cfgread:
@@ -30,8 +34,11 @@ with open("Params_wDataTypes.csv", 'r') as csvfile:
 	print str(params['ParamID'])
 	print str(params['ADEM_COOL_TEMP']['DisplayText'])
 # open file for yaml store
-yamlfile = codecs.open("newParamByRegister_wDataTypes.yaml", "r+", "utf-8")
+yamlfile = codecs.open(outfile, 'w+', 'utf-8')
 yamlfile.write(yaml.dump(params, encoding='utf-8', allow_unicode=True))
+#yamlfile = open(outfile, 'w+')
+#yamlfile.write(yaml.dump(params))
+
 
 '''if __name__ == "__main__":
     main()
