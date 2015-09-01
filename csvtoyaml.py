@@ -23,7 +23,6 @@ n=1
 #start process of csv
 with open(infile, 'r') as csvfile:
 	cfgread = csv.reader(csvfile, delimiter=';', quotechar='"')
-#	cfgread = unicode_csv_reader(csvfile, delimiter=';', quotechar='"')
 	for line in cfgread:
 		for i in range(len(line)):
 			if n == 1:
@@ -36,9 +35,6 @@ with open(infile, 'r') as csvfile:
 # open file for yaml store
 yamlfile = codecs.open(outfile, 'w+', 'utf-8')
 yamlfile.write(yaml.dump(params, encoding='utf-8', allow_unicode=True))
-#yamlfile = open(outfile, 'w+')
-#yamlfile.write(yaml.dump(params))
-
 
 '''if __name__ == "__main__":
     main()
