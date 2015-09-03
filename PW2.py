@@ -13,15 +13,16 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 import yaml
+import argparse
 
-from getopt import getopt
 from pymodbus.constants import Defaults
-from twisted.internet import reactor, protocol
+# need for async TCP client
+#from twisted.internet import reactor, protocol
 
 #---------------------------------------------------------------------------# 
 # choose the requested modbus protocol
 #---------------------------------------------------------------------------#
-''' Первоначально только синхронный режим через последовательный порт '''
+'''First step - only sync serial connection'''
 #from pymodbus.client.async import ModbusClientProtocol as ModbusClient
 from pymodbus.client.sync import ModbusSerialClient as ModbusSerialClient
 #from pymodbus.client.async import ModbusUdpClientProtocol as ModbusClient
@@ -71,22 +72,24 @@ class Client(ModbusSerialClient):
     def __init__(self, method=DEFAULT_SERIAL_METHOD, stopbits=DEFAULT_SERIAL_STOPBITS, bytesize=DEFAULT_SERIAL_BYTESIZE, parity=DEFAULT_SERIAL_PARITY, port=DEFAULT_SERIAL_PORT):
         pass
 
-    def request_regs(self, regs=DEFAULT_REGSm unit=DEFAULT_UNIT):
+    def request_regs(self, regs=DEFAULT_REGS, unit=DEFAULT_UNIT):
         '''read_holding_registers'''
         return self.read_holding_registers(regs, unit)
 
 
-class Options:
+class Options(ArgumentParser):
     ''' class for script options ''' 
     def __init__(self):
-        pass
+        '''init and fill args'''
+        self = argparse.ArgumentParser()
+        self.add_argument('parameter',type=str,nargs='+',help='query PW parameter')
+        self.add_argument('-a','--list-all',help='list all available parameters',action='store_true')
+        self.add_argument('-l','--list-enable',help='list only enabled parameters',action='store_true')
+        self.add_argument('-p','--port',type=str,help='list all available parameters')
 
     def args(self):
-        for args in sys.argv:
-            if len(sys.argv) == 0 :
-                log.error('No args')
-            else:
-                return 
+        ''' return options as dictionary  '''
+        pass
 
     def usage_info(self):
         ''' usage info'''
@@ -94,8 +97,9 @@ class Options:
         pw2.py [options] <parameter> ... [parameter] \n\
         parameter - query PW parameter \n\
     Options: \n\
-        -a, --list - list all available parameters \n\
-        -l, --list-enable - list all enabled parameters \n\
+        -a, --list-all - list all available parameters \n\
+        -l, --list-enable - list only enabled parameters \n\
+        -p, --port - port for connection \n\
         '
         sys.exit()
 
@@ -116,13 +120,13 @@ class Params:
         if self.params[param_id]['ReadRegister']:
             return self.params[param_id]['ReadRegister']
         else:
-            return 'No ReadRegister'                                  #generate error if no read reg
+            return 'No ReadRegister'             # generate error if no read reg
 
     def get_write_register(self, param_id ):
         if self.params[param_id]['WriteRegister']:
             return self.params[param_id]['WriteRegister']
         else:
-            return 'No WriteRegister'                                  #generate error if no write reg    
+            return 'No WriteRegister'             # generate error if no write reg    
 
     def get_description(self, param_id ):
         return self.params[param_id]['DisplayText']
@@ -130,12 +134,18 @@ class Params:
 
 def main():
 ##    rr = client.read_holding_registers(201,1)
+    ''' Read script options '''
+    options = Options()
+    print options.parse_args()
+#    if not options.parse_args() or options.help:
+#        print options.print_help()
+
     ''' Load conf to dictionary '''
     config = Params()
     config.load()
 
     print config.get_header()
-#   test get params
+    '''test get params'''
     print config.get_register(param_id='ParamID')
     print config.get_description(param_id='ParamID')
     print config.get_register(param_id='ENG_COOL_TMP')
