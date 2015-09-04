@@ -77,31 +77,10 @@ class Client(ModbusSerialClient):
         return self.read_holding_registers(regs, unit)
 
 
-class Options(ArgumentParser):
-    ''' class for script options ''' 
-    def __init__(self):
-        '''init and fill args'''
-        self = argparse.ArgumentParser()
-        self.add_argument('parameter',type=str,nargs='+',help='query PW parameter')
-        self.add_argument('-a','--list-all',help='list all available parameters',action='store_true')
-        self.add_argument('-l','--list-enable',help='list only enabled parameters',action='store_true')
-        self.add_argument('-p','--port',type=str,help='list all available parameters')
-
-    def args(self):
-        ''' return options as dictionary  '''
-        pass
-
-    def usage_info(self):
-        ''' usage info'''
-        print ' \n\
-        pw2.py [options] <parameter> ... [parameter] \n\
-        parameter - query PW parameter \n\
-    Options: \n\
-        -a, --list-all - list all available parameters \n\
-        -l, --list-enable - list only enabled parameters \n\
-        -p, --port - port for connection \n\
-        '
-        sys.exit()
+class Options(argparse.ArgumentParser):
+    ''' argparse subclass  for operate options
+        https://docs.python.org/2/library/argparse.html'''
+    pass
 
 
 class Params:
@@ -126,19 +105,32 @@ class Params:
         if self.params[param_id]['WriteRegister']:
             return self.params[param_id]['WriteRegister']
         else:
-            return 'No WriteRegister'             # generate error if no write reg    
+            return 'No WriteRegister'            # generate error if no write reg    
 
     def get_description(self, param_id ):
         return self.params[param_id]['DisplayText']
-       
+
+def option_fill(options):
+        ''' function for fill options '''
+        options.add_argument('parameter',
+                            type=str,
+                            nargs='*',
+                            help='query PW parameter')
+        options.add_argument('-a','--list-all',
+                            help='list all available parameters',
+                            action='store_true')
+        options.add_argument('-l','--list-enable',
+                            help='list only enabled parameters',
+                            action='store_true')
+        options.add_argument('-p','--port',
+                            type=str,
+                            help='port for connect to panel')
 
 def main():
 ##    rr = client.read_holding_registers(201,1)
     ''' Read script options '''
     options = Options()
-    print options.parse_args()
-#    if not options.parse_args() or options.help:
-#        print options.print_help()
+    option_fill(options)
 
     ''' Load conf to dictionary '''
     config = Params()
