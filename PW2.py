@@ -78,7 +78,7 @@ class Client(ModbusSerialClient):
 
 
 class Options(argparse.ArgumentParser):
-    ''' argparse subclass  for operate options
+    ''' argparse subclass  for operating options
         https://docs.python.org/2/library/argparse.html'''
     pass
 
@@ -125,24 +125,36 @@ def option_fill(options):
         options.add_argument('-p','--port',
                             type=str,
                             help='port for connect to panel')
+        options.add_argument('-t','--title',
+                            help='list params title',
+                            action='store_true')
 
 def main():
 ##    rr = client.read_holding_registers(201,1)
     ''' Read script options '''
     options = Options()
     option_fill(options)
+    arguments = options.parse_args()
 
     ''' Load conf to dictionary '''
     config = Params()
     config.load()
 
-    print config.get_header()
-    '''test get params'''
+    if arguments.list_all:
+        print 'list_all'
+    elif arguments.list_enable:
+        print 'list_enable'
+    elif arguments.port:
+        print arguments.port
+    elif arguments.title:
+        print config.get_header()
+        
+    '''test get params
     print config.get_register(param_id='ParamID')
     print config.get_description(param_id='ParamID')
     print config.get_register(param_id='ENG_COOL_TMP')
     print config.get_description(param_id='ENG_COOL_TMP')
-
+    '''
 
 # For not to work as library
 if __name__ == "__main__":
