@@ -32,6 +32,35 @@ with open(infile, 'r') as csvfile:
 		params[line[0]] = subdict
 		n=n+1
 	print str(params['ParamID'])
+
+''' Enable needed params
+params['']['Enable'] = '1'
+'''
+enable_params = [ 'TOTAL_KW_PCT', 
+                'REAL_POWER', 
+                'PH_A_RMS_CURRENT', \
+                'PH_B_RMS_CURRENT', \
+                'PH_C_RMS_CURRENT', \
+                'B_PH_A_L2L_VOLTS', \
+                'B_PH_B_L2L_VOLTS', \
+                'B_PH_C_L2L_VOLTS', \
+                'ENG_COOL_TMP', \
+                'AUTO_STRT_STOP', \
+                'ADEM_OIL_PRESS', \
+                'ADEM_COOL_TEMP', \
+                'DL_ENG_OIL_TEMP', \
+                'DL_INST_FUEL_CON', \
+                'ENG_OP_MODE', \
+                'RTC', \
+                'LOSS_OF_UTILITY',
+                 \
+                'BAT_VOLTS', \
+                'GEN_FREQ_OK', \
+                'GEN_VOLTS_OK']
+                
+for en_param in enable_params:
+    params[en_param]['Enable'] = '1'
+
 ordered_params = collections.OrderedDict(sorted(params.items()))
 # open file for yaml store
 yamlfile = codecs.open(outfile, 'w+', 'utf-8')

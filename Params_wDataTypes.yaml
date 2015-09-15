@@ -5,11 +5,11 @@
       Scale: '1', TotalBytes: '2', WriteRegister: '304'}
   - - ADEM_COOL_TEMP
     - {DisplayText: !!python/str 'Температура охлаждающей жидкости двигателя с системы
-        ADEM', Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
+        ADEM', Enable: '1', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
       ParamID: ADEM_COOL_TEMP, ReadRegister: '219', Scale: '0,03125', TotalBytes: '2',
       WriteRegister: ''}
   - - ADEM_OIL_PRESS
-    - {DisplayText: !!python/str 'Давление масла в двигателе с системы ADEM', Enable: '0',
+    - {DisplayText: !!python/str 'Давление масла в двигателе с системы ADEM', Enable: '1',
       MaxVal: '8031,875', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: ADEM_OIL_PRESS,
       ReadRegister: '217', Scale: '0,125', TotalBytes: '2', WriteRegister: ''}
   - - AIR_FLT_PRES_PIN
@@ -23,7 +23,7 @@
       ParamID: AMB_AIR_TMP_PIN, ReadRegister: '814', Scale: '0,03125', TotalBytes: '2',
       WriteRegister: ''}
   - - AUTO_STRT_STOP
-    - {DisplayText: !!python/str 'Состояние автоматического пуска/останова', Enable: '0',
+    - {DisplayText: !!python/str 'Состояние автоматического пуска/останова', Enable: '1',
       MaxVal: '7', MinVal: '0', NumUsedBits: '8', Offset: '0', ParamID: AUTO_STRT_STOP,
       ReadRegister: '206', Scale: '1', TotalBytes: '2', WriteRegister: ''}
   - - AVG_AC_CURRENT
@@ -57,7 +57,7 @@
       ParamID: AVR_BIAS_PCT, ReadRegister: '1058', Scale: '0,0078125', TotalBytes: '2',
       WriteRegister: ''}
   - - BAT_VOLTS
-    - {DisplayText: !!python/str 'Напр акк бат', Enable: '0', MaxVal: '3212,75', MinVal: '0',
+    - {DisplayText: !!python/str 'Напр акк бат', Enable: '1', MaxVal: '3212,75', MinVal: '0',
       NumUsedBits: '16', Offset: '0', ParamID: BAT_VOLTS, ReadRegister: '202', Scale: '0,05',
       TotalBytes: '2', WriteRegister: ''}
   - - BPASS_COOLDOW_
@@ -90,7 +90,7 @@
       WriteRegister: ''}
   - - B_PH_A_L2L_VOLTS
     - {DisplayText: !!python/str 'Линейное среднеквадратичное напряжение переменного
-        тока на шинах фазы А', Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16',
+        тока на шинах фазы А', Enable: '1', MaxVal: '64255', MinVal: '0', NumUsedBits: '16',
       Offset: '0', ParamID: B_PH_A_L2L_VOLTS, ReadRegister: '166', Scale: '1', TotalBytes: '2',
       WriteRegister: ''}
   - - B_PH_A_L2N_VOLTS
@@ -100,7 +100,7 @@
       WriteRegister: ''}
   - - B_PH_B_L2L_VOLTS
     - {DisplayText: !!python/str 'Линейное среднеквадратичное напряжение переменного
-        тока на шинах фазы В', Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16',
+        тока на шинах фазы В', Enable: '1', MaxVal: '64255', MinVal: '0', NumUsedBits: '16',
       Offset: '0', ParamID: B_PH_B_L2L_VOLTS, ReadRegister: '167', Scale: '1', TotalBytes: '2',
       WriteRegister: ''}
   - - B_PH_B_L2N_VOLTS
@@ -110,7 +110,7 @@
       WriteRegister: ''}
   - - B_PH_C_L2L_VOLTS
     - {DisplayText: !!python/str 'Линейное среднеквадратичное напряжение переменного
-        тока на шинах фазы С', Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16',
+        тока на шинах фазы С', Enable: '1', MaxVal: '64255', MinVal: '0', NumUsedBits: '16',
       Offset: '0', ParamID: B_PH_C_L2L_VOLTS, ReadRegister: '168', Scale: '1', TotalBytes: '2',
       WriteRegister: ''}
   - - B_PH_C_L2N_VOLTS
@@ -407,7 +407,7 @@
       WriteRegister: ''}
   - - DL_ENG_OIL_TEMP
     - {DisplayText: !!python/str 'Температура масла в двигателе с канала передачи
-        данных', Enable: '0', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
+        данных', Enable: '1', MaxVal: '1735', MinVal: '-273', NumUsedBits: '16', Offset: '-273',
       ParamID: DL_ENG_OIL_TEMP, ReadRegister: '245', Scale: '0,03125', TotalBytes: '2',
       WriteRegister: ''}
   - - DL_EX_MFD_1_TEMP
@@ -435,7 +435,7 @@
       ReadRegister: '247', Scale: '0,125', TotalBytes: '2', WriteRegister: ''}
   - - DL_INST_FUEL_CON
     - {DisplayText: !!python/str 'Мгновенный расход топлива с канала передачи данных',
-      Enable: '0', MaxVal: '3212,75', MinVal: '0', NumUsedBits: '16', Offset: '0',
+      Enable: '1', MaxVal: '3212,75', MinVal: '0', NumUsedBits: '16', Offset: '0',
       ParamID: DL_INST_FUEL_CON, ReadRegister: '256', Scale: '0,05', TotalBytes: '2',
       WriteRegister: ''}
   - - DL_IN_MFD_1_PRES
@@ -490,7 +490,7 @@
       Offset: '-251', ParamID: ENG_COOL_LVL_PIN, ReadRegister: '807', Scale: '0,0078125',
       TotalBytes: '2', WriteRegister: ''}
   - - ENG_COOL_TMP
-    - {DisplayText: !!python/str 'Темп охл жидк двгля', Enable: '0', MaxVal: '1735',
+    - {DisplayText: !!python/str 'Темп охл жидк двгля', Enable: '1', MaxVal: '1735',
       MinVal: '-273', NumUsedBits: '16', Offset: '-273', ParamID: ENG_COOL_TMP, ReadRegister: '201',
       Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
   - - ENG_OIL_LVL_PIN
@@ -511,7 +511,7 @@
       MinVal: '0', NumUsedBits: '32', Offset: '0', ParamID: ENG_OP_HRS, ReadRegister: '204',
       Scale: '0,05', TotalBytes: '4', WriteRegister: ''}
   - - ENG_OP_MODE
-    - {DisplayText: !!python/str 'Режим работы двигателя', Enable: '0', MaxVal: '2',
+    - {DisplayText: !!python/str 'Режим работы двигателя', Enable: '1', MaxVal: '2',
       MinVal: '0', NumUsedBits: '8', Offset: '0', ParamID: ENG_OP_MODE, ReadRegister: '301',
       Scale: '1', TotalBytes: '2', WriteRegister: ''}
   - - ENG_OP_MODE_CM_
@@ -571,11 +571,11 @@
       MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: GEN_BRKR_OPEN,
       ReadRegister: '1065', Scale: '1', TotalBytes: '2', WriteRegister: ''}
   - - GEN_FREQ_OK
-    - {DisplayText: !!python/str 'Частота генератора в заданных пределах', Enable: '0',
+    - {DisplayText: !!python/str 'Частота генератора в заданных пределах', Enable: '1',
       MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: GEN_FREQ_OK,
       ReadRegister: '1067', Scale: '1', TotalBytes: '2', WriteRegister: ''}
   - - GEN_VOLTS_OK
-    - {DisplayText: !!python/str 'Напряжение генератора в заданных пределах', Enable: '0',
+    - {DisplayText: !!python/str 'Напряжение генератора в заданных пределах', Enable: '1',
       MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: GEN_VOLTS_OK,
       ReadRegister: '1068', Scale: '1', TotalBytes: '2', WriteRegister: ''}
   - - GOOD_STARTS
@@ -996,7 +996,7 @@
       Offset: '-273', ParamID: LFT_MFD_TMP_PIN, ReadRegister: '802', Scale: '0,03125',
       TotalBytes: '2', WriteRegister: ''}
   - - LOSS_OF_UTILITY
-    - {DisplayText: !!python/str 'Потеря общ э/сети', Enable: '0', MaxVal: '3', MinVal: '0',
+    - {DisplayText: !!python/str 'Потеря общ э/сети', Enable: '1', MaxVal: '3', MinVal: '0',
       NumUsedBits: '2', Offset: '0', ParamID: LOSS_OF_UTILITY, ReadRegister: '1064',
       Scale: '1', TotalBytes: '2', WriteRegister: ''}
   - - MAINT_DAYS_REM
@@ -1058,7 +1058,7 @@
       WriteRegister: ''}
   - - PH_A_RMS_CURRENT
     - {DisplayText: !!python/str 'Среднеквадратичный переменный ток фазы А генератора',
-      Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: PH_A_RMS_CURRENT,
+      Enable: '1', MaxVal: '64255', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: PH_A_RMS_CURRENT,
       ReadRegister: '111', Scale: '1', TotalBytes: '2', WriteRegister: ''}
   - - PH_A_WND_TMP
     - {DisplayText: !!python/str 'Температура обмотки фазы А генератора', Enable: '0',
@@ -1099,7 +1099,7 @@
       WriteRegister: ''}
   - - PH_B_RMS_CURRENT
     - {DisplayText: !!python/str 'Среднеквадратичный переменный ток фазы В генератора',
-      Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: PH_B_RMS_CURRENT,
+      Enable: '1', MaxVal: '64255', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: PH_B_RMS_CURRENT,
       ReadRegister: '112', Scale: '1', TotalBytes: '2', WriteRegister: ''}
   - - PH_B_WND_TMP
     - {DisplayText: !!python/str 'Температура обмотки фазы В генератора', Enable: '0',
@@ -1140,7 +1140,7 @@
       WriteRegister: ''}
   - - PH_C_RMS_CURRENT
     - {DisplayText: !!python/str 'Среднеквадратичный переменный ток фазы С генератора',
-      Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: PH_C_RMS_CURRENT,
+      Enable: '1', MaxVal: '64255', MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: PH_C_RMS_CURRENT,
       ReadRegister: '113', Scale: '1', TotalBytes: '2', WriteRegister: ''}
   - - PH_C_WND_TMP
     - {DisplayText: !!python/str 'Температура обмотки фазы С генератора', Enable: '0',
@@ -1159,7 +1159,7 @@
       Offset: Offset, ParamID: ParamID, ReadRegister: ReadRegister, Scale: Scale,
       TotalBytes: TotalBytes, WriteRegister: WriteRegister}
   - - REAL_POWER
-    - {DisplayText: !!python/str 'Общая активная мощность генератора', Enable: '0',
+    - {DisplayText: !!python/str 'Общая активная мощность генератора', Enable: '1',
       MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
       ParamID: REAL_POWER, ReadRegister: '106', Scale: '0,001', TotalBytes: '4', WriteRegister: ''}
   - - REAR_BRG_TMP
@@ -1250,7 +1250,7 @@
       Offset: '0', ParamID: RST_SVC_INT_CNT_, ReadRegister: '', Scale: '1', TotalBytes: '2',
       WriteRegister: '1032'}
   - - RTC
-    - {DisplayText: !!python/str 'Счетчик времени в реальном масштабе', Enable: '0',
+    - {DisplayText: !!python/str 'Счетчик времени в реальном масштабе', Enable: '1',
       MaxVal: '0', MinVal: '0', NumUsedBits: '48', Offset: '0', ParamID: RTC, ReadRegister: '900',
       Scale: '1', TotalBytes: '6', WriteRegister: ''}
   - - SPD_BIAS_PCNT
@@ -1282,7 +1282,7 @@
         J1939)', Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0',
       ParamID: TNS_ACK_EVENTS, ReadRegister: '306', Scale: '1', TotalBytes: '2', WriteRegister: ''}
   - - TOTAL_KW_PCT
-    - {DisplayText: !!python/str 'Общая мощность генератора, кВт, в %', Enable: '0',
+    - {DisplayText: !!python/str 'Общая мощность генератора, кВт, в %', Enable: '1',
       MaxVal: '250,99', MinVal: '-251', NumUsedBits: '16', Offset: '-251', ParamID: TOTAL_KW_PCT,
       ReadRegister: '105', Scale: '0,0078125', TotalBytes: '2', WriteRegister: ''}
   - - TOT_APRNT_POWER
