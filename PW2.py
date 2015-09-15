@@ -54,7 +54,8 @@ DEFAULT_SERIAL_PORT = "/dev/ttyr00"        # default port for npreals
 DEFAULT_REGS  = 201
 DEFAULT_UNIT = 0x01
 
-DATA_FILE = 'Params_wDataTypes.yaml'        # file with params config
+DEFAULT_PATH = os.path.dirname(__file__) + '/'
+DATA_FILE = DEFAULT_PATH + 'Params_wDataTypes.yaml'        # file with params config
 DEFAULT_STORE = '/tmp/pw2py/'              # place to store regs status
 PID_FILE = DEFAULT_STORE + 'pw2py.pid'
 LOG_FILE = '/var/log/pw2py.log'
@@ -87,7 +88,6 @@ class Options(argparse.ArgumentParser):
 class Params:
     '''class for manipulate Params ''' 
     def __init__(self):
-        #self.params = {}
         pass
 
     def load(self, yamlfile=DATA_FILE):
@@ -113,6 +113,7 @@ class Params:
         return self.params[param_id]['DisplayText']
 
 
+
 def options_fill(options):
         ''' function for fill options '''
         options.add_argument('parameter',
@@ -121,6 +122,9 @@ def options_fill(options):
                             help='query PW parameter')
         options.add_argument('-a','--list-all',
                             help='list all available parameters',
+                            action='store_true')
+        options.add_argument('-g','--get-enable',
+                            help='get enabled parameters',
                             action='store_true')
         options.add_argument('-l','--list-enable',
                             help='list only enabled parameters',
@@ -144,27 +148,34 @@ def main():
     config.load()
 
     if arguments.list_all:
-        print 'list_all'
+        print 'List all available parameters'
+        print '| {0} | {1}'.format(config.params['ParamID']['ParamID'].ljust(19), config.params['ParamID']['DisplayText'])
+        print '| {0} | {1}'.format(''.ljust(19,'-'), ''.ljust(60,'-'))
         for param in config.params.keys():
             print '| {0} | {1}'.format(config.params[param]['ParamID'].ljust(19), config.params[param]['DisplayText'])
         sys.exit()
     elif arguments.list_enable:
-        print 'list_enable'
+        print 'List only enabled parameters'
+        print '| {0} | {1}'.format(config.params['ParamID']['ParamID'].ljust(19), config.params['ParamID']['DisplayText'])
+        print '| {0} | {1}'.format(''.ljust(19,'-'), ''.ljust(60,'-'))
         for param in config.params.keys():
             if config.params[param]['Enable'] == '1':
                 print '| {0} | {1}'.format(config.params[param]['ParamID'].ljust(19), config.params[param]['DisplayText'])
         sys.exit()
-    elif arguments.port:
-        print arguments.port
-        SERIAL_PORT = arguments.port
     elif arguments.title:
         print config.get_header()
         sys.exit()        
-    else:
+    elif len(sys.argv) == 1:
         options.print_help()
-    
-    
+        sys.exit()
+
+    if arguments.port:
+        print arguments.port
+        SERIAL_PORT = arguments.port
+
+
     ''' main algorithm'''
+    
 
     '''test get params
     print config.get_register(param_id='ParamID')
