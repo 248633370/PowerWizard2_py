@@ -6,6 +6,7 @@ Based on header fill the dictionary and subdictionary for yaml format file.
 '''
 import csv
 import yaml
+import collections
 import codecs
 import sys
 # Make utf8 default encoding
@@ -31,11 +32,8 @@ with open(infile, 'r') as csvfile:
 		params[line[0]] = subdict
 		n=n+1
 	print str(params['ParamID'])
-	print str(params['ADEM_COOL_TEMP']['DisplayText'])
+ordered_params = collections.OrderedDict(sorted(params.items()))
 # open file for yaml store
 yamlfile = codecs.open(outfile, 'w+', 'utf-8')
-yamlfile.write(yaml.dump(params, encoding='utf-8', allow_unicode=True))
+yamlfile.write(yaml.dump(ordered_params, encoding='utf-8', allow_unicode=True))
 
-'''if __name__ == "__main__":
-    main()
-'''
