@@ -72,8 +72,9 @@ def dassert(deferred, callback):
 class Client(ModbusSerialClient):
     ''' Class for connection and request to PW console  '''
     def __init__(self, method=DEFAULT_SERIAL_METHOD, stopbits=DEFAULT_SERIAL_STOPBITS, bytesize=DEFAULT_SERIAL_BYTESIZE, parity=DEFAULT_SERIAL_PARITY, port=DEFAULT_SERIAL_PORT):
-        pass
-
+        if SERIAL_PORT is not None:
+            port = SERIAL_PORT
+        
     def request_regs(self, regs=DEFAULT_REGS, unit=DEFAULT_UNIT):
         '''read_holding_registers'''
         return self.read_holding_registers(regs, unit)
@@ -92,6 +93,10 @@ class Params:
 
     def load(self, yamlfile=DATA_FILE):
         self.params = yaml.load(open(yamlfile, 'r'))
+        self.header = self.params['ParamID'].keys()
+        self.enable_params = {}
+        for param in self.params.keys():
+            self.enable_params[param] = self.params[param]
         
     def get_header(self):
         ''' return "header" of dictionary'''
@@ -124,7 +129,7 @@ def options_fill(options):
                             help='list all available parameters',
                             action='store_true')
         options.add_argument('-g','--get-enable',
-                            help='get enabled parameters',
+                            help='get value for enabled parameters',
                             action='store_true')
         options.add_argument('-l','--list-enable',
                             help='list only enabled parameters',
@@ -175,14 +180,16 @@ def main():
 
 
     ''' main algorithm'''
-    
+    for param in arguments.parameter:
+        pass
 
-    '''test get params
+    
+    '''test get params'''
     print config.get_register(param_id='ParamID')
     print config.get_description(param_id='ParamID')
     print config.get_register(param_id='ENG_COOL_TMP')
     print config.get_description(param_id='ENG_COOL_TMP')
-    '''
+    ''''''
 
 # For not to work as library
 if __name__ == "__main__":
