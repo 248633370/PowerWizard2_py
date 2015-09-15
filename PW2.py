@@ -132,7 +132,7 @@ def options_fill(options):
                             help='list all available parameters',
                             action='store_true')
         options.add_argument('-g','--get-enable',
-                            help='get value for enabled parameters',
+                            help='get value for enabled parameters, this options discard <parameter> ',
                             action='store_true')
         options.add_argument('-l','--list-enable',
                             help='list only enabled parameters',
@@ -155,6 +155,7 @@ def main():
     config = Params()
     config.load()
 
+    ''' List some info to stdout '''
     if arguments.list_all:
         print 'List all available parameters'
         print '| {0} | {1}'.format(config.params['ParamID']['ParamID'].ljust(19), config.params['ParamID']['DisplayText'])
@@ -172,26 +173,33 @@ def main():
     elif arguments.title:
         print config.get_title()
         sys.exit()        
+    elif arguments.get_enable:
+        arguments.parameter = []
+        for param in config.enabled_params.keys():
+            arguments.parameter.append(param)
     elif len(sys.argv) == 1:
         options.print_help()
         sys.exit()
 
+    ''' Arguments '''
     if arguments.port:
         SERIAL_PORT = arguments.port
 
-    ''' main algorithm'''
-    connection = Client()
-    connection.request_regs(config.get_register('ENG_COOL_TMP'))
-    for param in arguments.parameter:
-        pass
-
+    ''' main algorithm
+        init connection conf '''
+    client = Client()
+    client.request_regs('201','0x01') 
+    ''' get regs '''
+#    for param in arguments.parameter:
+#        print client.request_regs(config.get_register(param))
+#        print config.get_register(param)
     
     '''test get params
     print config.get_register(param_id='ParamID')
     print config.get_description(param_id='ParamID')
     print config.get_register(param_id='ENG_COOL_TMP')
     print config.get_description(param_id='ENG_COOL_TMP')
-'''
+    '''
 
 # For not to work as library
 if __name__ == "__main__":
