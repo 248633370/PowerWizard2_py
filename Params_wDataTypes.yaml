@@ -17,7 +17,7 @@ AMB_AIR_TMP_PIN: {DisplayText: !!python/str 'Температура окружа
   ParamID: AMB_AIR_TMP_PIN, ReadRegister: '814', Scale: '0,03125', TotalBytes: '2',
   WriteRegister: ''}
 AUTO_STRT_STOP: {DisplayText: !!python/str 'Состояние автоматического пуска/останова',
-  Enable: '0', MaxVal: '7', MinVal: '0', NumUsedBits: '8', Offset: '0', ParamID: AUTO_STRT_STOP,
+  Enable: '1', MaxVal: '7', MinVal: '0', NumUsedBits: '8', Offset: '0', ParamID: AUTO_STRT_STOP,
   ReadRegister: '206', Scale: '1', TotalBytes: '2', WriteRegister: ''}
 AVG_AC_CURRENT: {DisplayText: !!python/str 'Среднее значение среднеквадратичного переменного
     тока генератора', Enable: '0', MaxVal: '64255', MinVal: '0', NumUsedBits: '16',
@@ -43,7 +43,7 @@ AVR_BIAS_PCT: {DisplayText: !!python/str 'Смещение в % автомати
     напряжения', Enable: '0', MaxVal: '250,99', MinVal: '-251', NumUsedBits: '16',
   Offset: '-251', ParamID: AVR_BIAS_PCT, ReadRegister: '1058', Scale: '0,0078125',
   TotalBytes: '2', WriteRegister: ''}
-BAT_VOLTS: {DisplayText: !!python/str 'Напр акк бат', Enable: '0', MaxVal: '3212,75',
+BAT_VOLTS: {DisplayText: !!python/str 'Напр акк бат', Enable: '1', MaxVal: '3212,75',
   MinVal: '0', NumUsedBits: '16', Offset: '0', ParamID: BAT_VOLTS, ReadRegister: '202',
   Scale: '0,05', TotalBytes: '2', WriteRegister: ''}
 BPASS_COOLDOW_: {DisplayText: !!python/str 'Охлаждение по препускной линии', Enable: '0',
@@ -378,10 +378,10 @@ EM_SH_OV_STATE: {DisplayText: !!python/str 'Активен реж подавл �
   MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: EM_SH_OV_STATE,
   ReadRegister: '318', Scale: '1', TotalBytes: '2', WriteRegister: ''}
 ENG_COOL_LVL_PIN: {DisplayText: !!python/str 'Уровень охлаждающей жидкости в двигателе
-    с контакта ВВ/ВЫВ', Enable: '0', MaxVal: '250,99', MinVal: '-251', NumUsedBits: '16',
+    с контакта ВВ/ВЫВ', Enable: '1', MaxVal: '250,99', MinVal: '-251', NumUsedBits: '16',
   Offset: '-251', ParamID: ENG_COOL_LVL_PIN, ReadRegister: '807', Scale: '0,0078125',
   TotalBytes: '2', WriteRegister: ''}
-ENG_COOL_TMP: {DisplayText: !!python/str 'Темп охл жидк двгля', Enable: '0', MaxVal: '1735',
+ENG_COOL_TMP: {DisplayText: !!python/str 'Темп охл жидк двгля', Enable: '1', MaxVal: '1735',
   MinVal: '-273', NumUsedBits: '16', Offset: '-273', ParamID: ENG_COOL_TMP, ReadRegister: '201',
   Scale: '0,03125', TotalBytes: '2', WriteRegister: ''}
 ENG_OIL_LVL_PIN: {DisplayText: !!python/str 'Уровень масла в двигателе с контакта
