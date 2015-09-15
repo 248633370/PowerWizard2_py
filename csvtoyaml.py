@@ -33,9 +33,7 @@ with open(infile, 'r') as csvfile:
 		n=n+1
 	print str(params['ParamID'])
 
-''' Enable needed params
-params['']['Enable'] = '1'
-'''
+# Enable needed params
 enable_params = [ 'TOTAL_KW_PCT', 
                 'REAL_POWER', 
                 'PH_A_RMS_CURRENT', \
@@ -57,12 +55,12 @@ enable_params = [ 'TOTAL_KW_PCT',
                 'BAT_VOLTS', \
                 'GEN_FREQ_OK', \
                 'GEN_VOLTS_OK']
-                
+
 for en_param in enable_params:
     params[en_param]['Enable'] = '1'
-
-ordered_params = collections.OrderedDict(sorted(params.items()))
+# Sorting yaml by key
+#ordered_params = collections.OrderedDict(sorted(params.items()))
 # open file for yaml store
 yamlfile = codecs.open(outfile, 'w+', 'utf-8')
-yamlfile.write(yaml.dump(ordered_params, encoding='utf-8', allow_unicode=True))
+yamlfile.write(yaml.dump(collections.OrderedDict(sorted(params.items())), encoding='utf-8', allow_unicode=True))
 
