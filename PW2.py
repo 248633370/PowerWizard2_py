@@ -57,6 +57,7 @@ DEFAULT_UNIT = 0x01
 DATA_FILE = 'Params_wDataTypes.yaml'        # file with params config
 DEFAULT_STORE = '/tmp/pw2py/'              # place to store regs status
 PID_FILE = DEFAULT_STORE + 'pw2py.pid'
+LOG_FILE = '/var/log/pw2py.log'
 
 #---------------------------------------------------------------------------# 
 # helper method to test deferred callbacks
@@ -86,9 +87,10 @@ class Options(argparse.ArgumentParser):
 class Params:
     '''class for manipulate Params ''' 
     def __init__(self):
-        self.params = {}
+        #self.params = {}
+        pass
 
-    def  load(self, yamlfile=DATA_FILE):
+    def load(self, yamlfile=DATA_FILE):
         self.params = yaml.load(open(yamlfile, 'r'))
         
     def get_header(self):
@@ -110,7 +112,8 @@ class Params:
     def get_description(self, param_id ):
         return self.params[param_id]['DisplayText']
 
-def option_fill(options):
+
+def options_fill(options):
         ''' function for fill options '''
         options.add_argument('parameter',
                             type=str,
@@ -133,7 +136,7 @@ def main():
 ##    rr = client.read_holding_registers(201,1)
     ''' Read script options '''
     options = Options()
-    option_fill(options)
+    options_fill(options)
     arguments = options.parse_args()
 
     ''' Load conf to dictionary '''
@@ -142,13 +145,27 @@ def main():
 
     if arguments.list_all:
         print 'list_all'
+        for param in config.params.keys():
+            print '| {0} | {1}'.format(config.params[param]['ParamID'].ljust(19), config.params[param]['DisplayText'])
+        sys.exit()
     elif arguments.list_enable:
         print 'list_enable'
+        for param in config.params.keys():
+            if config.params[param]['Enable'] == '1':
+                print '| {0} | {1}'.format(config.params[param]['ParamID'].ljust(19), config.params[param]['DisplayText'])
+        sys.exit()
     elif arguments.port:
         print arguments.port
+        SERIAL_PORT = arguments.port
     elif arguments.title:
         print config.get_header()
-        
+        sys.exit()        
+    else:
+        options.print_help()
+    
+    
+    ''' main algorithm'''
+
     '''test get params
     print config.get_register(param_id='ParamID')
     print config.get_description(param_id='ParamID')
