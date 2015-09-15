@@ -72,9 +72,11 @@ def dassert(deferred, callback):
 class Client(ModbusSerialClient):
     ''' Class for connection and request to PW console  '''
     def __init__(self, method=DEFAULT_SERIAL_METHOD, stopbits=DEFAULT_SERIAL_STOPBITS, bytesize=DEFAULT_SERIAL_BYTESIZE, parity=DEFAULT_SERIAL_PARITY, port=DEFAULT_SERIAL_PORT):
-        if SERIAL_PORT is not None:
+        try:
             port = SERIAL_PORT
-        
+        except NameError:
+            pass
+
     def request_regs(self, regs=DEFAULT_REGS, unit=DEFAULT_UNIT):
         '''read_holding_registers'''
         return self.read_holding_registers(regs, unit)
@@ -93,13 +95,14 @@ class Params:
 
     def load(self, yamlfile=DATA_FILE):
         self.params = yaml.load(open(yamlfile, 'r'))
-        self.header = self.params['ParamID'].keys()
-        self.enable_params = {}
+        self.title = self.params['ParamID'].keys()
+        self.enabled_params = {}
         for param in self.params.keys():
-            self.enable_params[param] = self.params[param]
+            if self.params[param]['Enable'] == '1':
+                self.enabled_params[param] = self.params[param]
         
-    def get_header(self):
-        ''' return "header" of dictionary'''
+    def get_title(self):
+        ''' return "title" of dictionary'''
         return self.params['ParamID'].keys()
 
     def get_register(self, param_id ):
@@ -163,33 +166,32 @@ def main():
         print 'List only enabled parameters'
         print '| {0} | {1}'.format(config.params['ParamID']['ParamID'].ljust(19), config.params['ParamID']['DisplayText'])
         print '| {0} | {1}'.format(''.ljust(19,'-'), ''.ljust(60,'-'))
-        for param in config.params.keys():
-            if config.params[param]['Enable'] == '1':
-                print '| {0} | {1}'.format(config.params[param]['ParamID'].ljust(19), config.params[param]['DisplayText'])
+        for param in config.enabled_params.keys():
+            print '| {0} | {1}'.format(config.enabled_params[param]['ParamID'].ljust(19), config.enabled_params[param]['DisplayText'])
         sys.exit()
     elif arguments.title:
-        print config.get_header()
+        print config.get_title()
         sys.exit()        
     elif len(sys.argv) == 1:
         options.print_help()
         sys.exit()
 
     if arguments.port:
-        print arguments.port
         SERIAL_PORT = arguments.port
 
-
     ''' main algorithm'''
+    connection = Client()
+    connection.request_regs(config.get_register('ENG_COOL_TMP'))
     for param in arguments.parameter:
         pass
 
     
-    '''test get params'''
+    '''test get params
     print config.get_register(param_id='ParamID')
     print config.get_description(param_id='ParamID')
     print config.get_register(param_id='ENG_COOL_TMP')
     print config.get_description(param_id='ENG_COOL_TMP')
-    ''''''
+'''
 
 # For not to work as library
 if __name__ == "__main__":
