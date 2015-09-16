@@ -68,18 +68,31 @@ def dassert(deferred, callback):
     deferred.addCallback(lambda r: _assertor(callback(r)))
     deferred.addErrback(lambda  _: _assertor(False))
 
-
+''' Seems it overdosed '''
 class Client(ModbusSerialClient):
     ''' Class for connection and request to PW console  '''
-    def __init__(self, method=DEFAULT_SERIAL_METHOD, stopbits=DEFAULT_SERIAL_STOPBITS, bytesize=DEFAULT_SERIAL_BYTESIZE, parity=DEFAULT_SERIAL_PARITY, port=DEFAULT_SERIAL_PORT):
+    def __init__(self, method=DEFAULT_SERIAL_METHOD, 
+                        port=DEFAULT_SERIAL_PORT, 
+                        stopbits=DEFAULT_SERIAL_STOPBITS,
+                        bytesize=DEFAULT_SERIAL_BYTESIZE,
+                        parity=DEFAULT_SERIAL_PARITY,
+                        baudrate = DEFAULT_SERIAL_BAUDRATE,
+                        timeout = DEFAULT_SERIAL_TIMEOUT ):
         try:
-            port = SERIAL_PORT
+            self.port = SERIAL_PORT
         except NameError:
             pass
+        method=DEFAULT_SERIAL_METHOD
+        port=DEFAULT_SERIAL_PORT
+        stopbits=DEFAULT_SERIAL_STOPBITS
+        bytesize=DEFAULT_SERIAL_BYTESIZE
+        parity=DEFAULT_SERIAL_PARITY
+        baudrate = DEFAULT_SERIAL_BAUDRATE
+        timeout = DEFAULT_SERIAL_TIMEOUT
 
     def request_regs(self, regs=DEFAULT_REGS, unit=DEFAULT_UNIT):
         '''read_holding_registers'''
-        return self.read_holding_registers(regs, unit)
+        return self.read_holding_registers(regs, 1, unit=0x01)
 
 
 class Options(argparse.ArgumentParser):
@@ -103,7 +116,8 @@ class Params:
         
     def get_title(self):
         ''' return "title" of dictionary'''
-        return self.params['ParamID'].keys()
+#        return self.params['ParamID'].keys()
+        return self.title
 
     def get_register(self, param_id ):
         if self.params[param_id]['ReadRegister']:
@@ -181,19 +195,35 @@ def main():
         options.print_help()
         sys.exit()
 
-    ''' Arguments '''
+    ''' Check override default arguments value '''
     if arguments.port:
         SERIAL_PORT = arguments.port
+    else:
+        SERIAL_PORT = DEFAULT_SERIAL_PORT
 
     ''' main algorithm
-        init connection conf '''
-    client = Client()
-    client.request_regs('201','0x01') 
+        init connection conf and connect'''
+    client = ModbusSerialClient( method=DEFAULT_SERIAL_METHOD, 
+                        port=SERIAL_PORT, 
+                        stopbits=DEFAULT_SERIAL_STOPBITS,
+                        bytesize=DEFAULT_SERIAL_BYTESIZE,
+                        parity=DEFAULT_SERIAL_PARITY,
+                        baudrate = DEFAULT_SERIAL_BAUDRATE,
+                        timeout = DEFAULT_SERIAL_TIMEOUT )
+
+    print client
+    client.connect()
+    registers = []
     ''' get regs '''
-#    for param in arguments.parameter:
-#        print client.request_regs(config.get_register(param))
-#        print config.get_register(param)
-    
+    print arguments.parameter
+    for param in arguments.parameter:
+        print param, int(config.get_register(param))-1
+        registers.append(client.read_holding_registers( int(config.get_register(param))-1, 1, unit=DEFAULT_UNIT).registers)
+        print registers
+
+    ''' Close client connection '''
+    client.close()
+
     '''test get params
     print config.get_register(param_id='ParamID')
     print config.get_description(param_id='ParamID')
