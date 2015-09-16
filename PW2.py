@@ -43,7 +43,7 @@ DEFAULT_SERIAL_STOPBITS = 1
 DEFAULT_SERIAL_BYTESIZE = 8
 DEFAULT_SERIAL_PARITY = "E"
 DEFAULT_SERIAL_BAUDRATE = 9600
-DEFAULT_SERIAL_TIMEOUT = 1
+DEFAULT_SERIAL_TIMEOUT = 3
 DEFAULT_SERIAL_PORT = "/dev/ttyr00"        # default port for npreals
 #DEFAULT_SERIAL_PORT = "/dev/ttyS33"        # symlink to /dev/ttyr00
 
@@ -211,16 +211,21 @@ def main():
                         baudrate = DEFAULT_SERIAL_BAUDRATE,
                         timeout = DEFAULT_SERIAL_TIMEOUT )
 
-    print client
     client.connect()
     registers = []
-    ''' get regs '''
-    print arguments.parameter
+    ''' get params and regs '''
     for param in arguments.parameter:
-        print param, int(config.get_register(param))-1
-        registers.append(client.read_holding_registers( int(config.get_register(param))-1, 1, unit=DEFAULT_UNIT).registers)
-        print registers
+        register = int(config.get_register(param))-1
+        print param, register
+        try:
+            register_value = client.read_holding_registers(register, 1, unit=DEFAULT_UNIT).registers
+        except AttributeError:
+            register_value = 'get_error'
+        registers.append(register_value)
+        print register_value
 
+    print arguments.parameter
+    print registers
     ''' Close client connection '''
     client.close()
 
