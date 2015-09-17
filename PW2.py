@@ -43,7 +43,7 @@ DEFAULT_SERIAL_STOPBITS = 1
 DEFAULT_SERIAL_BYTESIZE = 8
 DEFAULT_SERIAL_PARITY = "E"
 DEFAULT_SERIAL_BAUDRATE = 9600
-DEFAULT_SERIAL_TIMEOUT = 3
+DEFAULT_SERIAL_TIMEOUT = 1
 DEFAULT_SERIAL_PORT = "/dev/ttyr00"        # default port for npreals
 #DEFAULT_SERIAL_PORT = "/dev/ttyS33"        # symlink to /dev/ttyr00
 
@@ -59,41 +59,6 @@ DATA_FILE = DEFAULT_PATH + 'Params_wDataTypes.yaml'        # file with params co
 DEFAULT_STORE = '/tmp/pw2py/'              # place to store regs status
 PID_FILE = DEFAULT_STORE + 'pw2py.pid'
 LOG_FILE = '/var/log/pw2py.log'
-
-#---------------------------------------------------------------------------# 
-# helper method to test deferred callbacks
-#---------------------------------------------------------------------------# 
-def dassert(deferred, callback):
-    def _assertor(value): assert(value)
-    deferred.addCallback(lambda r: _assertor(callback(r)))
-    deferred.addErrback(lambda  _: _assertor(False))
-
-''' Seems it overdosed '''
-class Client(ModbusSerialClient):
-    ''' Class for connection and request to PW console  '''
-    def __init__(self, method=DEFAULT_SERIAL_METHOD, 
-                        port=DEFAULT_SERIAL_PORT, 
-                        stopbits=DEFAULT_SERIAL_STOPBITS,
-                        bytesize=DEFAULT_SERIAL_BYTESIZE,
-                        parity=DEFAULT_SERIAL_PARITY,
-                        baudrate = DEFAULT_SERIAL_BAUDRATE,
-                        timeout = DEFAULT_SERIAL_TIMEOUT ):
-        try:
-            self.port = SERIAL_PORT
-        except NameError:
-            pass
-        method=DEFAULT_SERIAL_METHOD
-        port=DEFAULT_SERIAL_PORT
-        stopbits=DEFAULT_SERIAL_STOPBITS
-        bytesize=DEFAULT_SERIAL_BYTESIZE
-        parity=DEFAULT_SERIAL_PARITY
-        baudrate = DEFAULT_SERIAL_BAUDRATE
-        timeout = DEFAULT_SERIAL_TIMEOUT
-
-    def request_regs(self, regs=DEFAULT_REGS, unit=DEFAULT_UNIT):
-        '''read_holding_registers'''
-        return self.read_holding_registers(regs, 1, unit=0x01)
-
 
 class Options(argparse.ArgumentParser):
     ''' argparse subclass  for operating options
@@ -120,12 +85,14 @@ class Params:
         return self.title
 
     def get_register(self, param_id ):
+        ''' Get ReadRegister of param '''
         if self.params[param_id]['ReadRegister']:
             return self.params[param_id]['ReadRegister']
         else:
             return 'No ReadRegister'             # generate error if no read reg
 
     def get_write_register(self, param_id ):
+        ''' Get WriteRegister of param '''
         if self.params[param_id]['WriteRegister']:
             return self.params[param_id]['WriteRegister']
         else:
@@ -133,7 +100,6 @@ class Params:
 
     def get_description(self, param_id ):
         return self.params[param_id]['DisplayText']
-
 
 
 def options_fill(options):
@@ -157,9 +123,15 @@ def options_fill(options):
         options.add_argument('-t','--title',
                             help='list params title',
                             action='store_true')
-
+def print_table(*column):
+    ''' function for printing table '''
+    num_columns = len(column)
+    print '| {0} | {1}'.format(column[0][0].ljust(19), column[1][0])
+    print '| {0} | {1}'.format(''.ljust(19,'-'), ''.ljust(60,'-'))
+    for row1,row2 in zip(column[0],column[1]):
+        print '| {0} | {1}'.format(row1.ljust(19), row2)
+        
 def main():
-##    rr = client.read_holding_registers(201,1)
     ''' Read script options '''
     options = Options()
     options_fill(options)
@@ -174,22 +146,24 @@ def main():
         print 'List all available parameters'
         print '| {0} | {1}'.format(config.params['ParamID']['ParamID'].ljust(19), config.params['ParamID']['DisplayText'])
         print '| {0} | {1}'.format(''.ljust(19,'-'), ''.ljust(60,'-'))
-        for param in config.params.keys():
+        for param in sorted(config.params.keys()):
             print '| {0} | {1}'.format(config.params[param]['ParamID'].ljust(19), config.params[param]['DisplayText'])
         sys.exit()
     elif arguments.list_enable:
         print 'List only enabled parameters'
         print '| {0} | {1}'.format(config.params['ParamID']['ParamID'].ljust(19), config.params['ParamID']['DisplayText'])
         print '| {0} | {1}'.format(''.ljust(19,'-'), ''.ljust(60,'-'))
-        for param in config.enabled_params.keys():
+        for param in sorted(config.enabled_params.keys()):
             print '| {0} | {1}'.format(config.enabled_params[param]['ParamID'].ljust(19), config.enabled_params[param]['DisplayText'])
         sys.exit()
     elif arguments.title:
         print config.get_title()
         sys.exit()        
     elif arguments.get_enable:
+        ''' If used "-g" option, discard all other options. 
+            Fill arguments.parameter with all parameters enabled '''
         arguments.parameter = []
-        for param in config.enabled_params.keys():
+        for param in sorted(config.enabled_params.keys()):
             arguments.parameter.append(param)
     elif len(sys.argv) == 1:
         options.print_help()
@@ -212,20 +186,20 @@ def main():
                         timeout = DEFAULT_SERIAL_TIMEOUT )
 
     client.connect()
-    registers = []
+    registers = []          # init list for register value
     ''' get params and regs '''
     for param in arguments.parameter:
         register = int(config.get_register(param))-1
-        print param, register
+#        print param, register
         try:
             register_value = client.read_holding_registers(register, 1, unit=DEFAULT_UNIT).registers
         except AttributeError:
-            register_value = 'get_error'
+            register_value = 'acquisition_error'
         registers.append(register_value)
-        print register_value
+ #       print register_value
 
-    print arguments.parameter
-    print registers
+    for par,reg in zip(arguments.parameter,registers):
+        print '| {0} | {1}'.format(par.ljust(19), reg)
     ''' Close client connection '''
     client.close()
 
@@ -234,6 +208,8 @@ def main():
     print config.get_description(param_id='ParamID')
     print config.get_register(param_id='ENG_COOL_TMP')
     print config.get_description(param_id='ENG_COOL_TMP')
+
+
     '''
 
 # For not to work as library
