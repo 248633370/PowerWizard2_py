@@ -73,6 +73,7 @@ class Params:
 
     def load(self, yamlfile=DATA_FILE):
         self.params = yaml.load(open(yamlfile, 'r'))
+        self.params['ParamID']['RegisterValue'] = '6'
         self.enabled_params = {}
         for param in self.params.keys():
             if self.params[param]['Enable'] == '1':
@@ -131,43 +132,60 @@ def options_fill(options):
         options.add_argument('-t','--title',
                             help='list params title',
                             action='store_true')
-def print_params_table(param_id, column):
+
+def print_params_table(param_id, column, tab=6):
     ''' function for printing table.
         param_id - list/dict of params that wil be printed; column - list of needed column from title;
-        Curent title is: ['MaxVal', 'Enable', 'MinVal', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'DisplayText', 'Offset', 'NumUsedBits', 'ParamID', 'Scale'] 
+        Curent title is: ['ParamID', 'Enable', 'MinVal', 'MaxVal', 'Scale', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'DisplayText', 'Offset', 'NumUsedBits'] 
         and RegisterValue '''
-    num_params = len(param_id)
-    num_columns = len(column)
-
-    print '| {0} | {1}'.format(column[0][0].ljust(19), column[1][0])
-    print '| {0} | {1}'.format(''.ljust(19,'-'), ''.ljust(60,'-'))
-    for row1,row2 in zip(column[0],column[1]):
-        print '| {0} | {1}'.format(row1.ljust(19), row2)
+    ''' Print table header '''
+    for key in column:
+        try:
+            wtab = int(config.params['ParamID'][key])
+        except KeyError:
+            wtab = tab
+        subkey = key[0:wtab]
+        sys.stdout.write('|{0}'.format(subkey.ljust(wtab)))
+    print
+    for key in column:
+        try:
+            wtab = int(config.params['ParamID'][key])
+        except KeyError:
+            wtab = tab
+        sys.stdout.write('|{0}'.format(''.ljust(wtab,'-')))
+    print
+    ''' Print table '''
+    for param in sorted(param_id):
+        for key in column:
+            try:
+                wtab = int(config.params['ParamID'][key])
+            except KeyError:
+                wtab = tab
+            subkey = str(config.params[param][key]).decode('utf-8')[0:wtab]
+            sys.stdout.write('|{0}'.format(subkey.ljust(wtab)))
+        print
         
-def main():
+
+# For not to work as library
+if __name__ == "__main__":
+
     ''' Read script options '''
     options = Options()
     options_fill(options)
     arguments = options.parse_args()
 
     ''' Load conf to dictionary '''
+#    global config
     config = Params()
     config.load()
 
     ''' List some info to stdout '''
     if arguments.list_all:
-        print 'List all available parameters'
-        print '| {0} | {1}'.format('ParamID'.ljust(19), 'DisplayText')
-        print '| {0} | {1}'.format(''.ljust(19,'-'), ''.ljust(60,'-'))
-        for param in sorted(config.params.keys()):
-            print '| {0} | {1}'.format(config.params[param]['ParamID'].ljust(19), config.params[param]['DisplayText'])
+        print_params_table(config.params.keys(), ['ParamID', 'MinVal', 'MaxVal', 'Scale', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'DisplayText' ])
         sys.exit()
     elif arguments.list_enable:
-        print 'List only enabled parameters'
-        print '| {0} | {1}'.format('ParamID'.ljust(19), 'DisplayText')
-        print '| {0} | {1}'.format(''.ljust(19,'-'), ''.ljust(60,'-'))
-        for param in sorted(config.enabled_params.keys()):
-            print '| {0} | {1}'.format(config.enabled_params[param]['ParamID'].ljust(19), config.enabled_params[param]['DisplayText'])
+        ''' {'ParamID', 'Enable', 'MinVal', 'MaxVal', 'Scale', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'DisplayText', 'Offset', 'NumUsedBits'} '''
+        print_params_table(config.enabled_params.keys(), ['ParamID', 'DisplayText', 'TotalBytes', 'WriteRegister', 'ReadRegister' ])
         sys.exit()
     elif arguments.title:
         print config.get_title()
@@ -206,14 +224,17 @@ def main():
     ''' get params and regs '''
     for param in arguments.parameter:
 #        print client.read_holding_registers(int(config.get_register(param))-1, 1, unit=DEFAULT_UNIT)               # may nedd for debug acq register value
+        
         try:
-            config.enabled_params[param]['RegisterValue'] = client.read_holding_registers(int(config.get_register(param))-1, 1, unit=DEFAULT_UNIT).registers[0]
+            config.params[param]['RegisterValue'] = client.read_holding_registers(int(config.get_register(param))-1, 1, unit=DEFAULT_UNIT).registers[0]
         except AttributeError:
             ''' Acquisition Error'''
-            config.enabled_params[param]['RegisterValue'] = 'acq_err'
+            config.params[param]['RegisterValue'] = 'acq_err'
 
-    for param  in sorted(config.enabled_params.keys()):
-        print '|{0}|{1}|{2}'.format(config.enabled_params[param]['ParamID'].ljust(19), str(config.enabled_params[param]['RegisterValue']).center(7), config.enabled_params[param]['DisplayText'])
+    #return value
+    print_params_table(config.enabled_params.keys(), ['ParamID', 'RegisterValue', 'DisplayText', 'ReadRegister' ])
+#    for param  in sorted(config.enabled_params.keys()):
+#        print '|{0}|{1}|{2}'.format(config.enabled_params[param]['ParamID'].ljust(19), str(config.enabled_params[param]['RegisterValue']).center(7), config.enabled_params[param]['DisplayText'])
     ''' Close client connection '''
     client.close()
 
@@ -225,8 +246,4 @@ def main():
 
 
     '''
-
-# For not to work as library
-if __name__ == "__main__":
-    main()
 

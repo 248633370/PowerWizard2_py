@@ -3,6 +3,7 @@
 '''
  The csv file must have a valid header as 1st line.
 Based on header fill the dictionary and subdictionary for yaml format file.
+In ParamID key subdictionary stored width for print tables
 '''
 import csv
 import yaml
@@ -20,7 +21,7 @@ params = {}
 header = []
 subdict = {}
 # vars for tab width
-default_tab = '5'
+default_tab = '6'
 tab_line = []
 n=1
 
@@ -29,13 +30,14 @@ with open(infile, 'r') as csvfile:
     cfgread = csv.reader(csvfile, delimiter=';', quotechar='"')
     for line in cfgread:
         if n == 1:
-            print line[0]
             for i in range(len(line)):
                 header.append(line[i])
                 if line[i] == 'ParamID':
-                    tab_line.append('9')
+                    tab_line.append('16')
                 elif line[i] == 'DisplayText':
                     tab_line.append('40')
+                elif line[i] == 'MaxVal':
+                    tab_line.append('8')
                 else:
                     tab_line.append(default_tab)
             subdict = dict(zip(header,tab_line))
