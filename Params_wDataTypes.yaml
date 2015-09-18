@@ -1155,8 +1155,9 @@
       Enable: '0', MaxVal: '3', MinVal: '0', NumUsedBits: '2', Offset: '0', ParamID: PWR_FCTR_LAGGING,
       ReadRegister: '104', Scale: '1', TotalBytes: '2', WriteRegister: ''}
   - - ParamID
-    - {DisplayText: '40', Enable: '5', MaxVal: '5', MinVal: '5', NumUsedBits: '5',
-      Offset: '5', ParamID: '9', ReadRegister: '5', Scale: '5', TotalBytes: '5', WriteRegister: '5'}
+    - {DisplayText: '40', Enable: '6', MaxVal: '8', MinVal: '6', NumUsedBits: '6',
+      Offset: '6', ParamID: '16', ReadRegister: '6', Scale: '6', TotalBytes: '6',
+      WriteRegister: '6'}
   - - REAL_POWER
     - {DisplayText: !!python/str 'Общая активная мощность генератора', Enable: '1',
       MaxVal: '2211081215', MinVal: '-2000000000', NumUsedBits: '32', Offset: '-2000000',
