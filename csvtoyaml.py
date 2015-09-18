@@ -19,29 +19,44 @@ outfile = 'newParams_wDataTypes.yaml'
 params = {}
 header = []
 subdict = {}
+# vars for tab width
+default_tab = '5'
+tab_line = []
 n=1
 
-#start process of csv
+# start process of csv
 with open(infile, 'r') as csvfile:
-	cfgread = csv.reader(csvfile, delimiter=';', quotechar='"')
-	for line in cfgread:
-		for i in range(len(line)):
-			if n == 1:
-				header.append(line[i])
-		subdict = dict(zip(header,line))
-		params[line[0]] = subdict
-		n=n+1
-	print str(params['ParamID'])
+    cfgread = csv.reader(csvfile, delimiter=';', quotechar='"')
+    for line in cfgread:
+        if n == 1:
+            print line[0]
+            for i in range(len(line)):
+                header.append(line[i])
+                if line[i] == 'ParamID':
+                    tab_line.append('9')
+                elif line[i] == 'DisplayText':
+                    tab_line.append('40')
+                else:
+                    tab_line.append(default_tab)
+            subdict = dict(zip(header,tab_line))
+        else:
+            subdict = dict(zip(header,line))
+        params[line[0]] = subdict
+        n=n+1
+#    print params
+#    print str(params['ParamID'])
 
 # Enable needed params
+'''
+                'B_PH_A_L2L_VOLTS', \
+                'B_PH_B_L2L_VOLTS', \
+                'B_PH_C_L2L_VOLTS', \
+'''
 enable_params = [ 'TOTAL_KW_PCT', 
                 'REAL_POWER', 
                 'PH_A_RMS_CURRENT', \
                 'PH_B_RMS_CURRENT', \
                 'PH_C_RMS_CURRENT', \
-                'B_PH_A_L2L_VOLTS', \
-                'B_PH_B_L2L_VOLTS', \
-                'B_PH_C_L2L_VOLTS', \
                 'ENG_COOL_TMP', \
                 'AUTO_STRT_STOP', \
                 'ADEM_OIL_PRESS', \
@@ -63,4 +78,4 @@ for en_param in enable_params:
 # open file for yaml store
 yamlfile = codecs.open(outfile, 'w+', 'utf-8')
 yamlfile.write(yaml.dump(collections.OrderedDict(sorted(params.items())), encoding='utf-8', allow_unicode=True))
-
+yamlfile.close()

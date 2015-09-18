@@ -73,7 +73,6 @@ class Params:
 
     def load(self, yamlfile=DATA_FILE):
         self.params = yaml.load(open(yamlfile, 'r'))
-        self.title = self.params['ParamID'].keys()
         self.enabled_params = {}
         for param in self.params.keys():
             if self.params[param]['Enable'] == '1':
@@ -81,24 +80,29 @@ class Params:
         
     def get_title(self):
         ''' return "title" of dictionary'''
-#        return self.params['ParamID'].keys()
-        return self.title
+        return self.params['ParamID'].keys()
 
-    def get_register(self, param_id ):
+    def get_info(self, param_id):
+        self.params_info = {}
+        for param in param_id:
+            self.params_info[param] = self.params[param]
+        return self.params_info
+
+    def get_register(self, param_id):
         ''' Get ReadRegister of param '''
         if self.params[param_id]['ReadRegister']:
             return self.params[param_id]['ReadRegister']
         else:
             return 'No ReadRegister'             # generate error if no read reg
 
-    def get_write_register(self, param_id ):
+    def get_write_register(self, param_id):
         ''' Get WriteRegister of param '''
         if self.params[param_id]['WriteRegister']:
             return self.params[param_id]['WriteRegister']
         else:
             return 'No WriteRegister'            # generate error if no write reg    
 
-    def get_description(self, param_id ):
+    def get_description(self, param_id):
         return self.params[param_id]['DisplayText']
 
 
@@ -114,6 +118,10 @@ def options_fill(options):
         options.add_argument('-g','--get-enable',
                             help='get value for enabled parameters, this options discard <parameter> ',
                             action='store_true')
+        options.add_argument('-i','--param-info',
+                            type=str,
+                            nargs='+',
+                            help='information about parameter')
         options.add_argument('-l','--list-enable',
                             help='list only enabled parameters',
                             action='store_true')
@@ -123,9 +131,14 @@ def options_fill(options):
         options.add_argument('-t','--title',
                             help='list params title',
                             action='store_true')
-def print_table(*column):
-    ''' function for printing table '''
+def print_params_table(param_id, column):
+    ''' function for printing table.
+        param_id - list/dict of params that wil be printed; column - list of needed column from title;
+        Curent title is: ['MaxVal', 'Enable', 'MinVal', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'DisplayText', 'Offset', 'NumUsedBits', 'ParamID', 'Scale'] 
+        and RegisterValue '''
+    num_params = len(param_id)
     num_columns = len(column)
+
     print '| {0} | {1}'.format(column[0][0].ljust(19), column[1][0])
     print '| {0} | {1}'.format(''.ljust(19,'-'), ''.ljust(60,'-'))
     for row1,row2 in zip(column[0],column[1]):
@@ -144,14 +157,14 @@ def main():
     ''' List some info to stdout '''
     if arguments.list_all:
         print 'List all available parameters'
-        print '| {0} | {1}'.format(config.params['ParamID']['ParamID'].ljust(19), config.params['ParamID']['DisplayText'])
+        print '| {0} | {1}'.format('ParamID'.ljust(19), 'DisplayText')
         print '| {0} | {1}'.format(''.ljust(19,'-'), ''.ljust(60,'-'))
         for param in sorted(config.params.keys()):
             print '| {0} | {1}'.format(config.params[param]['ParamID'].ljust(19), config.params[param]['DisplayText'])
         sys.exit()
     elif arguments.list_enable:
         print 'List only enabled parameters'
-        print '| {0} | {1}'.format(config.params['ParamID']['ParamID'].ljust(19), config.params['ParamID']['DisplayText'])
+        print '| {0} | {1}'.format('ParamID'.ljust(19), 'DisplayText')
         print '| {0} | {1}'.format(''.ljust(19,'-'), ''.ljust(60,'-'))
         for param in sorted(config.enabled_params.keys()):
             print '| {0} | {1}'.format(config.enabled_params[param]['ParamID'].ljust(19), config.enabled_params[param]['DisplayText'])
@@ -165,7 +178,11 @@ def main():
         arguments.parameter = []
         for param in sorted(config.enabled_params.keys()):
             arguments.parameter.append(param)
+    elif arguments.param_info:
+        print config.get_info(arguments.param_info)
+        sys.exit()
     elif len(sys.argv) == 1:
+        ''' Wihtout scipt option(s) - get help '''
         options.print_help()
         sys.exit()
 
@@ -186,20 +203,17 @@ def main():
                         timeout = DEFAULT_SERIAL_TIMEOUT )
 
     client.connect()
-    registers = []          # init list for register value
     ''' get params and regs '''
     for param in arguments.parameter:
-        register = int(config.get_register(param))-1
-#        print param, register
+#        print client.read_holding_registers(int(config.get_register(param))-1, 1, unit=DEFAULT_UNIT)               # may nedd for debug acq register value
         try:
-            register_value = client.read_holding_registers(register, 1, unit=DEFAULT_UNIT).registers
+            config.enabled_params[param]['RegisterValue'] = client.read_holding_registers(int(config.get_register(param))-1, 1, unit=DEFAULT_UNIT).registers[0]
         except AttributeError:
-            register_value = 'acquisition_error'
-        registers.append(register_value)
- #       print register_value
+            ''' Acquisition Error'''
+            config.enabled_params[param]['RegisterValue'] = 'acq_err'
 
-    for par,reg in zip(arguments.parameter,registers):
-        print '| {0} | {1}'.format(par.ljust(19), reg)
+    for param  in sorted(config.enabled_params.keys()):
+        print '|{0}|{1}|{2}'.format(config.enabled_params[param]['ParamID'].ljust(19), str(config.enabled_params[param]['RegisterValue']).center(7), config.enabled_params[param]['DisplayText'])
     ''' Close client connection '''
     client.close()
 
