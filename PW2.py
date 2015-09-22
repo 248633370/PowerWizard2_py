@@ -74,6 +74,7 @@ class Params:
     def load(self, yamlfile=DATA_FILE):
         self.params = yaml.load(open(yamlfile, 'r'))
         self.params['ParamID']['RegisterValue'] = '6'
+        self.params['ParamID']['Value'] = '6'
         self.enabled_params = {}
         for param in self.params.keys():
             if self.params[param]['Enable'] == '1':
@@ -109,16 +110,17 @@ class Params:
 
 def options_fill(options):
         ''' function for fill options '''
-        options.add_argument('parameter',
-                            type=str,
-                            nargs='*',
-                            help='query PW parameter')
+#        options.add_argument('parameter',
+#                            type=str,
+#                            nargs='*',
+#                            help='query PW parameter')
         options.add_argument('-a','--list-all',
                             help='list all available parameters',
                             action='store_true')
-        options.add_argument('-g','--get-enable',
-                            help='get value for enabled parameters, this options discard <parameter> ',
-                            action='store_true')
+        options.add_argument('-g','--get-params',
+                            type=str,
+                            nargs='*',
+                            help='get value for enabled parameters or separate <parameter> ')
         options.add_argument('-i','--param-info',
                             type=str,
                             nargs='+',
@@ -137,7 +139,7 @@ def print_params_table(param_id, column, tab=6):
     ''' function for printing table.
         param_id - list/dict of params that wil be printed; column - list of needed column from title;
         Curent title is: ['ParamID', 'Enable', 'MinVal', 'MaxVal', 'Scale', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'DisplayText', 'Offset', 'NumUsedBits'] 
-        and RegisterValue '''
+        additionaly: 'RegisterValue', 'Value' '''
     ''' Print table header '''
     for key in column:
         try:
@@ -165,44 +167,68 @@ def print_params_table(param_id, column, tab=6):
             sys.stdout.write('|{0}'.format(subkey.ljust(wtab)))
         print
         
+def check_pid():
+    ''' Check PID for prevent two instances run 
+        Function use only connections options like '-g', not use with help and list options '''
+    if os.path.isfile(PID_FILE):
+        pidfile = open(PID_FILE, 'r+')
+        old_pid = pidfile.readline()
+        ''' if another instance already run - close this one
+            if not - write pid to file '''
+        if os.path.exists("/proc/%s" % old_pid):
+            sys.exit()
+        else:
+            pidfile.seek(0)
+            pidfile.truncate()
+            pidfile.write("%s" % os.getpid())
+    else:
+        try:
+            os.makedirs(DEFAULT_STORE)
+        except OSError:
+            pass
+        pidfile = open(PID_FILE, 'w')
+        pidfile.write("%s" % os.getpid())
+    pidfile.close()
 
 # For not to work as library
 if __name__ == "__main__":
-
     ''' Read script options '''
     options = Options()
     options_fill(options)
     arguments = options.parse_args()
 
     ''' Load conf to dictionary '''
-#    global config
     config = Params()
     config.load()
 
     ''' List some info to stdout '''
+    ''' {'ParamID', 'Enable', 'MinVal', 'MaxVal', 'Scale', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'DisplayText', 'Offset', 'NumUsedBits'} '''
     if arguments.list_all:
         print_params_table(config.params.keys(), ['ParamID', 'MinVal', 'MaxVal', 'Scale', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'DisplayText' ])
         sys.exit()
     elif arguments.list_enable:
-        ''' {'ParamID', 'Enable', 'MinVal', 'MaxVal', 'Scale', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'DisplayText', 'Offset', 'NumUsedBits'} '''
         print_params_table(config.enabled_params.keys(), ['ParamID', 'DisplayText', 'TotalBytes', 'WriteRegister', 'ReadRegister' ])
         sys.exit()
     elif arguments.title:
+        ''' get title '''
         print config.get_title()
         sys.exit()        
-    elif arguments.get_enable:
-        ''' If used "-g" option, discard all other options. 
-            Fill arguments.parameter with all parameters enabled '''
-        arguments.parameter = []
-        for param in sorted(config.enabled_params.keys()):
-            arguments.parameter.append(param)
     elif arguments.param_info:
-        print config.get_info(arguments.param_info)
+        ''' Information for separate params '''
+        print_params_table(arguments.param_info, ['ParamID', 'DisplayText', 'TotalBytes', 'WriteRegister', 'ReadRegister' ])
         sys.exit()
+    elif arguments.get_params is not None:
+        ''' If used "-g" option, discard all other options '''
+        if len(arguments.get_params) == 0:
+            for param in sorted(config.enabled_params.keys()):
+                arguments.get_params.append(param)
     elif len(sys.argv) == 1:
         ''' Wihtout scipt option(s) - get help '''
         options.print_help()
         sys.exit()
+
+    ''' check pid befor main algorithm '''
+    check_pid()
 
     ''' Check override default arguments value '''
     if arguments.port:
@@ -219,22 +245,19 @@ if __name__ == "__main__":
                         parity=DEFAULT_SERIAL_PARITY,
                         baudrate = DEFAULT_SERIAL_BAUDRATE,
                         timeout = DEFAULT_SERIAL_TIMEOUT )
-
     client.connect()
     ''' get params and regs '''
-    for param in arguments.parameter:
-#        print client.read_holding_registers(int(config.get_register(param))-1, 1, unit=DEFAULT_UNIT)               # may nedd for debug acq register value
-        
+    for param in arguments.get_params:
         try:
             config.params[param]['RegisterValue'] = client.read_holding_registers(int(config.get_register(param))-1, 1, unit=DEFAULT_UNIT).registers[0]
+            config.params[param]['Value'] = (config.params[param]['RegisterValue'] + int(config.params[param]['Offset']) ) * float(config.params[param]['Scale'].replace(',','.'))
+#            print  'Value, Offset, Scale', config.params[param]['Value'], config.params[param]['Offset'], config.params[param]['Scale'].replace(',','.')
         except AttributeError:
             ''' Acquisition Error'''
             config.params[param]['RegisterValue'] = 'acq_err'
+            config.params[param]['Value'] = 0
+    print_params_table(arguments.get_params, ['ParamID', 'RegisterValue', 'Value', 'DisplayText', 'ReadRegister' ])
 
-    #return value
-    print_params_table(config.enabled_params.keys(), ['ParamID', 'RegisterValue', 'DisplayText', 'ReadRegister' ])
-#    for param  in sorted(config.enabled_params.keys()):
-#        print '|{0}|{1}|{2}'.format(config.enabled_params[param]['ParamID'].ljust(19), str(config.enabled_params[param]['RegisterValue']).center(7), config.enabled_params[param]['DisplayText'])
     ''' Close client connection '''
     client.close()
 

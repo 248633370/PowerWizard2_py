@@ -4,6 +4,7 @@
  The csv file must have a valid header as 1st line.
 Based on header fill the dictionary and subdictionary for yaml format file.
 In ParamID key subdictionary stored width for print tables
+CSV must be save with semicolon (;) and quotechar is double quotation marks (").
 '''
 import csv
 import yaml
@@ -28,6 +29,7 @@ n=1
 # start process of csv
 with open(infile, 'r') as csvfile:
     cfgread = csv.reader(csvfile, delimiter=';', quotechar='"')
+#    cfgread = csv.reader(csvfile, delimiter=';')
     for line in cfgread:
         if n == 1:
             for i in range(len(line)):
