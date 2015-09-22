@@ -43,7 +43,7 @@ DEFAULT_SERIAL_STOPBITS = 1
 DEFAULT_SERIAL_BYTESIZE = 8
 DEFAULT_SERIAL_PARITY = "E"
 DEFAULT_SERIAL_BAUDRATE = 9600
-DEFAULT_SERIAL_TIMEOUT = 1
+DEFAULT_SERIAL_TIMEOUT = 0.2
 DEFAULT_SERIAL_PORT = "/dev/ttyr00"        # default port for npreals
 #DEFAULT_SERIAL_PORT = "/dev/ttyS33"        # symlink to /dev/ttyr00
 
@@ -250,9 +250,9 @@ if __name__ == "__main__":
     for param in arguments.get_params:
         try:
             config.params[param]['RegisterValue'] = client.read_holding_registers(int(config.get_register(param))-1, 1, unit=DEFAULT_UNIT).registers[0]
-            config.params[param]['Value'] = (config.params[param]['RegisterValue'] + int(config.params[param]['Offset']) ) * float(config.params[param]['Scale'].replace(',','.'))
+            config.params[param]['Value'] = config.params[param]['RegisterValue'] * float(config.params[param]['Scale'].replace(',','.')) + int(config.params[param]['Offset'])
 #            print  'Value, Offset, Scale', config.params[param]['Value'], config.params[param]['Offset'], config.params[param]['Scale'].replace(',','.')
-        except AttributeError:
+        except (AttributeError, OSError):
             ''' Acquisition Error'''
             config.params[param]['RegisterValue'] = 'acq_err'
             config.params[param]['Value'] = 0
@@ -266,7 +266,5 @@ if __name__ == "__main__":
     print config.get_description(param_id='ParamID')
     print config.get_register(param_id='ENG_COOL_TMP')
     print config.get_description(param_id='ENG_COOL_TMP')
-
-
     '''
 
