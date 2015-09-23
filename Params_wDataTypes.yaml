@@ -519,7 +519,7 @@
       MinVal: '0', NumUsedBits: '8', Offset: '0', ParamID: ENG_OP_MODE_CM_, ReadRegister: '',
       Scale: '1', TotalBytes: '2', WriteRegister: '302'}
   - - ENG_RPM
-    - {DisplayText: !!python/str 'ЧВД', Enable: '0', MaxVal: '8031,875', MinVal: '0',
+    - {DisplayText: !!python/str 'ЧВД', Enable: '1', MaxVal: '8031,875', MinVal: '0',
       NumUsedBits: '16', Offset: '0', ParamID: ENG_RPM, ReadRegister: '203', Scale: '0,125',
       TotalBytes: '2', WriteRegister: ''}
   - - ENG_STATUS
@@ -1156,7 +1156,7 @@
       ReadRegister: '104', Scale: '1', TotalBytes: '2', WriteRegister: ''}
   - - ParamID
     - {DisplayText: '40', Enable: '6', MaxVal: '8', MinVal: '6', NumUsedBits: '6',
-      Offset: '9', ParamID: '16', ReadRegister: '6', Scale: '6', TotalBytes: '6',
+      Offset: '9', ParamID: '16', ReadRegister: '6', Scale: '9', TotalBytes: '6',
       WriteRegister: '6'}
   - - REAL_POWER
     - {DisplayText: !!python/str 'Общая активная мощность генератора', Enable: '1',
