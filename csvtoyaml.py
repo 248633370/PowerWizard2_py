@@ -17,7 +17,7 @@ sys.setdefaultencoding('utf-8')
 
 # constants and init vars
 infile = 'Params_wDataTypes.csv'
-outfile = 'newParams_wDataTypes.yaml'
+outfile = 'Params_wDataTypes.yaml'
 params = {}
 header = []
 subdict = {}
@@ -40,6 +40,8 @@ with open(infile, 'r') as csvfile:
                     tab_line.append('40')
                 elif line[i] == 'MaxVal':
                     tab_line.append('8')
+                elif line[i] == 'Offset':
+                    tab_line.append('9')
                 else:
                     tab_line.append(default_tab)
             subdict = dict(zip(header,tab_line))
@@ -61,6 +63,7 @@ enable_params = [ 'TOTAL_KW_PCT',
                 'PH_A_RMS_CURRENT', \
                 'PH_B_RMS_CURRENT', \
                 'PH_C_RMS_CURRENT', \
+                'ENG_OIL_PRESS', \
                 'ENG_COOL_TMP', \
                 'AUTO_STRT_STOP', \
                 'ADEM_OIL_PRESS', \
