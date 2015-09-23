@@ -40,6 +40,8 @@ with open(infile, 'r') as csvfile:
                     tab_line.append('40')
                 elif line[i] == 'MaxVal':
                     tab_line.append('8')
+                elif line[i] == 'Scale':
+                    tab_line.append('9')
                 elif line[i] == 'Offset':
                     tab_line.append('9')
                 else:
@@ -63,6 +65,7 @@ enable_params = [ 'TOTAL_KW_PCT',
                 'PH_A_RMS_CURRENT', \
                 'PH_B_RMS_CURRENT', \
                 'PH_C_RMS_CURRENT', \
+                'ENG_RPM', \
                 'ENG_OIL_PRESS', \
                 'ENG_COOL_TMP', \
                 'AUTO_STRT_STOP', \

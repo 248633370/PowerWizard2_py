@@ -215,7 +215,7 @@ if __name__ == "__main__":
         sys.exit()        
     elif arguments.param_info:
         ''' Information for separate params '''
-        print_params_table(arguments.param_info, ['ParamID', 'DisplayText', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'Scale', 'Offset' ])
+        print_params_table(arguments.param_info, ['ParamID', 'DisplayText', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'Scale', 'Offset', 'MinVal', 'MaxVal' ])
         sys.exit()
     elif arguments.get_params is not None:
         ''' If used "-g" option, discard all other options '''
@@ -249,16 +249,23 @@ if __name__ == "__main__":
     ''' get params and regs '''
     for param in arguments.get_params:
         try:
-            readed_registers = client.read_holding_registers(int(config.get_register(param))-1, 1, unit=DEFAULT_UNIT)
-            config.params[param]['RegisterValue'] = readed_registers.registers[0]
-            config.params[param]['Value'] = config.params[param]['RegisterValue'] * float(config.params[param]['Scale'].replace(',','.')) - int(config.params[param]['Offset'])
+            config.params[param]['RegisterValue']  = client.read_holding_registers(int(config.get_register(param))-1, 1, unit=DEFAULT_UNIT).registers[0]
+            scale = float(config.params[param]['Scale'].replace(',','.'))
+            offset = int(config.params[param]['Offset'])
+            min_val = float(config.params[param]['MinVal'].replace(',','.'))
+            max_val = float(config.params[param]['MaxVal'].replace(',','.'))
+            config.params[param]['Value'] = config.params[param]['RegisterValue'] * scale + offset
+            if (config.params[param]['Value'] > max_val) or (config.params[param]['Value'] < min_val):
+                ''' Out of range '''
+                config.params[param]['RegisterValue'] = 'ran_er'
+                config.params[param]['Value'] = 0
         except AttributeError:
             ''' Acquisition Error'''
-            config.params[param]['RegisterValue'] = 'acq_err'
+            config.params[param]['RegisterValue'] = 'acq_er'
             config.params[param]['Value'] = 0
-        except OSError:
+        except (OSError):
             ''' Port Error'''
-            config.params[param]['RegisterValue'] = 'port_err'
+            config.params[param]['RegisterValue'] = 'prt_er'
             config.params[param]['Value'] = 0
 
     print_params_table(arguments.get_params, ['ParamID', 'RegisterValue', 'Value', 'DisplayText', 'ReadRegister' ])
