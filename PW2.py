@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 ''' 
     Modbus Client for get status from PowerWizard2.0 Panel by Nechaev Anton
     2015.08.19
