@@ -14,6 +14,8 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 import yaml
+import collections
+import codecs
 import argparse
 
 from pymodbus.constants import Defaults
@@ -108,6 +110,13 @@ class Params:
 
     def get_description(self, param_id):
         return self.params[param_id]['DisplayText']
+    
+    def save(self, yamlfilestore=DATA_STORE_FILE):
+        '''Save enabled params to yaml file '''
+        self.filestore  = codecs.open(yamlfilestore, 'w+', 'utf-8')
+        self.filestore.write(yaml.dump(collections.OrderedDict(sorted(self.enabled_params.items())), encoding='utf-8', allow_unicode=True))
+        self.filestore.close()
+
 
 
 def options_fill(options):
@@ -279,10 +288,13 @@ if __name__ == "__main__":
             config.params[param]['RegisterValue'] = 'prt_er'
             config.params[param]['Value'] = 0
 
-        if arguments.write_to_disk:
-            print_params_table(arguments.get_params, ['ParamID', 'RegisterValue', 'Value', 'DisplayText', 'ReadRegister' ])
-        else:
-            pass
+            
+    if arguments.write_to_disk:
+        '''Check print to stdout or save yaml to disk '''
+#        pass
+        config.save()
+    else:
+        print_params_table(arguments.get_params, ['ParamID', 'RegisterValue', 'Value', 'DisplayText', 'ReadRegister' ])
         
     ''' Close client connection '''
     client.close()
