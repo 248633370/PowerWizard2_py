@@ -37,7 +37,7 @@ DEFAULT_SERIAL_METHOD = "rtu"
 DEFAULT_SERIAL_STOPBITS = 1
 DEFAULT_SERIAL_BYTESIZE = 8
 DEFAULT_SERIAL_PARITY = "E"
-DEFAULT_SERIAL_BAUDRATE = 38400
+DEFAULT_SERIAL_BAUDRATE = 19200     # 9600 19200 38400 57600
 DEFAULT_SERIAL_TIMEOUT = 0.3
 DEFAULT_SERIAL_PORT = "/dev/ttyr00"        # default port for npreals
 #DEFAULT_SERIAL_PORT = "/dev/ttyS33"        # symlink to /dev/ttyr00
@@ -53,8 +53,8 @@ DEFAULT_PATH = os.path.dirname(__file__) + '/'
 DATA_INPUT_FILE = DEFAULT_PATH + 'Params_wDataTypes.yaml'        # file with params config
 DEFAULT_STORE = '/tmp/pw2py/'              # place to store regs status
 DATA_STORE_FILE = DEFAULT_STORE + 'data.yaml'
-PID_FILE = DEFAULT_STORE + 'pw2py.pid'
-LOG_FILE = '/var/log/pw2py.log'
+PID_FILE = DEFAULT_STORE + 'pw2d.pid'
+LOG_FILE = '/var/log/pw2d.log'
 
 #---------------------------------------------------------------------------# 
 # configure the client logging
@@ -111,7 +111,7 @@ class Params:
     def get_description(self, param_id):
         return self.params[param_id]['DisplayText']
     
-    def save(self, yamlfilestore=DATA_STORE_FILE):
+    def save_result(self, yamlfilestore=DATA_STORE_FILE):
         '''Save enabled params to yaml file '''
         self.filestore  = codecs.open(yamlfilestore, 'w+', 'utf-8')
         self.filestore.write(yaml.dump(collections.OrderedDict(sorted(self.enabled_params.items())), encoding='utf-8', allow_unicode=True))
@@ -121,10 +121,6 @@ class Params:
 
 def options_fill(options):
         ''' function for fill options '''
-#        options.add_argument('parameter',
-#                            type=str,
-#                            nargs='*',
-#                            help='query PW parameter')
         options.add_argument('-a','--list-all',
                             help='list all available parameters',
                             action='store_true')
@@ -279,20 +275,23 @@ if __name__ == "__main__":
                 ''' Out of range '''
                 config.params[param]['RegisterValue'] = 'ran_er'
                 config.params[param]['Value'] = 0
+                log.error( 'Param: ' + param + ' is out of range')
         except AttributeError:
             ''' Acquisition Error'''
             config.params[param]['RegisterValue'] = 'acq_er'
             config.params[param]['Value'] = 0
+            log.error( 'Param: ' + param + ' acquire register error')
         except (OSError):
             ''' Port Error'''
             config.params[param]['RegisterValue'] = 'prt_er'
             config.params[param]['Value'] = 0
-
+            log.error( 'Port: ' + SERIAL_PORT + ' communication error')
             
     if arguments.write_to_disk:
         '''Check print to stdout or save yaml to disk '''
-#        pass
-        config.save()
+        config.save_result()
+#        if arguments.verbose:
+#            print_params_table(arguments.get_params, ['ParamID', 'RegisterValue', 'Value', 'DisplayText', 'ReadRegister' ])
     else:
         print_params_table(arguments.get_params, ['ParamID', 'RegisterValue', 'Value', 'DisplayText', 'ReadRegister' ])
         
