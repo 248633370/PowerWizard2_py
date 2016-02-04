@@ -1250,7 +1250,7 @@
       Offset: '0', ParamID: RST_SVC_INT_CNT_, ReadRegister: '', Scale: '1', TotalBytes: '2',
       WriteRegister: '1032'}
   - - RTC
-    - {DisplayText: !!python/str 'Счетчик времени в реальном масштабе', Enable: '1',
+    - {DisplayText: !!python/str 'Счетчик времени в реальном масштабе', Enable: '0',
       MaxVal: '0', MinVal: '0', NumUsedBits: '48', Offset: '0', ParamID: RTC, ReadRegister: '900',
       Scale: '1', TotalBytes: '6', WriteRegister: ''}
   - - SPD_BIAS_PCNT

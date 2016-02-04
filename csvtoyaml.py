@@ -59,6 +59,7 @@ with open(infile, 'r') as csvfile:
                 'B_PH_A_L2L_VOLTS', \
                 'B_PH_B_L2L_VOLTS', \
                 'B_PH_C_L2L_VOLTS', \
+                'RTC', \
 '''
 enable_params = [ 'TOTAL_KW_PCT', 
                 'REAL_POWER', 
@@ -74,7 +75,6 @@ enable_params = [ 'TOTAL_KW_PCT',
                 'DL_ENG_OIL_TEMP', \
                 'DL_INST_FUEL_CON', \
                 'ENG_OP_MODE', \
-                'RTC', \
                 'LOSS_OF_UTILITY',
                  \
                 'BAT_VOLTS', \
