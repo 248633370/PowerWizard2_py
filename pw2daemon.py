@@ -18,7 +18,6 @@ import collections
 import codecs
 import argparse
 
-from pymodbus.constants import Defaults
 # need for async TCP client
 #from twisted.internet import reactor, protocol
 
@@ -75,11 +74,14 @@ class Params:
     def __init__(self):
         pass
 
+    '''In ParamID key stored dict with tabs title in keys and
+    tabs wide in Value for print_params_table function'''
     def load(self, yamlfile=DATA_INPUT_FILE):
         self.params = yaml.load(open(yamlfile, 'r'))
         self.params['ParamID']['RegisterValue'] = '6'
         self.params['ParamID']['Value'] = '9'
-        self.enabled_params = {}
+        self.enabled_params = {}        # for quick operate with only enabled params
+        self.enabled_params['ParamID'] = self.params['ParamID']
         for param in self.params.keys():
             if self.params[param]['Enable'] == '1':
                 self.enabled_params[param] = self.params[param]
@@ -111,12 +113,12 @@ class Params:
     def get_description(self, param_id):
         return self.params[param_id]['DisplayText']
     
-    def save_result(self, yamlfilestore=DATA_STORE_FILE):
+    def save_result(self, yamlfilestore=DATA_STORE_FILE, header=False):
         '''Save enabled params to yaml file '''
         self.filestore  = codecs.open(yamlfilestore, 'w+', 'utf-8')
+        print type(self.params)
         self.filestore.write(yaml.dump(collections.OrderedDict(sorted(self.enabled_params.items())), encoding='utf-8', allow_unicode=True))
         self.filestore.close()
-
 
 
 def options_fill(options):
@@ -148,37 +150,34 @@ def options_fill(options):
                             help='write result to disk',
                             action='store_true')
 
-def print_params_table(param_id, column, tab=6):
+def print_params_table(param_dict, column, tab=6):
     ''' function for printing table.
-        param_id - list/dict of params that wil be printed; column - list of needed column from title;
-        Curent title is: ['ParamID', 'Enable', 'MinVal', 'MaxVal', 'Scale', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'DisplayText', 'Offset', 'NumUsedBits'] 
-        additionaly: 'RegisterValue', 'Value' '''
+        param_id - list/dict of params that will be printed; column - list of needed column from title;
+        Current title is: ['ParamID', 'Enable', 'MinVal', 'MaxVal', 'Scale', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'DisplayText', 'Offset', 'NumUsedBits'] 
+        additional: 'RegisterValue', 'Value' '''
     ''' Print table header '''
+    headerline = ''
     for key in column:
         try:
-            wtab = int(config.params['ParamID'][key])
-        except KeyError:
+            wtab = int(param_dict['ParamID'][key])
+        except (KeyError,ValueError):
             wtab = tab
         subkey = key[0:wtab]
         sys.stdout.write('|{0}'.format(subkey.ljust(wtab)))
+        headerline += '|' + '-' * wtab 
     print
-    for key in column:
-        try:
-            wtab = int(config.params['ParamID'][key])
-        except KeyError:
-            wtab = tab
-        sys.stdout.write('|{0}'.format(''.ljust(wtab,'-')))
-    print
+    print headerline
     ''' Print table '''
-    for param in sorted(param_id):
-        for key in column:
-            try:
-                wtab = int(config.params['ParamID'][key])
-            except KeyError:
-                wtab = tab
-            subkey = str(config.params[param][key]).decode('utf-8')[0:wtab]
-            sys.stdout.write('|{0}'.format(subkey.ljust(wtab)))
-        print
+    for param in sorted(param_dict.keys()):
+        if param <> 'ParamID':
+            for key in column:
+                try:
+                    wtab = int(param_dict['ParamID'][key])
+                except KeyError:
+                    wtab = tab
+                subkey = str(param_dict[param][key]).decode('utf-8')[0:wtab]
+                sys.stdout.write('|{0}'.format(subkey.ljust(wtab)))
+            print
 
 def check_pid():
     ''' Check PID for prevent two instances run 
@@ -264,36 +263,38 @@ if __name__ == "__main__":
     client.connect()
     ''' get params and regs '''
     for param in arguments.get_params:
-        try:
-            config.params[param]['RegisterValue']  = client.read_holding_registers(int(config.get_register(param))-1, 1, unit=DEFAULT_UNIT).registers[0]
-            scale = float(config.params[param]['Scale'].replace(',','.'))
-            offset = int(config.params[param]['Offset'])
-            min_val = float(config.params[param]['MinVal'].replace(',','.'))
-            max_val = float(config.params[param]['MaxVal'].replace(',','.'))
-            config.params[param]['Value'] = config.params[param]['RegisterValue'] * scale + offset
-            if (config.params[param]['Value'] > max_val) or (config.params[param]['Value'] < min_val):
-                ''' Out of range '''
-                config.params[param]['RegisterValue'] = 'ran_er'
+        if param <> 'ParamID':
+            try:
+                config.params[param]['RegisterValue']  = client.read_holding_registers(int(config.get_register(param))-1, 1, unit=DEFAULT_UNIT).registers[0]
+                scale = float(config.params[param]['Scale'].replace(',','.'))
+                offset = int(config.params[param]['Offset'])
+                min_val = float(config.params[param]['MinVal'].replace(',','.'))
+                max_val = float(config.params[param]['MaxVal'].replace(',','.'))
+                config.params[param]['Value'] = config.params[param]['RegisterValue'] * scale + offset
+                if (config.params[param]['Value'] > max_val) or (config.params[param]['Value'] < min_val):
+                    ''' Out of range '''
+                    config.params[param]['RegisterValue'] = 'ran_er'
+                    config.params[param]['Value'] = 0
+                    log.error( 'Param: ' + param + ' is out of range')
+            except AttributeError:
+                ''' Acquisition Error'''
+                config.params[param]['RegisterValue'] = 'acq_er'
                 config.params[param]['Value'] = 0
-                log.error( 'Param: ' + param + ' is out of range')
-        except AttributeError:
-            ''' Acquisition Error'''
-            config.params[param]['RegisterValue'] = 'acq_er'
-            config.params[param]['Value'] = 0
-            log.error( 'Param: ' + param + ' acquire register error')
-        except (OSError):
-            ''' Port Error'''
-            config.params[param]['RegisterValue'] = 'prt_er'
-            config.params[param]['Value'] = 0
-            log.error( 'Port: ' + SERIAL_PORT + ' communication error')
+                log.error( 'Param: ' + param + ' acquire register error')
+            except (OSError):
+                ''' Port Error'''
+                config.params[param]['RegisterValue'] = 'prt_er'
+                config.params[param]['Value'] = 0
+                log.error( 'Port: ' + SERIAL_PORT + ' communication error')
+            config.enabled_params[param] = config.params[param]
             
     if arguments.write_to_disk:
         '''Check print to stdout or save yaml to disk '''
-        config.save_result()
+        config.save_result(header=True)
 #        if arguments.verbose:
 #            print_params_table(arguments.get_params, ['ParamID', 'RegisterValue', 'Value', 'DisplayText', 'ReadRegister' ])
     else:
-        print_params_table(arguments.get_params, ['ParamID', 'RegisterValue', 'Value', 'DisplayText', 'ReadRegister' ])
+        print_params_table(config.enabled_params, ['ParamID', 'RegisterValue', 'Value', 'DisplayText', 'ReadRegister' ])
         
     ''' Close client connection '''
     client.close()
