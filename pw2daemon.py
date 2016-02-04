@@ -235,7 +235,8 @@ if __name__ == "__main__":
     elif arguments.verbose:
         ''' verbose mode '''
         log.setLevel('DEBUG')
-    elif arguments.write_to_disk and not arguments.get_params:
+    elif arguments.write_to_disk and arguments.get_params is None:
+        print arguments.get_params
         options.error('-w,--write-to-disk can only be use with -g,--get-params.')
     elif arguments.get_params is not None:
         ''' If used "-g" option, discard all other options '''
@@ -292,7 +293,10 @@ if __name__ == "__main__":
                 config.params[param]['Value'] = 0
                 log.error( 'Port: ' + SERIAL_PORT + ' communication error')
             config.enabled_params[param] = config.params[param]
-            
+            if arguments.write_to_disk:
+                value_store = open(DEFAULT_STORE + param, 'w')
+                value_store.write(str(config.params[param]['Value']))
+                value_store.close()
     if arguments.write_to_disk:
         '''Check print to stdout or save yaml to disk '''
         config.save_result(header=True)
