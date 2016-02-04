@@ -116,7 +116,6 @@ class Params:
     def save_result(self, yamlfilestore=DATA_STORE_FILE, header=False):
         '''Save enabled params to yaml file '''
         self.filestore  = codecs.open(yamlfilestore, 'w+', 'utf-8')
-        print type(self.params)
         self.filestore.write(yaml.dump(collections.OrderedDict(sorted(self.enabled_params.items())), encoding='utf-8', allow_unicode=True))
         self.filestore.close()
 
@@ -227,11 +226,17 @@ if __name__ == "__main__":
         sys.exit()        
     elif arguments.param_info:
         ''' Information for separate params '''
-        print_params_table(arguments.param_info, ['ParamID', 'DisplayText', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'Scale', 'Offset', 'MinVal', 'MaxVal' ])
+        info_params = {}
+        info_params['ParamID'] = config.params['ParamID']
+        for param in arguments.param_info:
+            info_params[param] = config.params[param]
+        print_params_table(info_params, ['ParamID', 'DisplayText', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'Scale', 'Offset', 'MinVal', 'MaxVal' ])
         sys.exit()
     elif arguments.verbose:
         ''' verbose mode '''
         log.setLevel('DEBUG')
+    elif arguments.write_to_disk and not arguments.get_params:
+        options.error('-w,--write-to-disk can only be use with -g,--get-params.')
     elif arguments.get_params is not None:
         ''' If used "-g" option, discard all other options '''
         if len(arguments.get_params) == 0:
