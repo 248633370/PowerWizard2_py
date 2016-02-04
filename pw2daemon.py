@@ -303,11 +303,3 @@ if __name__ == "__main__":
         
     ''' Close client connection '''
     client.close()
-
-    '''test get params
-    print config.get_register(param_id='ParamID')
-    print config.get_description(param_id='ParamID')
-    print config.get_register(param_id='ENG_COOL_TMP')
-    print config.get_description(param_id='ENG_COOL_TMP')
-    '''
-
