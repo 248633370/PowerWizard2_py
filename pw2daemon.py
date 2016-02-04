@@ -216,10 +216,10 @@ if __name__ == "__main__":
     ''' List some info to stdout '''
     ''' {'ParamID', 'Enable', 'MinVal', 'MaxVal', 'Scale', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'DisplayText', 'Offset', 'NumUsedBits'} '''
     if arguments.list_all:
-        print_params_table(config.params.keys(), ['ParamID', 'MinVal', 'MaxVal', 'Scale', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'DisplayText' ])
+        print_params_table(config.params, ['ParamID', 'MinVal', 'MaxVal', 'Scale', 'TotalBytes', 'WriteRegister', 'ReadRegister', 'DisplayText' ])
         sys.exit()
     elif arguments.list_enable:
-        print_params_table(config.enabled_params.keys(), ['ParamID', 'DisplayText', 'TotalBytes', 'WriteRegister', 'ReadRegister' ])
+        print_params_table(config.enabled_params, ['ParamID', 'DisplayText', 'TotalBytes', 'WriteRegister', 'ReadRegister' ])
         sys.exit()
     elif arguments.title:
         ''' get title '''
@@ -275,7 +275,7 @@ if __name__ == "__main__":
                     ''' Out of range '''
                     config.params[param]['RegisterValue'] = 'ran_er'
                     config.params[param]['Value'] = 0
-                    log.error( 'Param: ' + param + ' is out of range')
+                    log.warn('Param: ' + param + ' is out of range')
             except AttributeError:
                 ''' Acquisition Error'''
                 config.params[param]['RegisterValue'] = 'acq_er'
